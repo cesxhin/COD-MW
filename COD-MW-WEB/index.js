@@ -10,7 +10,7 @@ const fastify = require('fastify')({
 });
 
 //create and connect db
-fastify.decorate('esterno', require('./db')());
+fastify.decorate('dal', require('./db')());
 const cod = require('./cod')
 
 //import or export date
@@ -26,7 +26,7 @@ fastify.register(require('point-of-view'), {
 
 //login
 fastify.get('/', async (req, reply) => {
-    return reply.view('login.ejs', {loginError : 'undefined'});
+    return reply.view('login.ejs', {loginError : false});
 });
 
 fastify.post('/login', async (req, reply) => {
@@ -34,7 +34,7 @@ fastify.post('/login', async (req, reply) => {
   const username = data.username;
   const password = data.password;
 
-  const result = await fastify.esterno.login(username, password);
+  const result = await fastify.dal.login(username, password);
   if(result){
     return reply.view('login.ejs', {loginError : false});
   }
@@ -44,7 +44,7 @@ fastify.post('/login', async (req, reply) => {
 
 //registration
 fastify.get('/registration', async (req, reply) => {
-  return reply.view('registration.ejs');
+  return reply.view('registration.ejs', {registrationError : false});
 });
 
 fastify.post('/registration', async (req, reply) => {
@@ -72,9 +72,13 @@ fastify.post('/registration', async (req, reply) => {
   if(login === 'success')
   {
     const uno = await cod.getUno();
-    fastify.esterno.registration(uno, data['password'],data['email_cod'],data['password_cod']);
+    const result = await fastify.dal.registration(uno, data['password'],data['email_cod'],data['password_cod']);
+    
+    return result ? reply.redirect('/') : reply.view('registration.ejs', {registrationError : true});
   }
-  });
+});
+
+
 fastify.listen(3000, (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)

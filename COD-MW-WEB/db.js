@@ -1,7 +1,7 @@
-const esterno = () =>
+const dal = () =>
 {
     const pg = require('pg');
-    const GetClient = () =>{
+    const getClient = () =>{
         const client = new pg.Client({
             host: 'ec2-34-242-51-83.eu-west-1.compute.amazonaws.com',
             database: 'COD-MW',
@@ -18,29 +18,28 @@ const esterno = () =>
         })
         return client;
     }
+
     //login
-    const login = async (username, password) =>
-    {
-      const client = GetClient();
-      const result = await client.query('SELECT * FROM account WHERE username_cod = $1 AND password = $2', [username], [password]);
+    const login = async (username, password) =>{
+      const client = getClient();
+      const result = await client.query('SELECT * FROM account WHERE username_cod = $1 AND password = $2', [username, password]);
       client.end();
-      if(result.rows.length > 0) {
-        return result;
-      } else {
-        return null;
-      }
+
+      return result.rows.length > 0 ? result.rows[0] : null;
     }
+
     //registration
-    const registration = async (uno, password, username_cod, password_cod) =>
-    {
-      const client = GetClient();
-      const result = await client.query('INSERT INTO account(uno, password, username_cod, password_cod) VALUES ($1, $2, $3, $4)', [uno], [password], [username_cod], [password_cod]);
+    const registration = async (uno, password, username_cod, password_cod) =>{
+      const client = getClient();
+      const result = await client.query('INSERT INTO account VALUES ($1, $2, $3, $4) RETURNING *', [uno, password, username_cod, password_cod]);
       client.end();
+      return result.rows.length > 0 ? result.rows[0] : null;
     }
+
     return{
       login,
       registration
     }
 }
 
-module.exports = esterno;
+module.exports = dal;

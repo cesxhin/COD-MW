@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Style/registration.css">
-    <script src="/Style/verifyAuthentication.js"></script>
     <title>Registrazione</title>
 </head>
 <body>
     <div class="form-reg">
         <form action="/registration" method="post">
-            <br><br>
+            <% if(registrationError) { %>
+                <p style="color: red;">Errore di registrazione, riprova!</p>
+            <% } %>
             <span>Username di Call Of Duty:</span>
             <input type="email" name="email_cod">
             <span>Password di Call Of Duty:</span>
             <input type="password" name="password_cod">
             <span>Se non hai un account di Call Of Duty premi <a target="_blank" href="https://profile.callofduty.com/cod/signup">qui</a></span>
-            <input type="button" onclick="Test()" value="Verifica">
             <div id="account-personal" style="display:block">
                 <span>Email:</span>
                 <input type="email" name="username" disabled>

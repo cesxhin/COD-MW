@@ -8,13 +8,8 @@
 </head>
 <body>
     <form action="/login" method="post">
-        <% if(loginError === 'undefined') { %>
-            <p>typeof</p>
-        <% } %>
-        <% if(loginError === true) { %>
+        <% if(loginError) { %>
             <p style="color:red">Username o password sbagliati!</p>
-        <% } else { %>
-            <p style="color:blue">Login avvenuto con successo!</p>
         <% } %>
         Username : 
         <input type="text" name="username" >
