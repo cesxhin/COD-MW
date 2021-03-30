@@ -1,36 +1,30 @@
-const cod = () =>
+const cod_api = require('call-of-duty-api')();
+module.exports = 
 {
-    const cod_api = require('call-of-duty-api')();
-    const verifyLogin = async (username, password) =>
+    verifyLogin : async function (username, password)
     {
         try {
             await cod_api.login(username, password);
+            console.log("success");
             return "success";
         } catch(Error) {
+            console.log("failed");
             return Error;
         }
-    }
-    const getUno = async (username, password) =>
+    },
+    getUno : async function()
     {
-        const a = verifyLogin(username, password);
-        if( a === "success")
-        {
-            const data = JSON.stringify(await cod_api.getLoggedInUserInfo());
-            data.forEach(element => {
-                if(element['provider'] === 'uno')
-                {
-                    return element['accountID'];
-                }
-            });
-            return null;
-        }else
-        {
-            return 'failed';
-        }
-    }
-    return{
-        verifyLogin,
-        getUno
+        console.log("INIZIO: ");
+        let data = await cod_api.getLoggedInUserInfo();
+        const array = data['identities'];
+        console.log(array);
+        let uno = null;
+        array.forEach(element => {
+            if(element['provider'] === 'uno')
+            {
+                uno = element['accountID'];
+            }
+         });
+        return uno;
     }
 }
-module.exports = cod;

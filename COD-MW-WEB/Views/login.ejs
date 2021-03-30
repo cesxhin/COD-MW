@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it-IT">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,19 @@
 </head>
 <body>
     <form action="/login" method="post">
+        <% if(loginError === 'undefined') { %>
+            <p>typeof</p>
+        <% } %>
+        <% if(loginError === true) { %>
+            <p style="color:red">Username o password sbagliati!</p>
+        <% } else { %>
+            <p style="color:blue">Login avvenuto con successo!</p>
+        <% } %>
+        Username : 
+        <input type="text" name="username" >
+        Password : 
+        <input type="password" name="password">
+        <input type="submit" value="Login">
     </form>
     <a href="/registration">Registrati subito!</a>
 </body>
