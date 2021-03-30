@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Style/registration.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Registrazione</title>
 </head>
 <body>
-    <div class="form-reg">
-        <form action="/registration" method="post">
+    <div class="form-insert">
+        <h1>Registrazione</h1>
+        <form action="/registration" method="post" autocomplete="off">
             <% if(registrationError === 'generic') { %>
                 <p style="color: red;">Errore generico, riprova di nuovo!</p>
             <% } else %>
@@ -24,17 +28,20 @@
             <% } else%>
             <% if(registrationError === 'failed') { %>
                 <p style="color: red;">Test login nel server di COD FALLITA! Controlla di nuovo la tua email e la tua password</p>
-            <% } else%>
-            <span>Username di Call Of Duty:</span>
-            <input type="email" name="email_cod">
-            <span>Password di Call Of Duty:</span>
-            <input type="password" name="password_cod">
+            <% } else %>
+            <% if(registrationError === 'exits_email') { %>
+                <p style="color: red;">Esiste già questa email!</p>
+            <% }%>
+            <input type="email" name="email_cod" placeholder="Email di Call Of Duty">
+            <input type="password" name="password_cod" placeholder="Password di Call Of Duty">
             <span>Se non hai un account di Call Of Duty premi <a target="_blank" href="https://profile.callofduty.com/cod/signup">qui</a></span>
-            <br><br><br><br>
+            <input type="checkbox" name="agree">Sono d'accordo che potete accedere il mio account
+            <br><br>
             <span>Inserisci una password per poter accedere al nostro sito!</span>
-            <span>Password:</span>
-            <input type="password" name="password">
+            <span></span>
+            <input type="password" name="password" placeholder="Password">
             <input type="submit" value="Conferma">
+            <a class="button-link" href="/login">Torna indietro</a>
     </div>
 </body>
 </html>

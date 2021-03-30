@@ -20,25 +20,33 @@ const dal = () =>
     }
 
     //login
-    const login = async (username, password) =>{
+    const login = async (email, password) =>{
       const client = getClient();
-      const result = await client.query('SELECT * FROM account WHERE username_cod = $1 AND password = $2', [username, password]);
+      const result = await client.query('SELECT * FROM account WHERE email_cod = $1 AND password = $2', [email.toLowerCase(), password]);
       client.end();
 
       return result.rows.length > 0 ? result.rows[0] : null;
     }
 
     //registration
-    const registration = async (uno, password, username_cod, password_cod) =>{
+    const registration = async (uno, password, email_cod, password_cod) =>{
       const client = getClient();
-      const result = await client.query('INSERT INTO account VALUES ($1, $2, $3, $4) RETURNING *', [uno, password, username_cod, password_cod]);
+      const result = await client.query('INSERT INTO account VALUES ($1, $2, $3, $4) RETURNING *', [uno, password, email_cod.toLowerCase(), password_cod]);
       client.end();
       return result.rows.length > 0 ? result.rows[0] : null;
     }
 
+    //verify equal email
+    const verifyEmail = async (email_cod) =>{
+      const client = getClient();
+      const result = await client.query('SELECT * FROM account where email_cod = $1', [email_cod.toLowerCase()]);
+      client.end();
+      return result.rows.length > 0 ? true : false;
+    }
     return{
       login,
-      registration
+      registration,
+      verifyEmail
     }
 }
 

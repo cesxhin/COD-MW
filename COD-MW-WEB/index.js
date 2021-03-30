@@ -38,7 +38,7 @@ fastify.register(require('fastify-cookie'));
 });*/
 
 fastify.get('/', async (req, reply) => {
-  return reply.view('home.ejs');
+  return reply.view('login.ejs');
 });
 
 //login
@@ -47,16 +47,16 @@ fastify.get('/login', async (req, reply) => {
 });
 fastify.post('/login', async (req, reply) => {
   const data = req.body;
-  const username = data.username;
+  const email = data.email;
   const password = sha256(data.password);
-  const result = await fastify.dal.login(username, password);
+  const result = await fastify.dal.login(email, password);
   if(result){
     reply.setCookie('login', true);
     reply.setCookie('admin', result.admin);
-    reply.setCookie('username_cod', result.username_cod);
+    reply.setCookie('email_cod', result.email_cod);
     reply.setCookie('password', result.password);
     reply.setCookie('password_cod', result.password_cod);
-    return reply.view('/home');
+    return reply.redirect('/home');
   }
   else
     return reply.view('login.ejs', {loginError : true});
@@ -86,7 +86,12 @@ fastify.post('/registration', async (req, reply) => {
     reply.view('registration.ejs', {registrationError : "password"});
     return;
   }
-
+  //verify email
+  if(fastify.dal.verifyEmail(data['email_cod']))
+  {
+    reply.view('registration.ejs', {registrationError : "exits_email"});
+    return;
+  }
   //testing connection
   const login = await cod.verifyLogin(data['email_cod'],data['password_cod']);
   if(login === 'success')

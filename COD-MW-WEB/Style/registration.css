@@ -1,9 +1,84 @@
-.form-reg
+*
 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+}
+h1
+{
+    font-size: 50px;
+}
+.form-insert
+{
+    margin-top: 45px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+form
+{
+    width: 450px;
+    margin: auto;
+    border: gray solid 4px;
+    border-radius: 10px;
+    padding: 30px;
+}
+input
+{
+    display: block;
+}
+form input[type=email], form input[type=password]
+{
+    width: 90%;
+    height: 30px;
+    border: 3px solid lightgray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-left: 40px;
+}
+form input[type=email]
+{
+    background: url(https://www.flaticon.com/svg/vstatic/svg/546/546394.svg?token=exp=1617142012~hmac=aa3947fa035aa1b3cc55bfb92e4be636) no-repeat scroll 5px 0px;
+}
+form input[type=password]
+{
+    background: url(https://www.flaticon.com/svg/vstatic/svg/747/747398.svg?token=exp=1617142510~hmac=962b76505c3419af6ee04926fc3fac69) no-repeat scroll 5px 0px;
+}
+form input[type=checkbox]
+{
+    display: inline;
+    margin-right: 5px;
+}
+form input[type=submit]
+{
+    width: 100%;
+    padding: 3px;
+    background-color: #31CA4A;
+    border: solid green 3px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+form input[type=submit]:hover
+{
+    background-color: green;
+    color: white;
+}
+form .button-link
+{
+    display: block;
+    margin-top: 5px;
+    width: 97.5%;
+    padding: 3px;
+    background-color: red;
+    border: solid darkred 3px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
 }
 span
 {
