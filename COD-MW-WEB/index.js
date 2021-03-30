@@ -1,5 +1,9 @@
 const path = require('path');
 
+//security
+const sha256 = require("sha256");
+const Cryptr = require('cryptr');
+
 //import css
 const fastify = require('fastify')({
     logger: true
@@ -24,19 +28,35 @@ fastify.register(require('point-of-view'), {
     root: path.join(__dirname, 'Views')
 });
 
-//login
+//cookie
+fastify.register(require('fastify-cookie'));
+/*fastify.addHook('onRequest', (req, reply) => {
+  if(req.cookies.login) {
+    return reply.redirect('/home');
+  }
+  return reply.redirect('/login');
+});*/
+
 fastify.get('/', async (req, reply) => {
-    return reply.view('login.ejs', {loginError : false});
+  return reply.view('home.ejs');
 });
 
+//login
+fastify.get('/login', async (req, reply) => {
+  return reply.view('login.ejs',{loginError : false});
+});
 fastify.post('/login', async (req, reply) => {
   const data = req.body;
   const username = data.username;
-  const password = data.password;
-
+  const password = sha256(data.password);
   const result = await fastify.dal.login(username, password);
   if(result){
-    return reply.view('login.ejs', {loginError : false});
+    reply.setCookie('login', true);
+    reply.setCookie('admin', result.admin);
+    reply.setCookie('username_cod', result.username_cod);
+    reply.setCookie('password', result.password);
+    reply.setCookie('password_cod', result.password_cod);
+    return reply.view('/home');
   }
   else
     return reply.view('login.ejs', {loginError : true});
@@ -44,7 +64,7 @@ fastify.post('/login', async (req, reply) => {
 
 //registration
 fastify.get('/registration', async (req, reply) => {
-  return reply.view('registration.ejs', {registrationError : false});
+  return reply.view('registration.ejs', {registrationError : ""});
 });
 
 fastify.post('/registration', async (req, reply) => {
@@ -52,18 +72,18 @@ fastify.post('/registration', async (req, reply) => {
   //email
   if(data['email_cod'].length < 1)
   {
-    console.log("errore email");
+    reply.view('registration.ejs', {registrationError : "email"});
     return;
   }
   //password
   if(data['password_cod'].length < 1)
   {
-    console.log("errore password_cod");
+    reply.view('registration.ejs', {registrationError : "password_cod"});
     return;
   }
   if(data['password'].length < 1)
   {
-    console.log("errore password");
+    reply.view('registration.ejs', {registrationError : "password"});
     return;
   }
 
@@ -72,12 +92,22 @@ fastify.post('/registration', async (req, reply) => {
   if(login === 'success')
   {
     const uno = await cod.getUno();
-    const result = await fastify.dal.registration(uno, data['password'],data['email_cod'],data['password_cod']);
+    const psw_sha256 = sha256(data['password'])
+    const crypt = new Cryptr(psw_sha256);
+    const psw_cod_aes = crypt.encrypt(data['password_cod']);
+    const result = await fastify.dal.registration(uno, psw_sha256, data['email_cod'], psw_cod_aes);
     
-    return result ? reply.redirect('/') : reply.view('registration.ejs', {registrationError : true});
+    return result ? reply.redirect('/') : reply.view('registration.ejs', {registrationError : "generic"});
+  }else
+  {
+    reply.view('registration.ejs', {registrationError : "failed"});
   }
 });
 
+//home
+fastify.get('/home', async (req, reply) => {
+  return reply.view('home.ejs');
+});
 
 fastify.listen(3000, (err, address) => {
   if (err) throw err
