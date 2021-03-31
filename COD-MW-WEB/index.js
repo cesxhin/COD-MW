@@ -38,12 +38,12 @@ fastify.register(require('fastify-cookie'));
 });*/
 
 fastify.get('/', async (req, reply) => {
-  return reply.view('login.ejs');
+  return reply.view('login.ejs', {loginError : false});
 });
 
 //login
 fastify.get('/login', async (req, reply) => {
-  return reply.view('login.ejs',{loginError : false});
+  return reply.view('login.ejs', {loginError : false});
 });
 fastify.post('/login', async (req, reply) => {
   const data = req.body;
@@ -51,7 +51,13 @@ fastify.post('/login', async (req, reply) => {
   const password = sha256(data.password);
   const result = await fastify.dal.login(email, password);
   if(result){
-    reply.setCookie('login', true);
+    if(data.remember_me)
+    {
+      reply.setCookie('remember_me', true);
+    }else
+    {
+      reply.setCookie('remember_me', false);
+    }
     reply.setCookie('admin', result.admin);
     reply.setCookie('email_cod', result.email_cod);
     reply.setCookie('password', result.password);
@@ -111,9 +117,13 @@ fastify.post('/registration', async (req, reply) => {
 
 //home
 fastify.get('/home', async (req, reply) => {
-  return reply.view('home.ejs');
+  return reply.view('home.ejs', {cookie: req.cookies});
 });
 
+//management
+fastify.get('/management', async (req, reply) => {
+  return reply.view('management.ejs');
+});
 fastify.listen(3000, (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)

@@ -9,6 +9,7 @@ h1
 {
     font-size: 50px;
 }
+/*Login e Registration*/
 .form-insert
 {
     margin-top: 45px;
@@ -66,21 +67,88 @@ form input[type=submit]:hover
     background-color: green;
     color: white;
 }
-form .button-link
+.button-link
 {
-    display: block;
-    margin-top: 5px;
-    width: 97.5%;
     padding: 3px;
-    background-color: red;
-    border: solid darkred 3px;
-    color: white;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
 }
+form .button-link
+{
+    display: block;
+    margin-top: 5px;
+    width: 97.5%;
+    background-color: red;
+    border: solid darkred 3px;
+    color: white;
+}
 span
 {
     display: block;
+}
+
+/*Home*/
+.head
+{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;justify-content: flex-end;
+}
+.head .iscrizione
+{
+    margin-top: 5px;
+    background-color: orange;
+    border: solid darkorange 3px;
+    color: white;
+    margin: 0px 5px;
+}
+.head .risultati
+{
+    margin-top: 5px;
+    background-color: #009999;
+    border: solid #004d4d 3px;
+    color: white;
+    margin: 0px 5px;
+}
+.head .statistiche
+{
+    margin-top: 5px;
+    background-color: #ff9966;
+    border: solid #ff661a 3px;
+    color: white;
+    margin: 0px 5px;
+}
+.head .gestione
+{
+    margin-top: 5px;
+    background-color: #cc0000;
+    border: solid #800000 3px;
+    color: white;
+    margin: 0px 5px;
+}
+/*managament*/
+.head .crea
+{
+    margin-top: 5px;
+    background-color: #009999;
+    border: solid #004d4d 3px;
+    color: white;
+    margin: 0px 5px;
+}
+.head .whitelist
+{
+    margin-top: 5px;
+    background-color: white;
+    border: solid lightgray 3px;
+    color: black;
+    margin: 0px 5px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th
+{
+    padding: 5px;
 }

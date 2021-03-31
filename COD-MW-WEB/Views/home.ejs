@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/Style/registration.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Home</title>
 </head>
 <body>
-    home
+    <div class="head">
+        <a class="button-link iscrizione" href="#">Iscrizione Torneo</a>
+        <a class="button-link risultati" href="#">Risultati</a>
+        <a class="button-link statistiche" href="#">Statistiche</a>
+        <% if(cookie.admin === 'true') {%>
+            <a class="button-link gestione" href="/management">Gestione Torneo</a>
+        <% } %>
+    </div>
 </body>
 </html>
