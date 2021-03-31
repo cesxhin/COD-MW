@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Modifica Schema Classifica</title>
+</head>
+<body>
+    <div class="form-insert">
+        <h1>Modifica Schema dei punteggi</h1>
+        <form action="/updateRankingSchema" method="post">
+            <input type="hidden" name="id" value="<%= schemas.id %>" required>
+            <input type="text" name="schemaName" placeholder="Nome schema" value="<%= schemas.name %>" required>
+            <input type="number" name="points_top1" placeholder="Punteggio TOP 1" value="<%= schemas.points_top1 %>" required>
+            <input type="number" name="points_top2" placeholder="Punteggio TOP 2" value="<%= schemas.points_top2 %>" required>
+            <input type="number" name="points_top3" placeholder="Punteggio TOP 3" value="<%= schemas.points_top3 %>" required>
+            <input type="number" name="points_top5" placeholder="Punteggio TOP 5" value="<%= schemas.points_top5 %>" required>
+            <input type="number" name="points_top10" placeholder="Punteggio TOP 10" value="<%= schemas.points_top10 %>" required>
+            <input type="number" name="points_top15" placeholder="Punteggio TOP 15" value="<%= schemas.points_top15 %>" required>
+            <input type="number" name="points_top20" placeholder="Punteggio TOP 20" value="<%= schemas.points_top20 %>" required>
+            <input type="submit" value="Salva Schema">
+            <a class="button-link" href="/management">Torna indietro</a>
+        </form>
+    </div>
+</body>
+</html>

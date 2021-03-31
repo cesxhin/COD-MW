@@ -2,8 +2,7 @@
 {
     padding: 0;
     margin: 0;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 25px;
+    font-family: 'Lato', sans-serif;
 }
 h1
 {
@@ -30,7 +29,7 @@ input
 {
     display: block;
 }
-form input[type=email], form input[type=password]
+form input[type=email], form input[type=password], form input[type=date], form input[type=time], form select, form input[type=number], form input[type=text]
 {
     width: 90%;
     height: 30px;
@@ -75,7 +74,7 @@ form input[type=submit]:hover
     text-align: center;
     cursor: pointer;
 }
-form .button-link
+.form-insert .button-link
 {
     display: block;
     margin-top: 5px;
@@ -90,13 +89,13 @@ span
 }
 
 /*Home*/
-.head
+.header
 {
     padding: 20px;
     display: flex;
     flex-direction: row;justify-content: flex-end;
 }
-.head .iscrizione
+.header .iscrizione
 {
     margin-top: 5px;
     background-color: orange;
@@ -104,7 +103,7 @@ span
     color: white;
     margin: 0px 5px;
 }
-.head .risultati
+.header .risultati
 {
     margin-top: 5px;
     background-color: #009999;
@@ -112,7 +111,7 @@ span
     color: white;
     margin: 0px 5px;
 }
-.head .statistiche
+.header .statistiche
 {
     margin-top: 5px;
     background-color: #ff9966;
@@ -120,7 +119,7 @@ span
     color: white;
     margin: 0px 5px;
 }
-.head .gestione
+.header .gestione
 {
     margin-top: 5px;
     background-color: #cc0000;
@@ -128,8 +127,16 @@ span
     color: white;
     margin: 0px 5px;
 }
-/*managament*/
-.head .crea
+.header .back
+{
+    margin-top: 5px;
+    background-color: #cc0000;
+    border: solid #800000 3px;
+    color: white;
+    margin: 0px 5px;
+}
+/*management*/
+.header .crea
 {
     margin-top: 5px;
     background-color: #009999;
@@ -137,7 +144,7 @@ span
     color: white;
     margin: 0px 5px;
 }
-.head .whitelist
+.header .whitelist
 {
     margin-top: 5px;
     background-color: white;
@@ -145,10 +152,43 @@ span
     color: black;
     margin: 0px 5px;
 }
-table, th, td {
-    border: 1px solid black;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
-th
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.a-icon img
 {
-    padding: 5px;
+    width: 50px;
+    height: 50px;
+}
+[onClick] {
+    cursor:pointer;
+}
+/*tournament*/
+form select
+{
+    width: 100%;
+}
+
+form input[type=date]
+{
+    background: url(https://www.flaticon.com/svg/vstatic/svg/747/747310.svg?token=exp=1617210996~hmac=fca6b7a9d2818d502e67d3811283fbb3) no-repeat scroll 5px 0px;
+}
+form input[type=time]
+{
+    background: url(https://www.flaticon.com/svg/vstatic/svg/992/992700.svg?token=exp=1617211020~hmac=c24237b4d0158b6cee9107dce01f9a8b) no-repeat scroll 5px 0px;
+}
+form select, form input[type=number], form input[type=text]
+{
+    background: url(https://www.flaticon.com/svg/vstatic/svg/849/849944.svg?token=exp=1617211067~hmac=41fa8be3ab11da7c647f77fb9cdd758e) no-repeat scroll 5px 0px;
 }

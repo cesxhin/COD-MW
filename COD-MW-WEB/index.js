@@ -45,6 +45,7 @@ fastify.get('/', async (req, reply) => {
 fastify.get('/login', async (req, reply) => {
   return reply.view('login.ejs', {loginError : false});
 });
+
 fastify.post('/login', async (req, reply) => {
   const data = req.body;
   const email = data.email;
@@ -93,9 +94,9 @@ fastify.post('/registration', async (req, reply) => {
     return;
   }
   //verify email
-  if(fastify.dal.verifyEmail(data['email_cod']))
+  if(await fastify.dal.verifyEmail(data['email_cod']))
   {
-    reply.view('registration.ejs', {registrationError : "exits_email"});
+    reply.view('registration.ejs', {registrationError : "exists_email"});
     return;
   }
   //testing connection
@@ -122,8 +123,108 @@ fastify.get('/home', async (req, reply) => {
 
 //management
 fastify.get('/management', async (req, reply) => {
-  return reply.view('management.ejs');
+  const schemas = await fastify.dal.getRankingSchemas();
+  const tournament = await fastify.dal.getTournaments();
+  return reply.view('management.ejs', {schemas, tournament});
 });
+
+//create tournament 
+fastify.get('/tournament', async (req, reply) => {
+  const schemas = await fastify.dal.getRankingSchemas();
+  return reply.view('createTournament.ejs', {rows: schemas});
+});
+fastify.post('/tournament', async (req, reply) => {
+  const data = req.body;
+  const result = await fastify.dal.createTournament(data);
+  if(result)
+  {
+    return reply.redirect("/management");
+  }else
+  {
+    reply.send({
+      error : 'Operazione di creazione fallita'
+    });
+  }
+});
+//update tournament
+fastify.get('/updateTournament/:id', async (req, reply) => {
+  const id = req.params.id;
+  const result = await fastify.dal.getTournamentsById(id);
+  const schemas = await fastify.dal.getRankingSchemas();
+  reply.view("updateTournament.ejs", {rows: schemas, tournament: result});
+});
+fastify.post('/updateTournament', async (req, reply) => {
+  const data = req.body;
+  const result = await fastify.dal.updateTournaments(data);
+  if(!result) {
+    reply.view({error : 'Operazione di creazione fallita'});
+  } else {
+    reply.redirect('/management');
+  }
+});
+//delete tournament
+fastify.get('/deleteTournament/:id', async (req, reply) => {
+  const id = req.params.id;
+  const result = await fastify.dal.deleteTournaments(id);
+  if(result === 'generic')
+  {
+    return  "Errore generico";
+  }else
+  {
+    reply.redirect('/management');
+  }
+});
+
+//ranking schema create
+fastify.get('/rankingSchema', async (req, reply) => {
+  return reply.view('createRankingSchema.ejs');
+});
+
+fastify.post('/rankingSchema', async (req, reply) => {
+  const data = req.body;
+
+  const result = await fastify.dal.addRankingSchema(data);
+
+  if(!result) {
+    reply.view({error : 'Operazione di creazione fallita'});
+  } else {
+    reply.redirect('/management');
+  }
+
+});
+
+//delete ranking schema
+fastify.get('/deleteRankingSchema/:id', async (req, reply) => {
+  const id = req.params.id;
+  const result = await fastify.dal.deleteRankingSchema(id);
+  if(result === 'violates')
+  {
+    return 'Non puoi eliminare questo schema, è già in uso in un altro torneo';
+  }else if(result === 'generic')
+  {
+    return  "Errore generico";
+  }else
+  {
+    reply.redirect('/management');
+  }
+});
+
+//update ranking schema
+fastify.get('/updateRankingSchema/:id', async (req, reply) => {
+  const id = req.params.id;
+  const result = await fastify.dal.getRankingSchemaById(id);
+  reply.view("updateRankingSchema.ejs", {schemas: result});
+});
+fastify.post('/updateRankingSchema', async (req, reply) => {
+  const data = req.body;
+  const result = await fastify.dal.updateRankingSchema(data);
+  if(!result) {
+    reply.view({error : 'Operazione di creazione fallita'});
+  } else {
+    reply.redirect('/management');
+  }
+});
+
 fastify.listen(3000, (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
