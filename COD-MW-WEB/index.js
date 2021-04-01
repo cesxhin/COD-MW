@@ -104,10 +104,11 @@ fastify.post('/registration', async (req, reply) => {
   if(login === 'success')
   {
     const uno = await cod.getUno();
+    const tag_username = await cod.getTagUsername(data['platform']);
     const psw_sha256 = sha256(data['password'])
     const crypt = new Cryptr(psw_sha256);
     const psw_cod_aes = crypt.encrypt(data['password_cod']);
-    const result = await fastify.dal.registration(uno, psw_sha256, data['email_cod'], psw_cod_aes);
+    const result = await fastify.dal.registration(uno, psw_sha256, data['email_cod'], psw_cod_aes, tag_username, data['platform']);
     
     return result ? reply.redirect('/') : reply.view('registration.ejs', {registrationError : "generic"});
   }else

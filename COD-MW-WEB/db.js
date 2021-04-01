@@ -29,9 +29,9 @@ const dal = () =>
     }
 
     //registration
-    const registration = async (uno, password, email_cod, password_cod) =>{
+    const registration = async (uno, password, email_cod, password_cod, tag_username, platform) =>{
       const client = getClient();
-      const result = await client.query('INSERT INTO account VALUES ($1, $2, $3, $4) RETURNING *', [uno, password, email_cod.toLowerCase(), password_cod]);
+      const result = await client.query('INSERT INTO account VALUES ($1, $2, $3, $4, false, $5, $6) RETURNING *', [uno, password, email_cod.toLowerCase(), password_cod, tag_username, platform]);
       client.end();
       return result.rows.length > 0 ? result.rows[0] : null;
     }
@@ -48,8 +48,8 @@ const dal = () =>
     const addRankingSchema = async (schema) => {
       const client = getClient();
       const result = await client.query(`INSERT INTO rankingschemas
-        (name, points_top1, points_top2, points_top3, points_top5, points_top10, points_top15, points_top20 ) 
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`, [schema.schemaName, schema.points_top1, schema.points_top2, schema.points_top3, schema.points_top5, schema.points_top10, schema.points_top15, schema.points_top20]);
+        (name, points_top1, points_top2, points_top3, points_top5, points_top10, points_top15, points_top20, kill, gulag) 
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *`, [schema.schemaName, schema.points_top1, schema.points_top2, schema.points_top3, schema.points_top5, schema.points_top10, schema.points_top15, schema.points_top20, schema.kill, schema.gulag]);
       
       client.end();
       return result.rows.length > 0 ? result.rows[0] : null;
@@ -76,8 +76,8 @@ const dal = () =>
     const updateRankingSchema = async (schema) => {
       const client = getClient();
       const result = await client.query(`UPDATE rankingschemas SET
-      name = $1, points_top1 = $2, points_top2 = $3, points_top3 = $4, points_top5 = $5, points_top10 = $6, points_top15 = $7, points_top20 = $8
-      WHERE id = $9 RETURNING *`, [schema.schemaName, schema.points_top1, schema.points_top2, schema.points_top3, schema.points_top5, schema.points_top10, schema.points_top15, schema.points_top20, schema.id]);
+      name = $1, points_top1 = $2, points_top2 = $3, points_top3 = $4, points_top5 = $5, points_top10 = $6, points_top15 = $7, points_top20 = $8, kill=$9, gulag=$10
+      WHERE id = $11 RETURNING *`, [schema.schemaName, schema.points_top1, schema.points_top2, schema.points_top3, schema.points_top5, schema.points_top10, schema.points_top15, schema.points_top20, schema.kill, schema.gulag, schema.id]);
       client.end();
       return result.rows.length > 0 ? result.rows[0] : null;
     }

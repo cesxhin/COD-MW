@@ -15,13 +15,15 @@
         <h1>Creazione Schema dei punteggi</h1>
         <form action="/rankingSchema" method="post">
             <input type="text" name="schemaName" placeholder="Nome schema" required>
-            <input type="number" name="points_top1" placeholder="Punteggio TOP 1" required>
-            <input type="number" name="points_top2" placeholder="Punteggio TOP 2" required>
-            <input type="number" name="points_top3" placeholder="Punteggio TOP 3" required>
-            <input type="number" name="points_top5" placeholder="Punteggio TOP 5" required>
-            <input type="number" name="points_top10" placeholder="Punteggio TOP 10" required>
-            <input type="number" name="points_top15" placeholder="Punteggio TOP 15" required>
-            <input type="number" name="points_top20" placeholder="Punteggio TOP 20" required>
+            <input type="number" name="points_top1" placeholder="Punteggio TOP 1" required min="1">
+            <input type="number" name="points_top2" placeholder="Punteggio TOP 2" required min="1">
+            <input type="number" name="points_top3" placeholder="Punteggio TOP 3" required min="1">
+            <input type="number" name="points_top5" placeholder="Punteggio TOP 5" required min="1">
+            <input type="number" name="points_top10" placeholder="Punteggio TOP 10" required min="1">
+            <input type="number" name="points_top15" placeholder="Punteggio TOP 15" required min="1">
+            <input type="number" name="points_top20" placeholder="Punteggio TOP 20" required min="1">
+            <input type="number" name="kill" placeholder="Kill" required min="1">
+            <input type="checkbox" name="gulag" checked>Conta anche le kill di gulag
             <input type="submit" value="Crea Schema">
             <a class="button-link" href="/management">Torna indietro</a>
         </form>

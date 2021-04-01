@@ -16,13 +16,19 @@
         <form action="/updateRankingSchema" method="post">
             <input type="hidden" name="id" value="<%= schemas.id %>" required>
             <input type="text" name="schemaName" placeholder="Nome schema" value="<%= schemas.name %>" required>
-            <input type="number" name="points_top1" placeholder="Punteggio TOP 1" value="<%= schemas.points_top1 %>" required>
-            <input type="number" name="points_top2" placeholder="Punteggio TOP 2" value="<%= schemas.points_top2 %>" required>
-            <input type="number" name="points_top3" placeholder="Punteggio TOP 3" value="<%= schemas.points_top3 %>" required>
-            <input type="number" name="points_top5" placeholder="Punteggio TOP 5" value="<%= schemas.points_top5 %>" required>
-            <input type="number" name="points_top10" placeholder="Punteggio TOP 10" value="<%= schemas.points_top10 %>" required>
-            <input type="number" name="points_top15" placeholder="Punteggio TOP 15" value="<%= schemas.points_top15 %>" required>
-            <input type="number" name="points_top20" placeholder="Punteggio TOP 20" value="<%= schemas.points_top20 %>" required>
+            <input type="number" name="points_top1" placeholder="Punteggio TOP 1" value="<%= schemas.points_top1 %>" required min="1">
+            <input type="number" name="points_top2" placeholder="Punteggio TOP 2" value="<%= schemas.points_top2 %>" required min="1">
+            <input type="number" name="points_top3" placeholder="Punteggio TOP 3" value="<%= schemas.points_top3 %>" required min="1">
+            <input type="number" name="points_top5" placeholder="Punteggio TOP 5" value="<%= schemas.points_top5 %>" required min="1">
+            <input type="number" name="points_top10" placeholder="Punteggio TOP 10" value="<%= schemas.points_top10 %>" required min="1">
+            <input type="number" name="points_top15" placeholder="Punteggio TOP 15" value="<%= schemas.points_top15 %>" required min="1">
+            <input type="number" name="points_top20" placeholder="Punteggio TOP 20" value="<%= schemas.points_top20 %>" required min="1">
+            <input type="number" name="kill" placeholder="Kill" required min="1" value="<%= schemas.kill %>">
+            <% if(schemas.kill === 'true') {%>
+                <input type="checkbox" name="gulag" checked>Conta anche le kill di gulag
+            <% }else{%>
+                <input type="checkbox" name="gulag">Conta anche le kill di gulag
+            <% }%>
             <input type="submit" value="Salva Schema">
             <a class="button-link" href="/management">Torna indietro</a>
         </form>

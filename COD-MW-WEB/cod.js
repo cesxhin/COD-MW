@@ -14,7 +14,6 @@ module.exports =
     },
     getUno : async function()
     {
-        console.log("INIZIO: ");
         let data = await cod_api.getLoggedInUserInfo();
         const array = data['identities'];
         console.log(array);
@@ -26,5 +25,18 @@ module.exports =
             }
          });
         return uno;
+    },
+    getTagUsername : async function(platform)
+    {
+        let tag_username = "";
+        let data = await cod_api.getLoggedInUserInfo();
+        const array = data['identities'];
+        array.forEach(element => {
+            if(element['provider'] === platform)
+            {
+                tag_username = element['username'];
+            }
+         });
+         return tag_username;
     }
 }
