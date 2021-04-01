@@ -1,0 +1,6 @@
+{
+    "host": "ec2-34-242-51-83.eu-west-1.compute.amazonaws.com",
+    "database": "COD-MW",
+    "user": "ospite",
+    "password": "1234"
+}

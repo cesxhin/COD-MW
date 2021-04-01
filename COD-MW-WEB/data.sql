@@ -47,13 +47,13 @@ create table rankingSchemas
 create table tournaments
 (
     id serial primary key,
-    start_date varchar(50),
-    start_time varchar(50),
+    start_date varchar(50),                 //magari tipo timestamp
+    start_time varchar(50),                 // ""
     number_matches integer,
     id_schema integer references rankingSchemas(id)
 );
 
-create table team
+create table teams
 (
     name varchar(250) primary key,
     player1 varchar(250) not null,

@@ -216,8 +216,10 @@ fastify.get('/updateRankingSchema/:id', async (req, reply) => {
   const result = await fastify.dal.getRankingSchemaById(id);
   reply.view("updateRankingSchema.ejs", {schemas: result});
 });
+
 fastify.post('/updateRankingSchema', async (req, reply) => {
   const data = req.body;
+  
   const result = await fastify.dal.updateRankingSchema(data);
   if(!result) {
     reply.view({error : 'Operazione di creazione fallita'});

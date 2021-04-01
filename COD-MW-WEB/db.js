@@ -1,13 +1,10 @@
+const config = require('./config.json');
+
 const dal = () =>
 {
     const pg = require('pg');
     const getClient = () =>{
-        const client = new pg.Client({
-            host: 'ec2-34-242-51-83.eu-west-1.compute.amazonaws.com',
-            database: 'COD-MW',
-            user: 'ospite',
-            password: '1234'
-        });
+        const client = new pg.Client(config);
 
         client.connect(err => {
           if (err) {
@@ -47,6 +44,9 @@ const dal = () =>
     //create ranking schema
     const addRankingSchema = async (schema) => {
       const client = getClient();
+      if(schema.gulag === undefined)
+        schema.gulag = false;
+
       const result = await client.query(`INSERT INTO rankingschemas
         (name, points_top1, points_top2, points_top3, points_top5, points_top10, points_top15, points_top20, kill, gulag) 
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *`, [schema.schemaName, schema.points_top1, schema.points_top2, schema.points_top3, schema.points_top5, schema.points_top10, schema.points_top15, schema.points_top20, schema.kill, schema.gulag]);
@@ -75,9 +75,15 @@ const dal = () =>
     //update ranking schema 
     const updateRankingSchema = async (schema) => {
       const client = getClient();
+      if(schema.gulag === undefined)
+        schema.gulag = false;
+      
       const result = await client.query(`UPDATE rankingschemas SET
-      name = $1, points_top1 = $2, points_top2 = $3, points_top3 = $4, points_top5 = $5, points_top10 = $6, points_top15 = $7, points_top20 = $8, kill=$9, gulag=$10
-      WHERE id = $11 RETURNING *`, [schema.schemaName, schema.points_top1, schema.points_top2, schema.points_top3, schema.points_top5, schema.points_top10, schema.points_top15, schema.points_top20, schema.kill, schema.gulag, schema.id]);
+      (name, points_top1, points_top2, points_top3, points_top5, points_top10, points_top15, points_top20, kill, gulag) 
+      = ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+      WHERE id = $11 RETURNING *`, 
+      [schema.schemaName, schema.points_top1, schema.points_top2, schema.points_top3, schema.points_top5, schema.points_top10, schema.points_top15, schema.points_top20, schema.kill, schema.gulag, schema.id]);
+      
       client.end();
       return result.rows.length > 0 ? result.rows[0] : null;
     }
