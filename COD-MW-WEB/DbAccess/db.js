@@ -19,28 +19,41 @@ const dal = () =>
     //login
     const login = async (email, password) =>{
       const client = getClient();
-      const result = await client.query('SELECT * FROM account WHERE email_cod = $1 AND password = $2', [email.toLowerCase(), password]);
+      const result = await client.query('SELECT * FROM account as a JOIN players as p ON (a.uno = p.uno) WHERE a.email_cod = $1 AND a.password = $2', [email.toLowerCase(), password]);
       client.end();
-
       return result.rows.length > 0 ? result.rows[0] : null;
     }
 
     //registration
-    const registration = async (uno, password, email_cod, password_cod, tag_username, platform) =>{
+    const registration = async (account, player) =>{
       const client = getClient();
-      const result = await client.query('INSERT INTO account VALUES ($1, $2, $3, $4, false, $5, $6) RETURNING *', [uno, password, email_cod.toLowerCase(), password_cod, tag_username, platform]);
-      client.end();
-      return result.rows.length > 0 ? result.rows[0] : null;
+      try {
+        const accountResult = await client.query('INSERT INTO account VALUES ($1, $2, $3, $4, false) RETURNING *', [account.uno, account.password, account.emailCod, account.passwordCod]);
+        const playerResult = await client.query('INSERT INTO players VALUES ($1, $2, $3) ', [player.tag_username, player.platform, player.uno]);
+        return accountResult.rows.length > 0 ? accountResult.rows[0] : null;
+      } catch (error) {
+        return null;
+      } finally {
+        client.end();
+        console.log('ended connection');
+      }
     }
 
     //verify equal email
-    const verifyEmail = async (email_cod) =>{
+    const verifyEmail = async (emailCod) =>{
       const client = getClient();
-      const result = await client.query('SELECT * FROM account where email_cod = $1', [email_cod.toLowerCase()]);
+      const result = await client.query('SELECT * FROM account where email_cod = $1', [emailCod.toLowerCase()]);
       client.end();
       return result.rows.length > 0 ? true : false;
     }
 
+    //get exists tag_username
+    const checkTagUsername = async (tagUsername) =>{
+      const client = getClient();
+      const result = await client.query('SELECT * FROM players where tag_username = $1', [tagUsername]);
+      client.end();
+      return result.rows.length > 0 ? true : false;
+    }
     //create ranking schema
     const addRankingSchema = async (schema) => {
       const client = getClient();
@@ -149,10 +162,84 @@ const dal = () =>
         return 'generic'
       }
     }
+
+    //get players
+    const getPlayers = async() => {
+      const client = getClient();
+      const result = await client.query('SELECT * FROM players');
+      client.end();
+
+      return result.rowCount > 0 ? result.rows[0] : null;
+    }
+    
+    //check if player already has a team
+    const checkPlayerIntoTeamBy = async(tagUsername) => {
+      const client = getClient();
+      const result = await client.query('SELECT * FROM teams');
+
+      /*result.rows.forEach(players => {
+        players.forEach(p => {
+          if(p === tagUsername)
+          {
+            return true;
+          }
+        })
+     
+      });*/
+
+      /*for(let k in result.rows) {
+        for(let x in result.rows[k].players)
+        {
+          if(result.rows[k].players[x].player === tagUsername)
+          {
+            return result.rows[k].name;
+          }
+        }
+      }*/
+
+      //Funzionante
+      for(let k in result.rows) {
+        if(result.rows[k].players.find(p => p.player === tagUsername))
+            return result.rows[k].name;
+          
+        }
+      return false;
+    }
+
+    //check if  players are into team
+    const checkPlayersIntoTeam = async(jsonPlayers) => {
+      const client = getClient();
+      const result = await client.query('SELECT * FROM teams');
+      //Funzionante
+      for (let z in jsonPlayers)
+      {
+        for(let k in result.rows) {
+          if(result.rows[k].players.find(p => p.player === jsonPlayers[z].player))
+              return jsonPlayers[z].player;
+          }
+      }
+      return false;
+    }
+
+
+    //create team
+    const createTeam = async(teamName, jsonPlayers) => {
+      const client = getClient();
+      try {
+          const result = await client.query('INSERT INTO teams VALUES ($1, $2)', [teamName, JSON.stringify(jsonPlayers)]);
+          return result.rowCount > 0 ? result.rows[0] : null;
+      } catch (error) {
+        return 'error';
+      } finally {
+        client.end();
+      }
+    }
+
     return{
       login,
       registration,
       verifyEmail,
+      checkTagUsername,
 
       addRankingSchema,
       getRankingSchemas,
@@ -164,7 +251,12 @@ const dal = () =>
       getTournaments,
       getTournamentsById,
       deleteTournaments,
-      updateTournaments
+      updateTournaments,
+
+      checkPlayerIntoTeamBy,
+      checkPlayersIntoTeam,
+
+      createTeam
     }
 }
 

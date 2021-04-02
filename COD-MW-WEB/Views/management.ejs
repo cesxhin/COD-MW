@@ -52,7 +52,7 @@
     <div class="table-management">
         <table>
             <tr>
-                <th colspan="11">Schema punteggi</th>
+                <th colspan="13">Schema punteggi</th>
             </tr>
             <tr>
                 <th>ID</th>
@@ -64,6 +64,8 @@
                 <th>Top 10</th>
                 <th>Top 15</th>
                 <th>Top 20</th>
+                <th>Kill</th>
+                <th>Gulag</th>
                 <th>Elimina</th>
                 <th>Modifica</th>
             </tr>
@@ -79,6 +81,8 @@
                         <td><%= s.points_top10 %></td>
                         <td><%= s.points_top15 %></td>
                         <td><%= s.points_top20 %></td>
+                        <td><%= s.kill %></td>
+                        <td><%= s.gulag %></td>
                         <td><a class="a-icon" onclick="popup('/deleteRankingSchema/<%= s.id %>')"><img src="https://www.flaticon.com/svg/vstatic/svg/1214/1214428.svg?token=exp=1617212106~hmac=c41a41123e39a66737b3d3e812c545aa"></a></td>
                         <td><a class="a-icon" href="/updateRankingSchema/<%= s.id %>"><img src="https://www.flaticon.com/svg/vstatic/svg/84/84380.svg?token=exp=1617212064~hmac=a61abf2a445963f139b5d008c12bc3ce"></a></td>
                     </tr>

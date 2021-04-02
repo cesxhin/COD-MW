@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it-IT">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +8,21 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Login</title>
+    <title>Crea Team</title>
 </head>
 <body>
     <div class="form-insert">
-        <h1>Login</h1>
-        <form action="/login" method="post" autocomplete="off">
-            <% if(loginError) { %>
-                <p style="color:red">Email o password sbagliati!</p>
+        <form action="/createTeam" method="post">
+            <% if(error) { %>
+                <p><%= error %></p>
             <% } %>
-            <input type="text" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
-            <input type="checkbox" name="remember_me">Resta connesso
-            <input type="submit" value="Accedi">
-            Se non hai un account <a href="/registration">Registrati subito!</a>
+            <input type="text" name="teamName" placeholder="Nome Team" required>
+            <input type="text" name="player1" value="<%= tag_username %>" readonly>
+            <input type="text" name="player2">
+            <input type="text" name="player3">
+            <input type="text" name="player4">
+            <input type="submit">
+            <a class="button-link" href="/home">Torna indietro</a>
         </form>
     </div>
 </body>

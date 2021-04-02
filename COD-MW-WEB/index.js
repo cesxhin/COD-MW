@@ -14,7 +14,7 @@ const fastify = require('fastify')({
 });
 
 //create and connect db
-fastify.decorate('dal', require('./db')());
+fastify.decorate('dal', require('./DbAccess/db')());
 const cod = require('./cod')
 
 //import or export date
@@ -60,9 +60,10 @@ fastify.post('/login', async (req, reply) => {
       reply.setCookie('remember_me', false);
     }
     reply.setCookie('admin', result.admin);
-    reply.setCookie('email_cod', result.email_cod);
+    /*reply.setCookie('email_cod', result.email_cod);
     reply.setCookie('password', result.password);
-    reply.setCookie('password_cod', result.password_cod);
+    reply.setCookie('password_cod', result.password_cod);*/
+    reply.setCookie('tag_username', result.tag_username);
     return reply.redirect('/home');
   }
   else
@@ -108,7 +109,21 @@ fastify.post('/registration', async (req, reply) => {
     const psw_sha256 = sha256(data['password'])
     const crypt = new Cryptr(psw_sha256);
     const psw_cod_aes = crypt.encrypt(data['password_cod']);
-    const result = await fastify.dal.registration(uno, psw_sha256, data['email_cod'], psw_cod_aes, tag_username, data['platform']);
+
+    var account = {
+      uno,
+      password : psw_sha256,
+      emailCod : data.email_cod.toLowerCase(),
+      passwordCod : psw_cod_aes,
+    }
+
+    var player = {
+      tag_username,
+      platform : data.platform, 
+      uno
+    }
+
+    const result = await fastify.dal.registration(account, player);
     
     return result ? reply.redirect('/') : reply.view('registration.ejs', {registrationError : "generic"});
   }else
@@ -119,7 +134,9 @@ fastify.post('/registration', async (req, reply) => {
 
 //home
 fastify.get('/home', async (req, reply) => {
-  return reply.view('home.ejs', {cookie: req.cookies});
+  //tag
+  const foundTeam = await fastify.dal.checkPlayerIntoTeamBy(req.cookies.tag_username);
+  return reply.view('home.ejs', {cookie: req.cookies, foundTeam});
 });
 
 //management
@@ -214,7 +231,7 @@ fastify.get('/deleteRankingSchema/:id', async (req, reply) => {
 fastify.get('/updateRankingSchema/:id', async (req, reply) => {
   const id = req.params.id;
   const result = await fastify.dal.getRankingSchemaById(id);
-  reply.view("updateRankingSchema.ejs", {schemas: result});
+  return reply.view("updateRankingSchema.ejs", {schemas: result});
 });
 
 fastify.post('/updateRankingSchema', async (req, reply) => {
@@ -228,6 +245,63 @@ fastify.post('/updateRankingSchema', async (req, reply) => {
   }
 });
 
+//createTeam
+fastify.get('/createTeam', async (req, reply) => {
+  return reply.view("createTeam.ejs", {tag_username: req.cookies.tag_username , error : false});
+});
+fastify.post('/createTeam', async (req, reply) => {
+  const data = req.body;
+  const tag_username = data.player1;
+  let jsonPlayers = [];
+  jsonPlayers.push({player : data.player1});
+  //search tag_name exitis and search player exitis in other team
+  if(data.player2 != '')
+  {
+    if(!fastify.dal.checkTagUsername(data.player2))
+    {
+      return reply.view('createTeam.ejs',{error : 'player2', tag_username})
+    }else
+    {
+      jsonPlayers.push({player: data.player2});
+    }
+  }
+  if(data.player3 != '')
+  {
+    if(!fastify.dal.checkTagUsername(data.player3))
+    {
+      return reply.view('createTeam.ejs', {error : 'player3', tag_username})
+    }else
+    {
+      jsonPlayers.push({player: data.player3});
+    }
+  }
+  if(data.player4 != '')
+  {
+    if(!fastify.dal.checkTagUsername(data.player4))
+    {
+      return reply.view('createTeam.ejs', {error : 'player4', tag_username})
+    }else
+    {
+      jsonPlayers.push({player: data.player4});
+    }
+  }
+
+  //
+  const result = await fastify.dal.checkPlayersIntoTeam(jsonPlayers);
+  if(result)
+  {
+    return reply.view('createTeam.ejs', {error : 'il player '+result+' esiste già in un altro team' , tag_username});
+  } else
+  {
+    const team = await fastify.dal.createTeam(data.teamName, jsonPlayers);
+    if(team === 'error')
+      return reply.view('createTeam.ejs', {error : 'Esiste già un team con questo nome', tag_username})
+    else if(team == null)
+      return reply.view('createTeam.ejs', {error : 'Inserimento fallito', tag_username});
+    
+    reply.redirect('/home');
+  }
+});
 fastify.listen(3000, (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)

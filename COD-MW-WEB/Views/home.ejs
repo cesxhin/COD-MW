@@ -18,6 +18,12 @@
         <% if(cookie.admin === 'true') {%>
             <a class="button-link gestione" href="/management">Gestione Torneo</a>
         <% } %>
+ 
+        <% if(foundTeam) {%>
+            <a class="button-link " href="#">Gestione Team</a>
+        <% } else { %>
+            <a class="button-link " href="/createTeam">Crea Team</a>
+        <% } %>
     </div>
 </body>
 </html>
