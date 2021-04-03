@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/style.css">
     <title>Classifica Globale</title>
 </head>
 <body>
     <div class="form-insert">
         <form action="/globalRankings" method="post">
             <% if(!rankings) {%> 
-                <a href="/globalRankings">Torna indietro</a>
+                <a href="/home">Torna indietro</a>
     
                 <label for="tournamentDate">Data Torneo</label>
                 <input type="date" name="tournamentDate" required>
@@ -32,27 +33,30 @@
                             <td><%= rankings.start_time %></td>
                         </tr>
                     </table>
-        
+                    
+                </div>
+
+                <div class="table-managament">
                     <table>
                         <tr>
-                            <th style="font-size : 30">SQUADRE</th>
+                            <th colspan="4" style="font-size : 30">SQUADRE</th>
                         </tr>
                         <tr style="text-align: center;">
                             <th>Posizione</th>
                             <th>Nome</th>
                             <th>Punti</th>
                         </tr>
-                        <tr>
+                        <tr style="text-align: center;">
                             <% rankings.teams.forEach(t => { %>
+                                <td><%= t.rankPositionSchema %></td>
                                 <td><%= t.teamName %></td>
                                 <td><%= t.points %></td>
-                                <td><%= t.rankPositionSchema %></td>
                             <% }) %>
                         </tr>
                     </table>
                 </div>
-                
-                <a href="/globalRankings">Torna indietro</a>
+                    
+                <a class="button-link" href="/globalRankings">Torna indietro</a>
             <% } %>
     
         

@@ -9,8 +9,8 @@ const fastify = require('fastify')({
     logger: true
   })
   fastify.register(require('fastify-static'), {
-    root: path.join(__dirname, 'Style'),
-    prefix: '/Style/', // optional: default '/'
+    root: path.join(__dirname, 'Public'),
+    prefix: '/Public/', // optional: default '/'
 });
 
 //create and connect db
@@ -259,12 +259,14 @@ fastify.post('/createTeam', async (req, reply) => {
   const tag_username = data.player1;
   let jsonPlayers = [];
   jsonPlayers.push({player : data.player1});
-  //search tag_name exitis and search player exitis in other team
+
+  //search if player exists 
   if(data.player2 != '')
   {
-    if(!fastify.dalGeneric.checkTagUsername(data.player2))
+    let exists = await fastify.dalGeneric.checkTagUsername(data.player2);
+    if(!exists)
     {
-      return reply.view('./Team/createTeam.ejs',{error : 'player2', tag_username})
+      return reply.view('./Team/createTeam.ejs',{error : 'Player '+ data.player2 + ' non esiste', tag_username});
     }else
     {
       jsonPlayers.push({player: data.player2});
@@ -272,9 +274,10 @@ fastify.post('/createTeam', async (req, reply) => {
   }
   if(data.player3 != '')
   {
-    if(!fastify.dalGeneric.checkTagUsername(data.player3))
+    let exists = await fastify.dalGeneric.checkTagUsername(data.player3);
+    if(!exists)
     {
-      return reply.view('./Team/createTeam.ejs', {error : 'player3', tag_username})
+      return reply.view('./Team/createTeam.ejs', {error : 'Player '+ data.player3 + ' non esiste', tag_username})
     }else
     {
       jsonPlayers.push({player: data.player3});
@@ -282,20 +285,21 @@ fastify.post('/createTeam', async (req, reply) => {
   }
   if(data.player4 != '')
   {
-    if(!fastify.dalGeneric.checkTagUsername(data.player4))
+    let exists = await fastify.dalGeneric.checkTagUsername(data.player4);
+    if(!exists)
     {
-      return reply.view('./Team/createTeam.ejs', {error : 'player4', tag_username})
+      return reply.view('./Team/createTeam.ejs', {error : 'Player '+ data.player4 + ' non esiste', tag_username})
     }else
     {
       jsonPlayers.push({player: data.player4});
     }
   }
 
-  //
+  //search if players are already in a team
   const result = await fastify.dalTeam.checkPlayersIntoTeam(jsonPlayers);
   if(result)
   {
-    return reply.view('./Team/createTeam.ejs', {error : 'il player '+result+' esiste già in un altro team' , tag_username});
+    return reply.view('./Team/createTeam.ejs', {error : 'Il Player '+result+' esiste già in un altro team' , tag_username});
   } else
   {
     const team = await fastify.dalTeam.createTeam(data.teamName, jsonPlayers);

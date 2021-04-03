@@ -106,17 +106,7 @@ create table teams
 
 */
 /*da decidere*/
-/*
-ridodante in che senso?
-allora
-fammi un esempio di insert in rankings 
-e guarda il json _teeams che abbiamo fatto sotto
-ci sono, si sono tutti team per ogni torneo, ecco
-quindi 1 riga di rankings si riferisce alla classifica per quel torneo
-mi sa che andrebbe fatto pointsPerTeam come json
-si, si si hai ragione
-non lo so però, a sto punto era meglio mongodb ahaha
-*/
+
 create table rankings
 (
     id serial primary key,

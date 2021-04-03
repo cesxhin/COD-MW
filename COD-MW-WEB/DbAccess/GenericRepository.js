@@ -52,7 +52,7 @@ const dalGeneric = () =>
       const client = new ConnectionClient();
       const result = await client.query('SELECT * FROM players where tag_username = $1', [tagUsername]);
       client.end();
-      return result.rows.length > 0 ? true : false;
+      return result.rowCount > 0 ? true : false;
     }
 
     //get global ranking by date
