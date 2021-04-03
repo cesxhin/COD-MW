@@ -106,36 +106,53 @@ create table teams
 
 */
 /*da decidere*/
+/*
+ridodante in che senso?
+allora
+fammi un esempio di insert in rankings 
+e guarda il json _teeams che abbiamo fatto sotto
+ci sono, si sono tutti team per ogni torneo, ecco
+quindi 1 riga di rankings si riferisce alla classifica per quel torneo
+mi sa che andrebbe fatto pointsPerTeam come json
+si, si si hai ragione
+non lo so però, a sto punto era meglio mongodb ahaha
+*/
 create table rankings
 (
     id serial primary key,
-    position integer not null,
-    total_point integer not null,
-    json_teams json not null,
+    teams json not null,
     id_tournament integer references tournaments (id)
 );
+
+
 /*
+rank poistion sarebb? hai scritto tu genio, la posizione in cui è arrivata la squadra in base i punteggi dello schema prestabilito anzi
+rankPositionSchema --> la posizione in base i punteggi calcolati dallo schema 
+rankPositionMZ --> la posizione in cui sono riusciti ad sopravvivere al più lungo nel gioco
+
 json_teams
 {
     "teams" :[
         {
             "teamName" : "ffdf",
+            "points":150,
+            "rankPositionSchema": 2,
             "players":
             [
                 {
                     "username":"username#1234",
-                    "match":
+                    "matches":
                     [
                         {
-                            "rank" : 54
-                            "kill" : 3
-                            "assists" : 1
+                            "rank" : 54,
+                            "kill" : 3,
+                            "assists" : 1,
                             "damageDone" : 170
                         },
                         {
-                            "rank" : 5
-                            "kill" : 24
-                            "assists" : 5
+                            "rank" : 5,
+                            "kill" : 24,
+                            "assists" : 5,
                             "damageDone" : 220
                         },
                         ....
@@ -153,6 +170,8 @@ json_teams
         },
         {
             "teamName" : "team2",
+            "points":12,
+            "rankPosition": 50,
             "players" : [{}]
         }
     ] 

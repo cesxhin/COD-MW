@@ -20,10 +20,14 @@
         <% } %>
  
         <% if(foundTeam) {%>
-            <a class="button-link " href="#">Gestione Team</a>
+            <a class="button-link viewTeam" href="/viewTeam/<%= foundTeam %>">Vedi Team</a>
+            <a class="button-link " href="/teamRankings">Classifiche Team </a>
         <% } else { %>
-            <a class="button-link " href="/createTeam">Crea Team</a>
+            <a class="button-link creaTeam" href="/createTeam">Crea Team</a>
         <% } %>
+        <a class="button-link " href="/globalRankings">Classifica Globale </a>
+
+        
     </div>
 </body>
 </html>

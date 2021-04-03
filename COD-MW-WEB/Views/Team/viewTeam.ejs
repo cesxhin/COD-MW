@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+</head>
+<body>
+    <div class="form-insert">
+        <% if(error && error === 'NON SEI AUTORIZZATO') { %>
+            <p><%= error %></p>
+        <% } else {%>
+            <% if(boss) {%>
+                <input type="text" name="teamName" value="<%= nameTeam %>" readonly>
+                <table>
+                    <tr>
+                        <th>Username</th>
+                        <th>Rimuovi</th>
+                        <th>Aggiungi</th>
+                    </tr>
+                    <% let k=0; %>
+                    <% while(k < 4){%>
+                        <%if(jsonPlayer.players[k] !== undefined){%>
+                            <tr>
+                                <% if(k == 0) {%>
+                                    <th>
+                                        <input type="text" name="player<%= parseInt(k)+1 %>" value="<%= jsonPlayer.players[k].player %>">
+                                    </th>
+                                <% } else {%>
+                                    <th>
+                                        <input type="text" name="player<%= parseInt(k)+1 %>" value="<%= jsonPlayer.players[k].player %>">
+                                    </th>
+                                    <th>
+                                        <% let player = jsonPlayer.players[k].player.replace('#','%23') %>
+                                        <a onclick="popup_player('/removePlayer/<%= nameTeam %>/<%= player %>', '<%= jsonPlayer.players[k].player %>')">Espelli</a>
+                                    </th>
+                                <% }%>
+                            </tr>
+                        <% } else {%>
+                            <tr>
+                                <th>
+                                    <input type="text" name="player<%= parseInt(k)+1 %>" value="">
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                    <a href="/addPlayer/<%= nameTeam %>">Aggiungi</a>
+                                </th>
+                            </tr>
+                        <% }%>
+                    <% ++k; %>
+                    <% }%>
+                    <tr>
+                        <td colspan="3"><a onclick="popup_team('/deleteTeam/<%= nameTeam %>', '<%= nameTeam %>')">Elimina Team</a></td>
+                    </tr>
+                </table>
+                <a class="button-link" href="/home">Torna indietro</a>
+            <% } else { %>
+asdasd
+            <% } %>
+        <% }%>
+    </div>
+    <script>
+        function popup_player(url, player) {
+          if(confirm("Sei sicuro di voler eliminare questo giocatore? "+player))
+          {
+              window.open(url,"_self")
+          }
+        }
+        function popup_team(url, player) {
+          if(confirm("Sei sicuro di voler eliminare questa team? "+player))
+          {
+              window.open(url,"_self")
+          }
+        }
+    </script>
+</body>
+</html>

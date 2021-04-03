@@ -127,6 +127,22 @@ span
     color: white;
     margin: 0px 5px;
 }
+.header .creaTeam
+{
+    margin-top: 5px;
+    background-color: gray;
+    border: solid darkgray 3px;
+    color: white;
+    margin: 0px 5px;
+}
+.header .viewTeam
+{
+    margin-top: 5px;
+    background-color: #005fcc;
+    border: solid #000d80 3px;
+    color: white;
+    margin: 0px 5px;
+}
 .header .back
 {
     margin-top: 5px;
