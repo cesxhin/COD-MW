@@ -170,6 +170,20 @@ json_teams
 }
 */
 
+/* da confermare
+non son sicuro se usare la chiave esterna per team o un json;
+punterei per la chiave esterna visto che una volta chiuse le iscrizioni finita li e si azzerra tutto a inizio torneo */
+
+
+create table registrations (
+    
+    registrationTime timestamp default now(),
+    teamID  varchar(250) references teams(name), 
+    tournamentID integer references tournaments(id),
+    closed boolean default false,
+    
+    primary key(teamID, tournamentID) 
+);
 
 /*da decidere
 create table team_tournaments

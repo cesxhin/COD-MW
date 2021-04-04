@@ -29,6 +29,14 @@ const dalTeam = () =>
       return false;
     }
 
+    //check if a team already participates
+    const checkTeamRegistration = async(teamName) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`SELECT * FROM teams WHERE participates = true AND name = $1`, [teamName]);
+      client.end();
+      return result.rowCount > 0 ? true : null;
+    }
+
     //check if  players are into team
     const getTeam = async(name) => {
       const client = new ConnectionClient();
@@ -79,6 +87,7 @@ const dalTeam = () =>
     return{
       checkPlayerIntoTeamBy,
       checkPlayersIntoTeam,
+      checkTeamRegistration,
       getTeam,
       updatePlayer,
       createTeam,

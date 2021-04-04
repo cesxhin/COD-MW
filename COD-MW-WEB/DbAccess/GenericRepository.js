@@ -58,7 +58,7 @@ const dalGeneric = () =>
     //get global ranking by date
     const getGlobalRankings = async(startDate) => {
       const client = new ConnectionClient();
-      const result = await client.query('SELECT * from rankings r JOIN tournaments t ON (t.id = r.id_tournament) WHERE t.start_date = $1 ', [startDate]);
+      const result = await client.query('SELECT * from rankings r JOIN tournaments t ON (t.id = r.id_tournament) WHERE t.start_date = $1 AND finished = true ', [startDate]);
       client.end();
       return result.rowCount > 0 ? result.rows[0] : null;
     

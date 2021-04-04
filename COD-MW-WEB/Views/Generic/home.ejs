@@ -12,7 +12,12 @@
 </head>
 <body>
     <div class="header">
-        <a class="button-link iscrizione" href="#">Iscrizione Torneo</a>
+        <% if(registrated) { %>
+            <input class="button-link iscrizione "  type="button"  value="Iscrizione Torneo" style="opacity:0.5;" readonly>
+        <% } %>
+        <% if(foundTeam && !registrated) { %>
+            <a class="button-link iscrizione" href="/registrateTeam">Iscrizione Torneo</a>
+        <% } %>
         <a class="button-link risultati" href="#">Risultati</a>
         <a class="button-link statistiche" href="#">Statistiche</a>
         <% if(cookie.admin === 'true') {%>

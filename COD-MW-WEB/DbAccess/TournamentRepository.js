@@ -23,6 +23,15 @@ const dalTournament = () =>
       client.end();
       return result.rows.length > 0 ? result.rows[0] : null;
     }
+
+    //get active tournaments 
+    const getActiveTournaments = async() => {
+      const client = new ConnectionClient();
+      const result = await client.query(`SELECT * FROM tournaments WHERE finished = false`);
+      client.end();
+      //dovrebbe essere uno solo in teoria quindi sarebbe più corretto ritornare result.rows[0]
+      return result.rowCount > 0 ? result.rows[0] : null;
+    }
     //update tournaments
     const updateTournaments = async (tournaments) => {
       const client = new ConnectionClient();
@@ -47,6 +56,7 @@ const dalTournament = () =>
     return{      
       createTournament,
       getTournaments,
+      getActiveTournaments,
       getTournamentsById,
       deleteTournaments,
       updateTournaments

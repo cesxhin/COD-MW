@@ -1,5 +1,9 @@
 const path = require('path');
 
+//COD WZ API
+const cod = require('./cod');
+
+
 //security
 const sha256 = require("sha256");
 const Cryptr = require('cryptr');
@@ -19,8 +23,7 @@ fastify.decorate('dalRankingSchema', require('./DbAccess/RankingSchemaRepository
 fastify.decorate('dalTournament', require('./DbAccess/TournamentRepository')());
 fastify.decorate('dalTeam', require('./DbAccess/TeamRepository')());
 fastify.decorate('dalGeneric', require('./DbAccess/GenericRepository')());
-const cod = require('./cod');
-const { triggerAsyncId } = require('async_hooks');
+fastify.decorate('dalRegistration', require('./DbAccess/RegistrationRepository')());
 
 //import or export date
 fastify.register(require('fastify-formbody'));
@@ -141,7 +144,9 @@ fastify.post('/registration', async (req, reply) => {
 fastify.get('/home', async (req, reply) => {
   //tag
   const foundTeam = await fastify.dalTeam.checkPlayerIntoTeamBy(req.cookies.tag_username);
-  return reply.view('./Generic/home.ejs', {cookie: req.cookies, foundTeam});
+  let registrated = await fastify.dalTeam.checkTeamRegistration(foundTeam);
+  reply.setCookie('teamName', foundTeam);
+  return reply.view('./Generic/home.ejs', {cookie: req.cookies, foundTeam, registrated});
 });
 
 //management
@@ -254,6 +259,7 @@ fastify.post('/updateRankingSchema', async (req, reply) => {
 fastify.get('/createTeam', async (req, reply) => {
   return reply.view("./Team/createTeam.ejs", {tag_username: req.cookies.tag_username , error : false});
 });
+
 fastify.post('/createTeam', async (req, reply) => {
   const data = req.body;
   const tag_username = data.player1;
@@ -435,6 +441,44 @@ fastify.post('/globalRankings', async(req, reply) => {
   }
 
 })
+
+
+//Registration
+fastify.get('/registrateTeam', async(req, reply) => {
+  const teamName = req.cookies.teamName;
+  
+  if(!teamName) {
+    return reply.view('./Generic/home.ejs', {foundTeam : false, cookie : req.cookies, registrated : false});
+  }
+
+  let checkRegistration = await fastify.dalTeam.checkTeamRegistration(teamName);
+  if(checkRegistration) {
+    return reply.view('./Registration/registrateTeam.ejs', {error : 'Il team è già registrato ad un altro torneo!', teamName, tournaments: null})
+  }
+
+  const tournaments = await fastify.dalTournament.getActiveTournaments();
+  if(!tournaments)
+    return reply.view('./Registration/registrateTeam.ejs', {error : null, teamName, tournaments});
+  
+  return reply.view('./Registration/registrateTeam.ejs', {error : null, teamName, tournaments});
+})
+
+fastify.post('/registrateTeam', async (req, reply) => {
+  const teamName = req.body.teamName;
+  const tournamentID = req.body.tournaments;
+  
+  const success = await fastify.dalRegistration.registrateTeam(teamName, tournamentID);
+
+  if(success)
+    reply.redirect('/home');
+  
+  const tournaments = await fastify.dalTournament.getActiveTournaments();
+  return reply.view('./Registration/registrateTeam.ejs' , {error : 'Registrazione non riuscita, riprova' , teamName, tournaments })
+
+})
+
+
+
 
 fastify.listen(3000, (err, address) => {
   if (err) throw err
