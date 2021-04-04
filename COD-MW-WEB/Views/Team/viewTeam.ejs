@@ -9,10 +9,13 @@
 </head>
 <body>
     <div class="form-insert">
+        <!-- AUTORIZZAZIONE NON CONCESSE -->
         <% if(error && error === 'NON SEI AUTORIZZATO') { %>
             <p><%= error %></p>
         <% } else {%>
+            <!-- controlla se è caposquadra  -->
             <% if(boss) {%>
+                <!-- se è caposquadra -->
                 <input type="text" name="teamName" value="<%= nameTeam %>" readonly>
                 <table>
                     <tr>
@@ -26,11 +29,11 @@
                             <tr>
                                 <% if(k == 0) {%>
                                     <th>
-                                        <input type="text" name="player<%= parseInt(k)+1 %>" value="<%= jsonPlayer.players[k].player %>">
+                                        <input type="text" name="player<%= parseInt(k)+1 %>" value="<%= jsonPlayer.players[k].player %>" readonly>
                                     </th>
                                 <% } else {%>
                                     <th>
-                                        <input type="text" name="player<%= parseInt(k)+1 %>" value="<%= jsonPlayer.players[k].player %>">
+                                        <input type="text" name="player<%= parseInt(k)+1 %>" value="<%= jsonPlayer.players[k].player %>" readonly>
                                     </th>
                                     <th>
                                         <% let player = jsonPlayer.players[k].player.replace('#','%23') %>
@@ -41,7 +44,7 @@
                         <% } else {%>
                             <tr>
                                 <th>
-                                    <input type="text" name="player<%= parseInt(k)+1 %>" value="">
+                                    <input type="text" name="player<%= parseInt(k)+1 %>" value="" readonly>
                                 </th>
                                 <th>
                                 </th>
@@ -53,18 +56,35 @@
                     <% ++k; %>
                     <% }%>
                     <tr>
-                        <td colspan="3"><a onclick="popup_team('/deleteTeam/<%= nameTeam %>', '<%= nameTeam %>')">Elimina Team</a></td>
+                        <td colspan="3"><a onclick="popup_team('/deleteTeam/<%= nameTeam %>', '<%= nameTeam %>')">Sciogli sqadra</a></td>
                     </tr>
                 </table>
                 <a class="button-link" href="/home">Torna indietro</a>
             <% } else { %>
-                <p>Non sei il capo Team, <a class="button-link" href="/home">torna indietro</a></p>
+                <!-- se non è caposquadra -->
+                <% let k=0; %>
+                    <% while(k < 4){%>
+                        <%if(jsonPlayer.players[k] !== undefined){%>
+                            <input type="text" value="<%= jsonPlayer.players[k].player %>" readonly>
+                        <% } else {%>
+                            <input type="text" value="" readonly>
+                        <% }%>
+                    <% ++k; %>
+                    <% }%>
+                <a class="button-link" onclick="popup_player_leave('/leavePlayer/<%= nameTeam %>', '<%= nameTeam %>')">Lascia squadra</a>
+                <a class="button-link" href="/home">torna indietro</a>
             <% } %>
         <% }%>
     </div>
     <script>
         function popup_player(url, player) {
           if(confirm("Sei sicuro di voler eliminare questo giocatore? "+player))
+          {
+              window.open(url,"_self")
+          }
+        }
+        function popup_player_leave(url, team) {
+          if(confirm("Sei sicuro di voler lasciare questo team? "+ team))
           {
               window.open(url,"_self")
           }

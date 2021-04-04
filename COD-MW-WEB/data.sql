@@ -59,13 +59,12 @@ create table tournaments
     mode varchar(24) NOT NULL,               
     number_matches integer,
     id_schema integer references rankingSchemas(id),
-    id_team varchar(250) references teams(name),
     finished boolean default false
 );
 
 /*teams whitelist*/
 CREATE VIEW teamsWhiteList AS 
-SELECT name, player1 as boss FROM teams
+SELECT name, players FROM teams
 
 
 CREATE VIEW countTeamPlayers AS
@@ -83,7 +82,8 @@ if(onefield == qualcosa ) //controlla se uno dei campi è vuoto
 create table teams
 (
     name varchar(250) primary key,
-    players json not null
+    players json not null,
+    participates boolean default false
 );
 /*
 

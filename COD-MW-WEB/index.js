@@ -314,11 +314,19 @@ fastify.post('/createTeam', async (req, reply) => {
 fastify.get('/viewTeam/:foundTeam', async (req, reply) => {
   const jsonPlayer = await fastify.dalTeam.getTeam(req.params.foundTeam);
   let boss = false;
+  //fine player in team
   if(jsonPlayer.players.find(p => p.player === req.cookies.tag_username))
   {
-    boss = true;
+    //find boss
+    if(jsonPlayer.players[0].player === req.cookies.tag_username)
+    {
+      boss = true;
+    }
+    reply.view('./Team/viewTeam.ejs', {boss, jsonPlayer, error: false, nameTeam: req.params.foundTeam});
+  }else
+  {
+    reply.view('./Team/viewTeam.ejs', {error: "NON SEI AUTORIZZATO"});
   }
-  reply.view('./Team/viewTeam.ejs', {boss, jsonPlayer, error: false, nameTeam: req.params.foundTeam});
 })
 fastify.post('/viewTeam', (req, reply) => {
   reply.view('./Generic/globalRankings.ejs', {rankings : null});
@@ -370,6 +378,28 @@ fastify.get('/removePlayer/:nameTeam/:player', async (req, reply) => {
     //da pensare per gestire gli errori
     await fastify.dalTeam.updatePlayer(req.params.nameTeam, players);
     reply.redirect('/viewTeam/'+req.params.nameTeam);
+  }else
+  {
+    reply.view('./Team/viewTeam.ejs', {error: 'NON SEI AUTORIZZATO'});
+  }
+})
+//leave team
+fastify.get('/leavePlayer/:nameTeam', async (req, reply) => {
+  const team = await fastify.dalTeam.getTeam(req.params.nameTeam);
+  if(team.players.find(p => p.player === req.cookies.tag_username))
+  {
+    let players = [], k=0;
+    while (k < team.players.length)
+    {
+      if(!(team.players[k].player === req.cookies.tag_username))
+      {
+        players.push(team.players[k]);
+      }
+      ++k;
+    }
+    //da pensare per gestire gli errori
+    await fastify.dalTeam.updatePlayer(req.params.nameTeam, players);
+    reply.redirect('/home');
   }else
   {
     reply.view('./Team/viewTeam.ejs', {error: 'NON SEI AUTORIZZATO'});
