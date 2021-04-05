@@ -8,6 +8,7 @@ const cod = require('./cod');
 const sha256 = require("sha256");
 const Cryptr = require('cryptr');
 
+
 //import css
 const fastify = require('fastify')({
     logger: true
@@ -152,8 +153,14 @@ fastify.get('/home', async (req, reply) => {
 //management
 fastify.get('/management', async (req, reply) => {
   const schemas = await fastify.dalRankingSchema.getRankingSchemas();
-  const tournament = await fastify.dalTournament.getTournaments();
-  return reply.view('./Generic/management.ejs', {schemas, tournament});
+  const tournaments = await fastify.dalTournament.getTournaments();
+
+  let tournamentsClosedOrNot = await Promise.all(tournaments.map(async t => {
+    t.closed = await fastify.dalGeneric.checkRegistrations(t.id);
+    return t;
+  }));
+  
+  return reply.view('./Generic/management.ejs', {schemas, tournament : tournamentsClosedOrNot, cookies : req.cookies, closed : false});
 });
 
 //create tournament 
@@ -456,7 +463,20 @@ fastify.get('/registrateTeam', async(req, reply) => {
     return reply.view('./Registration/registrateTeam.ejs', {error : 'Il team è già registrato ad un altro torneo!', teamName, tournaments: null})
   }
 
-  const tournaments = await fastify.dalTournament.getActiveTournaments();
+  const team = await fastify.dalTeam.getTeam(teamName);
+
+  let count = team.players.length;
+  let mode = null;
+
+  if(count == 2)
+    mode = 'duo';
+  if(count == 3)
+    mode = 'trio';
+  if(count == 4)
+    mode = 'quad';
+  
+
+  const tournaments = await fastify.dalTournament.getActiveTournaments(mode);
   if(!tournaments)
     return reply.view('./Registration/registrateTeam.ejs', {error : null, teamName, tournaments});
   
@@ -477,7 +497,15 @@ fastify.post('/registrateTeam', async (req, reply) => {
 
 })
 
+fastify.get('/closeRegistrations/:id', async(req, reply) => {
+  const tournamentID = req.params.id;
 
+  const success = await fastify.dalRegistration.closeRegistrations(tournamentID);
+  
+  if(success)
+    reply.redirect('/management');
+  return `Errore nello svolgimento dell'operazione`;
+})
 
 
 fastify.listen(3000, (err, address) => {

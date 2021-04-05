@@ -24,10 +24,10 @@ const dalTournament = () =>
       return result.rows.length > 0 ? result.rows[0] : null;
     }
 
-    //get active tournaments 
-    const getActiveTournaments = async() => {
+    //get active tournaments by mode (duo, trio, quad)
+    const getActiveTournaments = async(mode) => {
       const client = new ConnectionClient();
-      const result = await client.query(`SELECT * FROM tournaments WHERE finished = false`);
+      const result = await client.query(`SELECT * FROM tournaments WHERE finished = false AND mode = $1`, [mode]);
       client.end();
       //dovrebbe essere uno solo in teoria quindi sarebbe più corretto ritornare result.rows[0]
       return result.rowCount > 0 ? result.rows[0] : null;

@@ -180,18 +180,12 @@ create table registrations (
     registrationTime timestamp default now(),
     teamID  varchar(250) references teams(name), 
     tournamentID integer references tournaments(id),
-    closed boolean default false,
+    closed boolean default false, /* forse meglio fare una costante */
     
     primary key(teamID, tournamentID) 
 );
 
-/*da decidere
-create table team_tournaments
-{
-    id serial primary key,
-    id_tournaments serial references tournaments(id),
-    id_team varchar(250) references team(name)
-}*/
+
 
 INSERT INTO account VALUES ('1','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','1','1'),('2','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','2','2'),('3','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','3','3'),('4','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','4','4'),('5','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','5','5'),('6','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','6','6');
 

@@ -64,12 +64,22 @@ const dalGeneric = () =>
     
     }
 
+    //check closed registrations
+    const checkRegistrations = async(tournamentID) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`SELECT closed FROM registrations WHERE tournamentID = $1 AND closed = true limit 1`, [tournamentID]);
+      client.end();
+      return result.rowCount > 0 ? true : false;
+    }
+
+
     return{
       login,
       registration,
       verifyEmail,
       checkTagUsername,
-      getGlobalRankings
+      getGlobalRankings,
+      checkRegistrations
     }
 }
 
