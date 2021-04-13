@@ -25,23 +25,24 @@
                 </tr>
                 <tr>
                     <th>Data</th>
-                    <th>Ora</th>
-                    <th>Numero di Partite</th>
+                    <th>Ora inzio</th>
+                    <th>Ora fine</th>
                     <th>Tipo di Schema</th>
                     <th>Calcola</th>
                     <th>Elimina</th>
                     <th>Modifica</th>
                     <th>Stato</th>
                     <th>Registrazioni</th>
+                    <th>Vedi Registrazioni</th>
                 </tr>
                 <% if(typeof tournament == 'object' && tournament){ %>
                     <% tournament.forEach(t => { %>
                         <tr>
                             <td><%= t.start_date %></td>
                             <td><%= t.start_time %></td>
-                            <td><%= t.number_matches %></td>
+                            <td><%= t.end_time %></td>
                             <td><%= t.id_schema %></td>
-                            <td><a class="a-icon" href="#"><img src="https://www.flaticon.com/svg/vstatic/svg/887/887103.svg?token=exp=1617212459~hmac=54feac7aaf94b23deabc9195985a6ab4"></a></td>
+                            <td><a class="a-icon" href="/endTournament/<%= t.id %>"><img src="https://www.flaticon.com/svg/vstatic/svg/887/887103.svg?token=exp=1617212459~hmac=54feac7aaf94b23deabc9195985a6ab4"></a></td>
                             <td><a class="a-icon" onclick="popup('/deleteTournament/<%= t.id %>')"><img src="https://www.flaticon.com/svg/vstatic/svg/1214/1214428.svg?token=exp=1617212106~hmac=c41a41123e39a66737b3d3e812c545aa"></a></td>
                             <td><a class="a-icon" href="/updateTournament/<%= t.id %>"><img src="https://www.flaticon.com/svg/vstatic/svg/84/84380.svg?token=exp=1617212064~hmac=a61abf2a445963f139b5d008c12bc3ce"></a></td>
                             <% if(t.finished) { 
@@ -55,7 +56,7 @@
                             <% } else { %>
                                 <td><a onclick="closePopup('/closeRegistrations/<%= t.id %>')">Chiudi registrazioni</a></td>
                             <% } %>
-
+                            <td><a class="button-link" href="/management/<%= t.id %>">Visualizza</a></td>
                         </tr>
                     <% }) %>
                 <% } %>
@@ -78,6 +79,7 @@
                     <th>Top 15</th>
                     <th>Top 20</th>
                     <th>Kill</th>
+                    <th>N° ogni Team</th>
                     <th>Gulag</th>
                     <th>Elimina</th>
                     <th>Modifica</th>
@@ -95,6 +97,7 @@
                             <td><%= s.points_top15 %></td>
                             <td><%= s.points_top20 %></td>
                             <td><%= s.kill %></td>
+                            <th><%= s.playersnumber %></th>
                             <td><%= s.gulag %></td>
                             <td><a class="a-icon" onclick="popup('/deleteRankingSchema/<%= s.id %>')"><img src="https://www.flaticon.com/svg/vstatic/svg/1214/1214428.svg?token=exp=1617212106~hmac=c41a41123e39a66737b3d3e812c545aa"></a></td>
                             <td><a class="a-icon" href="/updateRankingSchema/<%= s.id %>"><img src="https://www.flaticon.com/svg/vstatic/svg/84/84380.svg?token=exp=1617212064~hmac=a61abf2a445963f139b5d008c12bc3ce"></a></td>

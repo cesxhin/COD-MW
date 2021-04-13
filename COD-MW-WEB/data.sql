@@ -14,31 +14,12 @@ create table players
     platform varchar(50) not null,
     uno varchar(250) references account(uno) not null,
 );
-/*da decidere*/
-create table resultsWZ
-(
-    matchID integer primary key,
-    playerID varchar(250) references players(tag_username) on delete cascade,
-    result integer,
-    duration integer,
-    map varchar(250),
-    kill integer,
-    headshots integer,
-    assists integer,
-    deaths integer,
-    suicides integer,
-    damageDone integer,
-    executions integer,
-    shotsFired integer,
-    nearmisses integer,
-    shotsMissed integer,
-    shotsLanded integer,
-);
 
 create table rankingSchemas
 (
     id serial primary key,
     name varchar(250) not null,
+    playersNumber integer not null,
     points_top1 integer not null,
     points_top2 integer not null,
     points_top3 integer not null,
@@ -54,120 +35,122 @@ create table rankingSchemas
 create table tournaments
 (
     id serial primary key,
-    start_date date NOT NULL,                 
-    start_time time NOT NULL,  
-    mode varchar(24) NOT NULL,               
-    number_matches integer,
+    start_date date NOT NULL,
+    start_time time NOT NULL,
+    end_time time NOT NULL,
+    mode varchar(24) NOT NULL,     /* duo, trio, quad */
     id_schema integer references rankingSchemas(id),
     finished boolean default false
 );
 
-/*teams whitelist*/
-CREATE VIEW teamsWhiteList AS 
-SELECT name, players FROM teams
-
-
-CREATE VIEW countTeamPlayers AS
-SELECT Count(*) 
-
-
-/* SELECT * FROM teams where player1 = ,.....;
-
-if(onefield == qualcosa ) //controlla se uno dei campi è vuoto 
-{
-    SELECT * FROM team
-    UPDATE TEAMS SET onefield  = null;
-} */
-/*da decidere*/
-create table teams
-(
-    name varchar(250) primary key,
-    players json not null,
-    participates boolean default false
-);
-/*
-
-    [
-        {
-            "player":"user#tag"
-        },
-        {
-            "player":"user#tag"
-        },
-        {
-            "player":"user#tag"
-        },
-        {
-            "player":"user#tag"
-        }
-    ]
-
-    
-
-*/
-/*da decidere*/
-
-create table rankings
+create table globalRankings
 (
     id serial primary key,
     teams json not null,
     id_tournament integer references tournaments (id)
 );
-
-
 /*
-rank poistion sarebb? hai scritto tu genio, la posizione in cui è arrivata la squadra in base i punteggi dello schema prestabilito anzi
-rankPositionSchema --> la posizione in base i punteggi calcolati dallo schema 
-rankPositionMZ --> la posizione in cui sono riusciti ad sopravvivere al più lungo nel gioco
-
 json_teams
 {
     "teams" :[
         {
             "teamName" : "ffdf",
-            "points":150,
-            "rankPositionSchema": 2,
-            "players":
+            "placement" : 1,
+            "totalPoints":150,
+            "matchs":
             [
                 {
-                    "username":"username#1234",
-                    "matches":
-                    [
+                    "rankWZ": 2,
+                    players : [
                         {
-                            "rank" : 54,
-                            "kill" : 3,
-                            "assists" : 1,
-                            "damageDone" : 170
+                            username : "",
+                            kills : 5
+                            killPoints: "15" // 1 kill = 5 points
                         },
                         {
-                            "rank" : 5,
-                            "kill" : 24,
-                            "assists" : 5,
-                            "damageDone" : 220
+                            username : "",
+                            kills : 0,
+                            killPoints : 5*schema,
                         },
-                        ....
-                    ]
-                }, 
-                {
-                    "username":"username#1234"
-                    "rank" : 54
-                    "kill" : 3
-                    "assists" : 1
-                    "damageDone" : 170
+                        {
+                            username : "",
+                            kills : 0,
+                            killPoints : 0*schema //killPoints = kills * killSchemaPointsBased,
+                        }
+                    ],
+                    "totalPointsMatch": 20+10
                 },
-                ...
+                {
+                    ...
+                },
+                {
+                    ...
+                }
             ]
         },
-        {
-            "teamName" : "team2",
-            "points":12,
-            "rankPosition": 50,
-            "players" : [{}]
-        }
     ] 
         
     }
 }
+*/
+
+create table teamRankings (
+    id serial primary key, 
+    teamID varchar(256) references teams(id),
+    teamResults json not null,
+    tournamentID integer references tournaments(id)
+);
+
+/*
+    
+    {
+        teamName : "Luna",
+        totalPoints : 100,
+        tournamentPlace : 2
+        results : {
+            
+            matches : [
+                {
+                    matchID : '2iro',
+                    players : [
+                        {
+                            username : "",
+                            kills : 5
+                            killPoints: "15" // 1 kill = 5 points
+                            details: 
+                            {
+                                ...
+                            }
+                        },
+                        {
+                            username : "",
+                            kills : 0,
+                            killPoints : 0*schema,
+                            details: 
+                            {
+                                ...
+                            }
+                        },
+                        {
+                            username : "",
+                            kills : 0,
+                            killPoints : 0*schema //killPoints = kills * killSchemaPointsBased,
+                            details: 
+                            {
+                                ...
+                            }
+                        }
+                    ]
+                },
+                {
+                    ...
+                },
+                {
+                    ...
+                }
+            ]
+        }
+    }
 */
 
 /* da confermare
@@ -176,12 +159,10 @@ punterei per la chiave esterna visto che una volta chiuse le iscrizioni finita l
 
 
 create table registrations (
-    
     registrationTime timestamp default now(),
-    teamID  varchar(250) references teams(name), 
-    tournamentID integer references tournaments(id),
+    teamID  varchar(250) references teams(name) on delete cascade, 
+    tournamentID integer references tournaments(id) on delete cascade,
     closed boolean default false, /* forse meglio fare una costante */
-    
     primary key(teamID, tournamentID) 
 );
 

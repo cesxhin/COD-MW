@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="/Public/style.css">
     <title>Aggiungi giocatore</title>
 </head>
-<body>
-    
+<body>    
     <div class="form-insert">
         <form action="/addPlayer" method="post">
             <% if(error) { %>
@@ -17,7 +16,7 @@
             <input type="hidden" name="nameTeam" value="<%= nameTeam %>">
             <input type="text" name="player" required>
             <input type="submit">
-            <a class="button-link" href="/viewTeam/">Torna indietro</a>
+            <a class="button-link" href="/viewTeam/<%= nameTeam %>">Torna indietro</a>
         </form>
     </div>
 </body>

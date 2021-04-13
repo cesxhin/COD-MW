@@ -2,9 +2,27 @@ const ConnectionClient = require('./connection');
 const dalTournament = () =>
 {
     //create tournament
-    const createTournament = async (tournaments) => {
+    const createTournament = async (tournament) => {
       const client = new ConnectionClient();
-      const result = await client.query('INSERT INTO tournaments (start_date, start_time, number_matches, id_schema) values ($1, $2, $3, $4)  RETURNING *', [tournaments.start_date, tournaments.start_time, tournaments.number_matches, tournaments.id_schema]);
+      const modeNumbers = await client.query('SELECT playersNumber FROM rankingSchemas WHERE id = $1', [tournament.id_schema]);
+      let mode = null;
+      switch (modeNumbers.rows[0].playersnumber) {
+        case 1:
+          mode = 'uno';
+          break;
+        case 2:
+          mode = 'duo';
+          break;
+        case 3:
+          mode = 'trio';
+          break;
+        case 4:
+          mode = 'quad';
+          break;
+        default:
+          break;
+      }
+      const result = await client.query('INSERT INTO tournaments (start_date, start_time, end_time, id_schema, mode) values ($1, $2, $3, $4, $5) RETURNING *', [tournament.start_date, tournament.start_time, tournament.end_time, tournament.id_schema, mode]);
       client.end();
       return result.rows.length > 0 ? result.rows[0] : null;
     }
@@ -35,7 +53,7 @@ const dalTournament = () =>
     //update tournaments
     const updateTournaments = async (tournaments) => {
       const client = new ConnectionClient();
-      const result = await client.query('UPDATE tournaments SET start_date=$1, start_time=$2, number_matches=$3, id_schema=$4 WHERE id = $5 RETURNING *',[tournaments.start_date, tournaments.start_time, tournaments.number_matches, tournaments.id_schema, tournaments.id]);
+      const result = await client.query('UPDATE tournaments SET start_date=$1, start_time=$2, end_time=$3, id_schema=$4 WHERE id = $5 RETURNING *',[tournaments.start_date, tournaments.start_time, tournaments.end_time, tournaments.id_schema, tournaments.id]);
       client.end();
       return result.rows.length > 0 ? result.rows[0] : null;
     }
@@ -53,13 +71,24 @@ const dalTournament = () =>
       }
     }
 
+    //close tournament by id
+    const closeTournament = async(id) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`UPDATE tournaments SET finished = true 
+                                        WHERE id = $1 RETURNING *`, [id]);
+      client.end();
+
+      return result.rowCount > 0 ? true : false;
+    }
+
     return{      
       createTournament,
       getTournaments,
       getActiveTournaments,
       getTournamentsById,
       deleteTournaments,
-      updateTournaments
+      updateTournaments,
+      closeTournament
     }
 }
 

@@ -72,6 +72,13 @@ const dalGeneric = () =>
       return result.rowCount > 0 ? true : false;
     }
 
+    //get information player
+    const getPlayerCredentials = async(username) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`SELECT a.email_cod AS codEmail, a.password_cod AS codPsw, a.password AS psw, a.uno FROM account a JOIN players p ON (a.uno = p.uno) where p.tag_username = $1`, [username]);
+      client.end();
+      return result.rowCount > 0 ? result.rows[0] : null;
+    }
 
     return{
       login,
@@ -79,7 +86,8 @@ const dalGeneric = () =>
       verifyEmail,
       checkTagUsername,
       getGlobalRankings,
-      checkRegistrations
+      checkRegistrations,
+      getPlayerCredentials
     }
 }
 

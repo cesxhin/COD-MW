@@ -12,10 +12,12 @@
 </head>
 <body>
     <div class="header">
+        <!-- ALREADY REGISTRATED -->
         <% if(registrated) { %>
             <input class="button-link iscrizione "  type="button"  value="Iscrizione Torneo" style="opacity:0.5;" readonly>
         <% } %>
-        <% if(foundTeam && !registrated) { %>
+        <!-- TEAM NOT REGISTRATED AND USER IS BOSS -->
+        <% if(foundTeam && !(registrated) && boss) { %>
             <a class="button-link iscrizione" href="/registrateTeam">Iscrizione Torneo</a>
         <% } %>
         <a class="button-link risultati" href="#">Risultati</a>

@@ -40,11 +40,11 @@ form input[type=email], form input[type=password], form input[type=date], form i
 }
 form input[type=email]
 {
-    background: url(https://www.flaticon.com/svg/vstatic/svg/546/546394.svg?token=exp=1617142012~hmac=aa3947fa035aa1b3cc55bfb92e4be636) no-repeat scroll 5px 0px;
+    background: url('./Assets/email.png') no-repeat scroll 5px 0px;
 }
 form input[type=password]
 {
-    background: url(https://www.flaticon.com/svg/vstatic/svg/747/747398.svg?token=exp=1617142510~hmac=962b76505c3419af6ee04926fc3fac69) no-repeat scroll 5px 0px;
+    background: url('./Assets/password.png') no-repeat scroll 5px 0px;
 }
 form input[type=checkbox]
 {

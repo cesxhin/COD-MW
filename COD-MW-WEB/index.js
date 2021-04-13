@@ -1,8 +1,5 @@
 const path = require('path');
 
-//COD WZ API
-const cod = require('./cod');
-
 
 //security
 const sha256 = require("sha256");
@@ -25,6 +22,9 @@ fastify.decorate('dalTournament', require('./DbAccess/TournamentRepository')());
 fastify.decorate('dalTeam', require('./DbAccess/TeamRepository')());
 fastify.decorate('dalGeneric', require('./DbAccess/GenericRepository')());
 fastify.decorate('dalRegistration', require('./DbAccess/RegistrationRepository')());
+fastify.decorate('dalRegistrationTournaments', require('./DbAccess/RegistrationTournamentsRepository')());
+//COD WZ API
+fastify.decorate('cod', require('./APICaller/CodService')());
 
 //import or export date
 fastify.register(require('fastify-formbody'));
@@ -110,11 +110,11 @@ fastify.post('/registration', async (req, reply) => {
     return;
   }
   //testing connection
-  const login = await cod.verifyLogin(data['email_cod'],data['password_cod']);
+  const login = await fastify.cod.verifyLogin(data['email_cod'],data['password_cod']);
   if(login === 'success')
   {
-    const uno = await cod.getUno();
-    const tag_username = await cod.getTagUsername(data['platform']);
+    const uno = await fastify.cod.getUno();
+    const tag_username = await fastify.cod.getGamerTag(data['platform']);
     const psw_sha256 = sha256(data['password'])
     const crypt = new Cryptr(psw_sha256);
     const psw_cod_aes = crypt.encrypt(data['password_cod']);
@@ -145,9 +145,20 @@ fastify.post('/registration', async (req, reply) => {
 fastify.get('/home', async (req, reply) => {
   //tag
   const foundTeam = await fastify.dalTeam.checkPlayerIntoTeamBy(req.cookies.tag_username);
-  let registrated = await fastify.dalTeam.checkTeamRegistration(foundTeam);
-  reply.setCookie('teamName', foundTeam);
-  return reply.view('./Generic/home.ejs', {cookie: req.cookies, foundTeam, registrated});
+
+  let registrated = false;
+  let checkBoss = false;
+  if(foundTeam)
+  {
+    registrated = await fastify.dalTeam.checkTeamRegistration(foundTeam);
+  
+    reply.setCookie('teamName', foundTeam);
+  
+    checkBoss = await fastify.dalTeam.checkIfBoss(foundTeam, req.cookies.tag_username);
+  }
+    
+  
+  return reply.view('./Generic/home.ejs', {boss : checkBoss, cookie: req.cookies, foundTeam, registrated});
 });
 
 //management
@@ -155,7 +166,10 @@ fastify.get('/management', async (req, reply) => {
   const schemas = await fastify.dalRankingSchema.getRankingSchemas();
   const tournaments = await fastify.dalTournament.getTournaments();
 
+  if(!tournaments)
+    return reply.view('./Generic/management.ejs', {schemas, tournament : null, cookies : req.cookies, closed : false});
   let tournamentsClosedOrNot = await Promise.all(tournaments.map(async t => {
+    t.start_date = new Date(t.start_date).toISOString().split('T')[0];
     t.closed = await fastify.dalGeneric.checkRegistrations(t.id);
     return t;
   }));
@@ -163,6 +177,30 @@ fastify.get('/management', async (req, reply) => {
   return reply.view('./Generic/management.ejs', {schemas, tournament : tournamentsClosedOrNot, cookies : req.cookies, closed : false});
 });
 
+//view registration
+fastify.get('/management/:id', async (req, reply) => {
+  const registratedTeamsID = await fastify.dalRegistrationTournaments.getRegistrationById(req.params.id);
+  const teams = [];
+  for(let pos in registratedTeamsID)
+  {
+    let jsonPlayers = await fastify.dalTeam.getTeam(registratedTeamsID[pos].teamid);
+    let boss = jsonPlayers.players[0].player;
+    teams.push({
+      name : registratedTeamsID[pos].teamid,
+      boss
+    });
+  }
+  /*
+  registratedTeamsID.forEach(async r => {
+    let jsonPlayers = await fastify.dalTeam.getTeam(r.teamid);
+    let boss = jsonPlayers.players[0].player;
+    teams.push({
+      name : r.teamid,
+      boss
+    });
+  })*/
+  return reply.view('./Registration/registrationViewTeams.ejs', {teams});
+});
 //create tournament 
 fastify.get('/tournament', async (req, reply) => {
   const schemas = await fastify.dalRankingSchema.getRankingSchemas();
@@ -453,7 +491,6 @@ fastify.post('/globalRankings', async(req, reply) => {
 //Registration
 fastify.get('/registrateTeam', async(req, reply) => {
   const teamName = req.cookies.teamName;
-  
   if(!teamName) {
     return reply.view('./Generic/home.ejs', {foundTeam : false, cookie : req.cookies, registrated : false});
   }
@@ -467,12 +504,13 @@ fastify.get('/registrateTeam', async(req, reply) => {
 
   let count = team.players.length;
   let mode = null;
-
-  if(count == 2)
+  if(count == 1)
+    mode = 'uno';
+  else if(count == 2)
     mode = 'duo';
-  if(count == 3)
+  else if(count == 3)
     mode = 'trio';
-  if(count == 4)
+  else
     mode = 'quad';
   
 
@@ -507,6 +545,50 @@ fastify.get('/closeRegistrations/:id', async(req, reply) => {
   return `Errore nello svolgimento dell'operazione`;
 })
 
+fastify.get('/endTournament/:id', async(req, reply) => {
+  const tournamentID = req.params.id;
+  
+  //close tournament
+ /* const closed = await fastify.dalTournament.closeTournament(tournamentID);
+  
+  if(!closed)
+    reply.redirect('/management');
+*/
+  //get teams registrated to this tournament
+  const registratedTeams = await fastify.dalRegistration.getRegistrations(tournamentID);
+
+  if(!registratedTeams)
+    reply.redirect('/management');
+  
+    let teamResultsGlobal = {};
+  //calculate team rankings foreach team
+  for (let i = 0; i < registratedTeams.length; i++) {
+    //json
+    let teamResults = {};
+    //get players
+    let team = await fastify.dalTeam.getTeam(registratedTeams[i].teamid);
+    let players = team.players;
+    for (let x = 0; x < players.length; x++) {
+      let username = players[x].player;
+
+      //get credentials
+      let encryptedCredentials = await fastify.dalGeneric.getPlayerCredentials(username);
+      const crypt = new Cryptr(encryptedCredentials.psw);
+      const email = encryptedCredentials.codemail;
+      const uno = encryptedCredentials.uno;
+      const plainCodPsw = crypt.decrypt(encryptedCredentials.codpsw);
+      
+      //login with credentials
+      let result = await fastify.cod.getMatches(email ,plainCodPsw, uno);
+      if(!result)
+        return; //error, reopen tournament or retry
+      console.log(result);
+    }
+    
+  }
+  
+  //calculate global ranking
+})
 
 fastify.listen(3000, (err, address) => {
   if (err) throw err

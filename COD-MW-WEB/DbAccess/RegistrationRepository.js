@@ -5,7 +5,6 @@ const dalRegistration = () => {
     const registrateTeam = async(team, tournament) => {
         const client = new ConnectionClient();
         const result = await client.query(`INSERT INTO registrations (teamid, tournamentid) VALUES ($1, $2) RETURNING * `, [team, tournament]);
-        await client.query('UPDATE teams SET participates = true WHERE name = $1', [team]);
         client.end();
         return result.rowCount > 0 ? result.rows[0] : null;
     }
@@ -16,9 +15,18 @@ const dalRegistration = () => {
         client.end();
         return result.rowCount > 0 ? true : false;
     }
+    
+    //get participating teams to a precise tournament
+    const getRegistrations = async(tournament) => {
+        const client = new ConnectionClient();
+        const result = await client.query('SELECT teamID FROM registrations WHERE closed = true AND tournamentid = $1', [tournament]);
+        client.end();
+        return result.rowCount > 0 ? result.rows : null;
+    }
     return {
         registrateTeam,
-        closeRegistrations
+        closeRegistrations,
+        getRegistrations
     }
 }
 

@@ -17,7 +17,9 @@ const dalTeam = () =>
     //check if  players are into team
     const checkPlayersIntoTeam = async(jsonPlayers) => {
       const client = new ConnectionClient();
-      const result = await client.query('SELECT * FROM teams');
+
+      try {
+        const result = await client.query('SELECT * FROM teams');
       //Funzionante
       for (let z in jsonPlayers)
       {
@@ -27,12 +29,19 @@ const dalTeam = () =>
           }
       }
       return false;
+      } catch (error) {
+        
+      }
+      finally {
+        client.end();
+      }
+      
     }
 
     //check if a team already participates
     const checkTeamRegistration = async(teamName) => {
       const client = new ConnectionClient();
-      const result = await client.query(`SELECT * FROM teams WHERE participates = true AND name = $1`, [teamName]);
+      const result = await client.query(`SELECT * FROM registrations WHERE teamid = $1`, [teamName]);
       client.end();
       return result.rowCount > 0 ? true : null;
     }
@@ -41,11 +50,19 @@ const dalTeam = () =>
     const getTeam = async(name) => {
       const client = new ConnectionClient();
       const result = await client.query('SELECT players FROM teams WHERE name = $1',[name]);
+      client.end();
       return result.rowCount > 0 ? result.rows[0] : null;
       /*//Funzionante
       if(result.rows[0].players.find(p => p.player === player))
           return true;
       return false;*/
+    }
+
+    const checkIfBoss = async(teamName, playerTag) => {
+      const jsonPlayers = await getTeam(teamName);
+      const bossTag = jsonPlayers.players[0].player;
+      
+      return bossTag === playerTag ? true : false;
     }
 
     //create team
@@ -88,6 +105,7 @@ const dalTeam = () =>
       checkPlayerIntoTeamBy,
       checkPlayersIntoTeam,
       checkTeamRegistration,
+      checkIfBoss,
       getTeam,
       updatePlayer,
       createTeam,
