@@ -10,7 +10,7 @@
 <body>
     <div class="form-insert">
         <form action="/globalRankings" method="post">
-            <% if(!rankings) {%> 
+            <% if(!rankings) { %> 
                 <a href="/home">Torna indietro</a>
     
                 <label for="tournamentDate">Data Torneo</label>
@@ -22,26 +22,62 @@
                     <table>
                         <tr>
                             <th>ID Torneo</th>
-                            <th>Data inizio</th>
-                            <th>Ora inizio</th>
-                            <th>Ora fine</th>
+                            <th>Data Inizio</th>
+                            <th>Ora Inizio</th>
+                            <th>Ora Fine</th>
                         </tr>
                         <tr>
-                            <% 
-                                var date = new Date(rankings.start_date.utcStartSeconds * 1000).toLocaleDateString('it-IT'); 
-                            %>
-                            <td><%= rankings.id_tournament %></td>
-                            <td><%= rankings.number_matches %></td>
-                            <td><%= %></td>
-                            <td><%= new Date(rankings.start_time.utcStartSeconds * 1000).toLocaleTimeString('it-IT'); %></td>
-                            <td><%= new Date(rankings.end_time.utcStartSeconds * 1000).toLocaleTimeString('it-IT'); %></td>
+                            <td><%= rankings.id %></td>
+                            <td><%= new Date(rankings.start_date).toLocaleDateString('it-IT') %></td>
+                            <td><%= rankings.start_time %></td>
+                            <td><%= rankings.end_time %></td>
                         </tr>
                     </table>
+                        
+                        <br>
+                    <table>
+                        <% rankings.teams.teams.forEach(t => { %>
+                            <tr>
+                                <th><%= t.tournamentPlace %></th>
+                                <th colspan="2"style="background-color : chartreuse"><%= t.teamName %></th>
+                                <th style="background-color: sandybrown;">1° PARTITA</th>
+                                <th style="background-color: skyblue;">2° PARTITA</th>
+                                <th style="background-color: tomato;">3° PARTITA</th>
+                                <th style="background-color: darksalmon;">TOT : </th>
+                            </tr>
+                            <tr>
+                                <th colspan="3" >Punteggio : </th>
+                                <td style="background-color: sandybrown;"><%= t.matches[0].totalPointsMatch %></td>
+                                <td style="background-color: skyblue;"><%= t.matches[1].totalPointsMatch %></td>
+                                <td style="background-color: tomato;"><%= t.matches[2].totalPointsMatch %></td>
+                                <td style="background-color: darksalmon;"><%= t.totalPoints %></td>
+                            </tr>
+                            <% const m = t.matches;    
+                                for(let i = 0; i < m.length; i++) {
+                                    for(let k = 0 ; k < m[i].players.length; k++){ 
+                                        let totalPointsMatch = 0; %>
+                                        <tr>
+                                            <th><%= m[i].players[k].username %></th>
+                                            <td colspan="2">KILL : </td> 
+                                            <% let index = i; 
+                                            while(index < m.length) { %>
+                                                <td><%= m[index].players[k].kills %></td>
+                                                <% totalPointsMatch += m[index].players[k].kills;
+                                                index++; 
+                                            } %>
+                                            <td><%= totalPointsMatch %></td>
+                                        </tr>
+                                        
+                                    <%}
+                                    break;
+                                }
+                             }); %> 
+                    </table>
+                       
                     
                 </div>
-                <a class="button-link" href="/globalRankings">Torna indietro</a>
+                <a class="button-link" href="/home">Torna indietro</a> 
             <% } %>
-            <a class="button-link" href="/home">Torna indietro</a>
         </form>
     </div>
     

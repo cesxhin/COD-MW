@@ -706,7 +706,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
   //END
 
   let tournamentPlace = [];
-  //select only 3 match and raking
+  //select only 3 match and ranking
   for (let i = 0; i < registratedTeams.length; i++) {
     let maxArray = []
     for (let k = 0; k < teamResultsGlobal.teams[i].matches.length; k++) {

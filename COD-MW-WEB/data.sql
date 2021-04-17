@@ -45,7 +45,7 @@ create table tournaments
 
 create table globalRankings
 (
-    id integer references tournaments (id) PRIMARY KEY,
+    id integer references tournaments (id) PRIMARY KEY, /*change name to tournamentID */
     teams json not null
 );
 /*
