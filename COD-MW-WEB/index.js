@@ -23,6 +23,8 @@ fastify.decorate('dalTeam', require('./DbAccess/TeamRepository')());
 fastify.decorate('dalGeneric', require('./DbAccess/GenericRepository')());
 fastify.decorate('dalRegistration', require('./DbAccess/RegistrationRepository')());
 fastify.decorate('dalRegistrationTournaments', require('./DbAccess/RegistrationTournamentsRepository')());
+fastify.decorate('dalGlobalRankings', require('./DbAccess/GlobalRankingsRepository')());
+fastify.decorate('dalTeamRankings', require('./DbAccess/TeamRankingsRepository')());
 //COD WZ API
 fastify.decorate('cod', require('./APICaller/CodService')());
 
@@ -476,8 +478,7 @@ fastify.get('/globalRankings', (req, reply) => {
 fastify.post('/globalRankings', async(req, reply) => {
   const date = req.body.tournamentDate;
 
-  const rankings = await fastify.dalGeneric.getGlobalRankings(date);
-
+  const rankings = await fastify.dalGlobalRankings.getGlobalRankings(date);
   //manca calcolo punti e visualizzazione players
   if(!rankings) {
     return reply.view('./Generic/globalRankings.ejs', {rankings : null});
@@ -547,27 +548,33 @@ fastify.get('/closeRegistrations/:id', async(req, reply) => {
 
 fastify.get('/endTournament/:id', async(req, reply) => {
   const tournamentID = req.params.id;
-  
-  //close tournament
- /* const closed = await fastify.dalTournament.closeTournament(tournamentID);
-  
-  if(!closed)
-    reply.redirect('/management');
-*/
   //get teams registrated to this tournament
   const registratedTeams = await fastify.dalRegistration.getRegistrations(tournamentID);
-
+  const tournament = await fastify.dalTournament.getTournamentsById(tournamentID);
+  const rankingSchema = await fastify.dalRankingSchema.getRankingSchemaById(tournament.id_schema)
   if(!registratedTeams)
     reply.redirect('/management');
-  
-    let teamResultsGlobal = {};
+
+    let teamResultsGlobal = {teams:[]};
+    let teamResultsPrivate = {teams:[]};
+    //temporany
+    let jsonTeam = [];
   //calculate team rankings foreach team
   for (let i = 0; i < registratedTeams.length; i++) {
     //json
-    let teamResults = {};
+    teamResultsGlobal.teams.push({
+      teamName : registratedTeams[0].teamid,
+      totalPoints : null,
+      tournamentPlace : null,
+      matches:[]
+    });
     //get players
     let team = await fastify.dalTeam.getTeam(registratedTeams[i].teamid);
+    //put into for verify players
+    jsonTeam.push({name: registratedTeams[0].teamid, players: team.players});
+    //
     let players = team.players;
+    //insert json
     for (let x = 0; x < players.length; x++) {
       let username = players[x].player;
 
@@ -582,13 +589,229 @@ fastify.get('/endTournament/:id', async(req, reply) => {
       let result = await fastify.cod.getMatches(email ,plainCodPsw, uno);
       if(!result)
         return; //error, reopen tournament or retry
-      console.log(result);
+      if(teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches.length > 0)
+      {
+        for(let z=0; z<teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches.length; z++)
+        {
+          //matching
+          for (let k = 0; k < result.matches.length; k++) 
+          {
+            let matchResults = {};
+            if(teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches[z].matchID === result.matches[k].matchID){
+                //check gulag
+                if(rankingSchema.gulag)
+                {
+                  matchResults = {
+                    username : username,
+                    kills : result.matches[k].playerStats.kills,
+                    killPoints: (result.matches[k].playerStats.kills * rankingSchema.kill),
+                    //details: result.matches[k]
+                  }
+                }else
+                {
+                  matchResults = {
+                      username : username,
+                      kills : result.matches[k].playerStats.kills - result.matches[k].playerStats.gulagKills,
+                      killPoints: result.matches[k].playerStats.kills * rankingSchema.kill,
+                      //details: result.matches[k]
+                    }
+                }
+                let players = {
+                  username : username, 
+                  details: result.matches[k]
+                }
+                teamResultsPrivate.teams[teamResultsGlobal.teams.length -1].matches[z].players.push(players);
+                //insert teamRankings
+                teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches[z].players.push(matchResults);
+                teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches[z].totalPointsMatch = (teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches[z].totalPointsMatch + matchResults.killPoints);
+            console.log();
+            }
+          }
+        }
+      }else
+      {
+        teamResultsPrivate.teams[teamResultsGlobal.teams.length -1] = {nameTeam: registratedTeams[i].teamid, matches: []}
+        //matching
+        for (let k = 0; k < result.matches.length; k++) 
+        {
+          let matchResults = {};
+          var timeMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleTimeString('it-IT');
+          var dateMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleDateString('it-IT');
+          var startTimeTournament = tournament.start_time;
+          var endTimeTournament = tournament.end_time;
+          var dateTournament = new Date(tournament.start_date).toLocaleDateString('it-IT');
+          if(dateMatch === dateTournament){
+            if(Date.parse('01/01/2011 ' + timeMatch) >= Date.parse('01/01/2011 ' + startTimeTournament) && Date.parse('01/01/2011 ' + timeMatch) <= Date.parse('01/01/2011 ' + endTimeTournament)){
+              //check gulag
+              if(rankingSchema.gulag)
+              {
+                matchResults = {
+                  username : username,
+                  kills : result.matches[k].playerStats.kills,
+                  killPoints: (result.matches[k].playerStats.kills * rankingSchema.kill),
+                  //details: result.matches[k]
+                }
+              }else
+              {
+                matchResults = {
+                    username : username,
+                    kills : result.matches[k].playerStats.kills - result.matches[k].playerStats.gulagKills,
+                    killPoints: result.matches[k].playerStats.kills * rankingSchema.kill,
+                    //details: result.matches[k]
+                  }
+              }
+              let players = {
+                username : username, 
+                details: result.matches[k]
+              }
+              teamResultsPrivate.teams[teamResultsGlobal.teams.length -1].matches.push({
+                matchID: result.matches[k].matchID,
+                players: [players]});
+              //ranking points
+              let bonus = 0;
+              if(result.matches[k].playerStats.teamPlacement == 1)
+              {
+                bonus = rankingSchema.points_top1;
+              }else if(result.matches[k].playerStats.teamPlacement == 2)
+              {
+                bonus = rankingSchema.points_top2;
+              }else if(result.matches[k].playerStats.teamPlacement == 3)
+              {
+                bonus = rankingSchema.points_top3;
+              }else if(result.matches[k].playerStats.teamPlacement > 3 && result.matches[k].playerStats.teamPlacement <= 5)
+              {
+                bonus = rankingSchema.points_top5;
+              }else if(result.matches[k].playerStats.teamPlacement > 5 && result.matches[k].playerStats.teamPlacement <= 10)
+              {
+                bonus = rankingSchema.points_top10;
+              }else if(result.matches[k].playerStats.teamPlacement > 10 && result.matches[k].playerStats.teamPlacement <= 15)
+              {
+                bonus = rankingSchema.points_top15;
+              }else if(result.matches[k].playerStats.teamPlacement > 15 && result.matches[k].playerStats.teamPlacement <= 20)
+              {
+                bonus = rankingSchema.points_top20;
+              }
+              //insert teamRankings
+              teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches.push({
+                matchID: result.matches[k].matchID,
+                players: [matchResults],
+                totalPointsMatch: (matchResults.killPoints +  bonus)
+              });
+            }
+          }
+        }
+      }
     }
-    
   }
-  
-  //calculate global ranking
+  //END
+
+  let tournamentPlace = [];
+  //select only 3 match and raking
+  for (let i = 0; i < registratedTeams.length; i++) {
+    let maxArray = []
+    for (let k = 0; k < teamResultsGlobal.teams[i].matches.length; k++) {
+      if(maxArray.length < 3)
+      {
+        maxArray.push({
+          matchID: teamResultsGlobal.teams[i].matches[k].matchID,
+          totalPointsMatch: teamResultsGlobal.teams[i].matches[k].totalPointsMatch
+        });
+      }else
+      {
+        let min = -1;
+        for(let z=0; z<maxArray.length; z++)
+        {
+          if(maxArray[z].totalPointsMatch < teamResultsGlobal.teams[i].matches[k].totalPointsMatch)
+          {
+            min = z;
+          }
+        }
+        if(min != -1)
+        {
+          maxArray[min] = {
+            matchID: teamResultsGlobal.teams[i].matches[k].matchID,
+            totalPointsMatch: teamResultsGlobal.teams[i].matches[k].totalPointsMatch
+          };
+        }
+      }
+    }
+    //remove match
+    for (let k = 0; k < teamResultsGlobal.teams[i].matches.length; k++) {
+      let remove = true;
+      for(let z=0; z<maxArray.length; z++)
+      {
+        if(maxArray[z].matchID === teamResultsGlobal.teams[i].matches[k].matchID)
+        {
+          teamResultsGlobal.teams[i].totalPoints += teamResultsGlobal.teams[i].matches[k].totalPointsMatch
+          remove = false;
+        }
+      }
+      if(remove)
+      {
+        teamResultsGlobal.teams[i].matches.splice(k,k);
+      }
+    }
+    //tournamentPlace only insert
+    tournamentPlace.push({teamName: teamResultsGlobal.teams[i].teamName, totalPoints: teamResultsGlobal.teams[i].totalPoints});
+  }
+  //tournamentPlace.push({teamName: "a", totalPoints: 10});
+  //tournamentPlace.push({teamName: "b", totalPoints: 12});
+  //tournamentPlace order and set position in rainking
+  tournamentPlace.sort(function(a,b)
+  {
+    return b.totalPoints - a.totalPoints;
+  });
+  for(let i=0; i<teamResultsGlobal.teams.length; i++)
+  {
+    for(let k=0; k<tournamentPlace.length; k++)
+    {
+      if(teamResultsGlobal.teams[i].teamName === tournamentPlace[k].teamName)
+      {
+        teamResultsGlobal.teams[i].tournamentPlace = k+1;
+      }
+    }
+  }
+  //close tournament
+  const closed = await fastify.dalTournament.closeTournament(tournamentID);
+  if(!closed)
+    reply.redirect('/management');
+  //insert into db
+  const rs = await fastify.dalGlobalRankings.insertGlobalRankings(teamResultsGlobal, tournamentID);
+  for(let i=0; i<teamResultsPrivate.teams.length; i++)
+  {
+    const result = await fastify.dalTeamRankings.insertTeamRankings(teamResultsPrivate.teams[i].nameTeam, teamResultsPrivate.teams[i], tournamentID);
+  }
+  reply.redirect('/management');
 })
+
+/*function findNameIntoTeam(jsonTeam, teams)
+{  
+  for(let x=0; x<jsonTeam.length; x++)
+  {
+    if(jsonTeam[x].name === teams.teamName)
+    {
+      let count = 0, pos=0;
+      for(let k=0; k<jsonTeam[x].players.length; k++)
+      {
+        pos = k;
+        for(let i=0; i<teams.players.length; i++)
+        {
+          if(jsonTeam[x].players[k] === teams.players[i])
+          {
+            ++count;
+          }
+        }
+      }
+      if(teams.players.length === pos)
+      {
+        return true;
+      }else
+      {
+        return false;
+      }
+    }
+  }
+}*/
 
 fastify.listen(3000, (err, address) => {
   if (err) throw err

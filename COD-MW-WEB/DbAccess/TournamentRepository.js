@@ -30,7 +30,7 @@ const dalTournament = () =>
     //get tournaments
     const getTournaments = async () => {
       const client = new ConnectionClient();
-      const result = await client.query('SELECT * FROM tournaments ORDER BY id ASC');
+      const result = await client.query('SELECT * FROM tournaments WHERE finished = false ORDER BY id ASC');
       client.end();
       return result.rows.length > 0 ? result.rows : null;
     }

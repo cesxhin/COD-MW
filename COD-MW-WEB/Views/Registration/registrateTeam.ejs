@@ -18,7 +18,7 @@
             
             <% if(tournaments) { %>
                 <select name="tournaments">
-                    <option value="<%= tournaments.id%>">Torneo delle ore : <%= tournaments.start_time %> del <%= new Date(tournaments.start_date).toISOString().split('T')[0] %></option>
+                    <option value="<%= tournaments.id%>">Torneo delle ore : <%= tournaments.start_time %> del <%= new Date(tournaments.start_date).toLocaleDateString('it-IT') %></option>
                 </select>
                 <input type="submit" value="Registrati">
             <% } else { %>

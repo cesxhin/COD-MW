@@ -45,9 +45,8 @@ create table tournaments
 
 create table globalRankings
 (
-    id serial primary key,
-    teams json not null,
-    id_tournament integer references tournaments (id)
+    id integer references tournaments (id) PRIMARY KEY,
+    teams json not null
 );
 /*
 json_teams
@@ -95,10 +94,10 @@ json_teams
 */
 
 create table teamRankings (
-    id serial primary key, 
-    teamID varchar(256) references teams(id),
+    id integer references tournaments(id),
+    teamID varchar(256) references teams(name),
     teamResults json not null,
-    tournamentID integer references tournaments(id)
+    PRIMARY KEY (id, teamID);
 );
 
 /*
@@ -107,49 +106,118 @@ create table teamRankings (
         teamName : "Luna",
         totalPoints : 100,
         tournamentPlace : 2
-        results : {
-            
-            matches : [
-                {
-                    matchID : '2iro',
-                    players : [
+        matches : [
+            {
+                matchID : '2iro',
+                totalPointsMatch : 10,
+                players : [
+                    {
+                        username : "",
+                        kills : 5
+                        killPoints: "15" // 1 kill = 5 points
+                        details: 
                         {
-                            username : "",
-                            kills : 5
-                            killPoints: "15" // 1 kill = 5 points
-                            details: 
-                            {
-                                ...
-                            }
-                        },
-                        {
-                            username : "",
-                            kills : 0,
-                            killPoints : 0*schema,
-                            details: 
-                            {
-                                ...
-                            }
-                        },
-                        {
-                            username : "",
-                            kills : 0,
-                            killPoints : 0*schema //killPoints = kills * killSchemaPointsBased,
-                            details: 
-                            {
-                                ...
-                            }
+                            ...
                         }
-                    ]
-                },
-                {
-                    ...
-                },
-                {
-                    ...
-                }
-            ]
-        }
+                    },
+                    {
+                        username : "",
+                        kills : 0,
+                        killPoints : 0*schema,
+                        details: 
+                        {
+                            ...
+                        }
+                    },
+                    {
+                        username : "",
+                        kills : 0,
+                        killPoints : 0*schema //killPoints = kills * killSchemaPointsBased,
+                        details: 
+                        {
+                            ...
+                        }
+                    }
+                ]
+            },
+            {
+                ...
+            },
+            {
+                ...
+            }
+        ]
+    }
+
+    {
+        teamName : "Luna",
+        totalPoints : 100,
+        tournamentPlace : 2
+        matches : [
+            {
+                matchID : '2iro',
+                totalPointsMatch : 10,
+                players : [
+                    {
+                        username : "cesxhin",
+                        kills : 2
+                        killPoints: "10" // 1 kill = 5 points
+                        details:
+                        {
+                            ...
+                        }
+                    },
+                    {
+                        username : "mateo",
+                        kills : 2
+                        killPoints: "10" // 1 kill = 5 points
+                        details:
+                        {
+                            ...
+                        }
+                    }
+                ]
+            },
+            {
+                matchID : '2ir123123123123o',
+                totalPointsMatch : 20,
+                players : [
+                    {
+                        username : "cesxhin",
+                        kills : 4
+                        killPoints: "20" // 1 kill = 5 points
+                        details:
+                        {
+                            ...
+                        }
+                    },
+                    {
+                        username : "mateo",
+                        kills : 2
+                        killPoints: "10" // 1 kill = 5 points
+                        details:
+                        {
+                            ...
+                        }
+                    }
+                ]
+            },
+            {
+                matchID : '2ir123123123123o',
+                totalPointsMatch : 20,
+                players : [
+                    {
+                        username : "cesxhin",
+                        kills : 4
+                        killPoints: "20" // 1 kill = 5 points
+                        details:
+                        {
+                            ...
+                        }
+                    }
+                ]
+            }
+        ]
     }
 */
 

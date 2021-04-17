@@ -22,38 +22,22 @@
                     <table>
                         <tr>
                             <th>ID Torneo</th>
-                            <th>Numero partite</th>
                             <th>Data inizio</th>
                             <th>Ora inizio</th>
+                            <th>Ora fine</th>
                         </tr>
                         <tr>
+                            <% 
+                                var date = new Date(rankings.start_date.utcStartSeconds * 1000).toLocaleDateString('it-IT'); 
+                            %>
                             <td><%= rankings.id_tournament %></td>
                             <td><%= rankings.number_matches %></td>
-                            <td><%= rankings.start_date %></td>
-                            <td><%= rankings.start_time %></td>
+                            <td><%= %></td>
+                            <td><%= new Date(rankings.start_time.utcStartSeconds * 1000).toLocaleTimeString('it-IT'); %></td>
+                            <td><%= new Date(rankings.end_time.utcStartSeconds * 1000).toLocaleTimeString('it-IT'); %></td>
                         </tr>
                     </table>
                     
-                </div>
-
-                <div class="table-managament">
-                    <table>
-                        <tr>
-                            <th colspan="4" style="font-size : 30">SQUADRE</th>
-                        </tr>
-                        <tr style="text-align: center;">
-                            <th>Posizione</th>
-                            <th>Nome</th>
-                            <th>Punti</th>
-                        </tr>
-                        <tr style="text-align: center;">
-                            <% rankings.teams.forEach(t => { %>
-                                <td><%= t.rankPositionSchema %></td>
-                                <td><%= t.teamName %></td>
-                                <td><%= t.points %></td>
-                            <% }) %>
-                        </tr>
-                    </table>
                 </div>
                 <a class="button-link" href="/globalRankings">Torna indietro</a>
             <% } %>
