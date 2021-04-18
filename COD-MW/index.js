@@ -3,7 +3,7 @@ const fs = require('fs');
 async function login()
 {
     try {
-        await API.login('mattia.ceschin@gmail.com', 'DTjjsULmR6EjpvcrxjEO');
+        await API.login('mattia.ceschin@gmail.com', '');
         let data = JSON.stringify(await API.getLoggedInUserInfo());
         console.log("Successo! " + data);
     } catch(Error) {
@@ -20,7 +20,7 @@ async function login()
          //Handle Exception
          console.log(Error)
      }*/
-     try {
+     /*try {
         let data = await API.MWcombatwz('11211544909771063639','uno');
         fs.writeFile("data-warzone.txt",JSON.stringify(data) , function (err) {
             if (err) return console.log(err);
@@ -28,6 +28,6 @@ async function login()
           });
      } catch(Error) {
          //Handle Exception
-     }
+     }*/
 }
 login()

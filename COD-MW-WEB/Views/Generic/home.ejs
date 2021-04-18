@@ -1,40 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Public/style.css">
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Home</title>
-</head>
-<body>
-    <div class="header">
-        <!-- ALREADY REGISTRATED -->
-        <% if(registrated) { %>
-            <input class="button-link iscrizione "  type="button"  value="Iscrizione Torneo" style="opacity:0.5;" readonly>
-        <% } %>
-        <!-- TEAM NOT REGISTRATED AND USER IS BOSS -->
-        <% if(foundTeam && !(registrated) && boss) { %>
-            <a class="button-link iscrizione" href="/registrateTeam">Iscrizione Torneo</a>
-        <% } %>
-        <a class="button-link risultati" href="#">Risultati</a>
-        <a class="button-link statistiche" href="#">Statistiche</a>
-        <% if(cookie.admin === 'true') {%>
-            <a class="button-link gestione" href="/management">Gestione Torneo</a>
-        <% } %>
- 
-        <% if(foundTeam) {%>
-            <a class="button-link viewTeam" href="/viewTeam/<%= foundTeam %>">Vedi Team</a>
-            <a class="button-link " href="/teamRankings">Classifiche Team </a>
-        <% } else { %>
-            <a class="button-link creaTeam" href="/createTeam">Crea Team</a>
-        <% } %>
-        <a class="button-link " href="/globalRankings">Classifica Globale </a>
+<html lang="it-IT">
 
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Torneo COD WZ</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <link rel="shortcut icon" href="/Public/assets/images/favicon.ico">
+
+        <!--Chartist Chart CSS -->
+        <link rel="stylesheet" href="/Public/plugins/chartist/css/chartist.min.css">
+        <link href="/Public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container-fluid">
+
+                    <!-- Logo container-->
+                    <div class="logo">
+                        <a href="index.html" class="logo">
+                            <img src="/Public/assets/images/logo-sm.png" alt="" class="logo-small">
+                            <img src="/Public/assets/images/logo-light.png" alt="" class="logo-large">
+                        </a>
+                    </div>
+
+                    <!-- End Logo container-->
+                    <div class="menu-extras topbar-custom">
+
+                        <ul class="navbar-right list-inline float-right mb-0">    
+                            <!-- full screen -->
+                            <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+                                <a class="nav-link" href="#" id="btn-fullscreen">
+                                    <i class="mdi mdi-fullscreen noti-icon"></i>
+                                </a>
+                            </li>
+
+                            <li class="dropdown notification-list list-inline-item">
+                                <div class="dropdown notification-list nav-pro-img">
+                                    <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                        <img src="/Public/assets/images/users/user-4.jpg" alt="user" class="rounded-circle">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                        <!-- item-->
+                                        <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5"></i> test </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item text-danger" href="/logout"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                                    </div>
+                                </div>
+                            </li>  
+                            <li class="menu-item list-inline-item">
+                                <!-- Mobile menu toggle-->
+                                <a class="navbar-toggle nav-link">
+                                    <div class="lines">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a>
+                                <!-- End mobile menu toggle-->
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- end menu-extras -->
+                    <div class="clearfix"></div>
+                </div> <!-- end container -->
+            </div>
+            <!-- end topbar-main -->
+
+            <!-- MENU Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+                            <!-- ALREADY REGISTRATED -->
+                            <% if(registrated) { %>
+                                <li class="has-submenu">
+                                    <a href="#"><i class="mdi mdi-account-alert"></i>Ti sei già iscritto</a>
+                                </li>
+                            <% } %>
+                            <% if(foundTeam && !(registrated) && boss) { %>
+                                <li class="has-submenu">
+                                    <a href="/registrateTeam"><i class="mdi mdi-account-star"></i>Iscrizione Torneo</a>
+                                </li>
+                            <% } %>
+                            <% if(cookie.admin === 'true') {%>
+                                <li class="has-submenu">
+                                    <a href="/management"><i class="ti-home"></i>Gestione Torneo</a>
+                                </li>
+                            <% } %>
+                            <!-- TEAM NOT REGISTRATED AND USER IS BOSS -->
+                            <% if(foundTeam) {%>
+                                
+                                <li class="has-submenu">
+                                    <a href="/viewTeam/<%= foundTeam %>"><i class="mdi mdi-account-multiple"></i>Vedi Team</a>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="/teamRankings"><i class="mdi mdi-format-list-bulleted"></i>Classifiche Team</a>
+                                </li>
+                            <% } else { %>
+                                <li class="has-submenu">
+                                    <a href="/createTeam"><i class="mdi mdi-account-plus"></i>Crea Team</a>
+                                </li>
+                            <% } %>
+                            <li class="has-submenu">
+                                <a href="/globalRankings"><i class="mdi mdi-format-list-bulleted-type"></i>Classifica Globale</a>
+                            </li>
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div> <!-- end #navigation -->
+                </div> <!-- end container -->
+            </div> <!-- end navbar-custom -->
+        </header>
+        <!-- End Navigation Bar-->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        2019 © Veltrix <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    
+
+        <!-- jQuery  -->
+        <script src="/Public/assets/js/jquery.min.js"></script>
+        <script src="/Public/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/Public/assets/js/jquery.slimscroll.js"></script>
+        <script src="/Public/assets/js/waves.min.js"></script>
+
+        <!--Chartist Chart-->
+        <script src="/Public/plugins/chartist/js/chartist.min.js"></script>
+        <script src="/Public/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script>
+
+        <!-- peity JS -->
+        <script src="/Public/plugins/peity-chart/jquery.peity.min.js"></script>
+
+        <script src="/Public/assets/pages/dashboard.js"></script>
         
-    </div>
-</body>
+        <!-- App js -->
+        <script src="/Public/assets/js/app.js"></script>
+
+    </body>
+
 </html>

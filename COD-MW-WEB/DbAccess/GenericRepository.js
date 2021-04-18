@@ -24,6 +24,22 @@ const dalGeneric = () =>
       return result.rows.length > 0 ? result.rows[0] : null;
     }
 
+    //get user by  auth token
+    const getUserByToken = async(token) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`SELECT * FROM account WHERE authToken = $1`, [token]);
+      client.end();
+      return result.rowCount > 0 ? result.rows[0] : null;
+    }
+
+    //add / edit auth token to user
+    const addToken = async(uno, token) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`UPDATE account SET authToken = $2 WHERE uno = $1`, [uno, token]);
+      client.end();
+      return result.rowCount > 0 ? result.rows[0] : null;
+    }
+
     //registration
     const registration = async (account, player) =>{
       const client = new ConnectionClient();
@@ -73,6 +89,8 @@ const dalGeneric = () =>
 
     return{
       login,
+      addToken,
+      getUserByToken,
       registration,
       verifyEmail,
       checkTagUsername,

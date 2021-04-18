@@ -1,28 +1,86 @@
 <!DOCTYPE html>
 <html lang="it-IT">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Public/style.css">
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Login</title>
-</head>
-<body>
-    <div class="form-insert">
-        <h1>Login</h1>
-        <form action="/login" method="post" autocomplete="off">
-            <% if(loginError) { %>
-                <p style="color:red">Email o password sbagliati!</p>
-            <% } %>
-            <input type="text" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
-            <input type="checkbox" name="remember_me">Resta connesso
-            <input type="submit" value="Accedi">
-            Se non hai un account <a href="/registration">Registrati subito!</a>
-        </form>
-    </div>
-</body>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Veltrix - Responsive Bootstrap 4 Admin Dashboard</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <link rel="shortcut icon" href="/Public/assets/images/favicon.ico">
+
+        <link href="/Public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body class="pb-0">        
+        <div class="wrapper-page">
+
+            <div class="card overflow-hidden account-card mx-3">
+                
+                <div class="bg-primary p-4 text-white text-center position-relative">
+                    <h4 class="font-20 m-b-5">Benvenuto !</h4>
+                    <p class="text-white-50 mb-4">Loggati per entrare a COD-WZ</p>
+                    <a href="#" class="logo logo-admin"><img src="/Public/assets/images/logo-sm.png" height="24" alt="logo"></a>
+                </div>
+                <div class="account-card-content"> 
+                    <% if(loginError) { %>
+                        <div class="alert alert-danger m-t-20" role="alert">
+                            <strong>Email</strong> o/e <strong> Password </strong> sbagliati!
+                        </div>
+                    <% } %>
+                    <form class="form-horizontal m-t-30" action="/login" method="post" autocomplete="off">
+                        <!-- email -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="pippo@domain.com">
+                        </div>
+                        <!-- password -->
+                        <div class="form-group">
+                            <label for="emailpassword">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                        </div>
+                        <!-- remember me -->
+                        <div class="form-group row m-t-20">
+                            <div class="col-sm-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="remember_me" id="customControlInline">
+                                    <label class="custom-control-label" for="customControlInline">Ricordami</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Accedi</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-t-10 mb-0 row">
+                            <div class="col-12 m-t-20">
+                                <a href="#"><i class="mdi mdi-lock"></i> Hai dimenticato la password?</a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="m-t-40 text-center">
+                <p>Non hai un account? <a href="/registration" class="font-500 text-primary"> Registrati ora </a> </p>
+            </div>
+
+        </div>
+        <!-- end wrapper-page -->
+
+        <!-- jQuery  -->
+        <script src="/Public/assets/js/jquery.min.js"></script>
+        <script src="/Public/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/Public/assets/js/jquery.slimscroll.js"></script>
+        <script src="/Public/assets/js/waves.min.js"></script>
+
+        <!-- App js -->
+        <script src="/Public/assets/js/app.js"></script>
+
+    </body>
+
 </html>

@@ -1,4 +1,8 @@
+//variable global
 const path = require('path');
+
+//uuid for authToken 
+const uuid = require('uuid');
 
 
 //security
@@ -8,7 +12,12 @@ const Cryptr = require('cryptr');
 
 //import css
 const fastify = require('fastify')({
-    logger: true
+    logger: {
+      level : 'error',
+      file : './Logging/codLoggerError.log'
+    }
+    
+    
   })
   fastify.register(require('fastify-static'), {
     root: path.join(__dirname, 'Public'),
@@ -40,45 +49,73 @@ fastify.register(require('point-of-view'), {
 });
 
 //cookie
-fastify.register(require('fastify-cookie'));
-/*fastify.addHook('onRequest', (req, reply) => {
-  if(req.cookies.login) {
-    return reply.redirect('/home');
+fastify.register(require('fastify-cookie'), {
+  secret : 'mySecret'
+});
+
+fastify.addHook('onRequest', async (req, reply) => {
+
+  if(req.url === '/login' || req.url.startsWith('/Public') || req.url === '/registration') 
+    return;
+  //if browser is in incognito it would be better to not edit user authToken in db
+  if(req.cookies.authToken) {
+    const user = await fastify.dalGeneric.getUserByToken(req.cookies.authToken);
+    if(user)
+      return;
   }
   return reply.redirect('/login');
-});*/
+});
 
 fastify.get('/', async (req, reply) => {
-  return reply.view('./Generic/login.ejs', {loginError : false});
+  // if(req.cookies.authToken) {
+  //   const user = await fastify.dalGeneric.getUserByToken(req.cookies.authToken);
+  //   if(user)
+  //     return;
+  // }
+  // return reply.view('./Generic/login.ejs', {loginError : false});
+  return reply.redirect('/home');
 });
 
 //login
 fastify.get('/login', async (req, reply) => {
   return reply.view('./Generic/login.ejs', {loginError : false});
 });
-
+//login
+fastify.get('/logout', async (req, reply) => {
+  reply.setCookie('authToken', {maxAge: 0});
+  return reply.redirect("/");
+});
 fastify.post('/login', async (req, reply) => {
   const data = req.body;
   const email = data.email;
   const password = sha256(data.password);
   const result = await fastify.dalGeneric.login(email, password);
+  let _MAXAGE = null;
   if(result){
     if(data.remember_me)
     {
-      reply.setCookie('remember_me', true);
-    }else
-    {
-      reply.setCookie('remember_me', false);
+      _MAXAGE = 60 * 60 * 1000;
     }
-    reply.setCookie('admin', result.admin);
-    /*reply.setCookie('email_cod', result.email_cod);
-    reply.setCookie('password', result.password);
-    reply.setCookie('password_cod', result.password_cod);*/
-    reply.setCookie('tag_username', result.tag_username);
+    reply.setCookie('admin', result.admin, 
+    {
+      maxAge: _MAXAGE
+    });
+    reply.setCookie('tag_username', result.tag_username,
+    {
+      maxAge: _MAXAGE
+    });
+    const authToken = uuid.v4();
+    await fastify.dalGeneric.addToken(result.uno, authToken);
+    reply.setCookie('authToken', authToken, {
+      maxAge : _MAXAGE
+    });
+    req.log.info(`Logged ${result.tag_username}` );
     return reply.redirect('/home');
   }
-  else
+  else{
+    req.log.error(`${req.ip} tried to login`);
     return reply.view('./Generic/login.ejs', {loginError : true});
+  }
 });
 
 //registration
@@ -103,6 +140,11 @@ fastify.post('/registration', async (req, reply) => {
   if(data['password'].length < 1)
   {
     reply.view('./Generic/registration.ejs', {registrationError : "password"});
+    return;
+  }
+  if(data['agree'] !== 'on')
+  {
+    reply.view('./Generic/registration.ejs', {registrationError : "agree"});
     return;
   }
   //verify email
@@ -147,7 +189,7 @@ fastify.post('/registration', async (req, reply) => {
 fastify.get('/home', async (req, reply) => {
   //tag
   const foundTeam = await fastify.dalTeam.checkPlayerIntoTeamBy(req.cookies.tag_username);
-
+  
   let registrated = false;
   let checkBoss = false;
   if(foundTeam)
@@ -155,11 +197,8 @@ fastify.get('/home', async (req, reply) => {
     registrated = await fastify.dalTeam.checkTeamRegistration(foundTeam);
   
     reply.setCookie('teamName', foundTeam);
-  
     checkBoss = await fastify.dalTeam.checkIfBoss(foundTeam, req.cookies.tag_username);
   }
-    
-  
   return reply.view('./Generic/home.ejs', {boss : checkBoss, cookie: req.cookies, foundTeam, registrated});
 });
 
@@ -693,6 +732,8 @@ fastify.get('/endTournament/:id', async(req, reply) => {
               }
               //insert teamRankings
               teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches.push({
+                teamPlacement: result.matches[k].playerStats.teamPlacement,
+                bonus: bonus,
                 matchID: result.matches[k].matchID,
                 players: [matchResults],
                 totalPointsMatch: (matchResults.killPoints +  bonus)
