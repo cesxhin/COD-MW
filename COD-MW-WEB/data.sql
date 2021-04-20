@@ -4,6 +4,7 @@ create table account
     password varchar(250) not null,
     email_cod varchar(250) not null,
     password_cod varchar(300) not null,
+    authToken varchar(500) default null,
     admin boolean default false
 );
 
@@ -31,7 +32,6 @@ create table rankingSchemas
     gulag boolean not null
 );
 
-
 create table tournaments
 (
     id serial primary key,
@@ -48,6 +48,7 @@ create table globalRankings
     id integer references tournaments (id) PRIMARY KEY, /*change name to tournamentID */
     teams json not null
 );
+
 /*
 json_teams
 {
@@ -92,6 +93,11 @@ json_teams
     }
 }
 */
+
+create table teams(
+    name primary key,
+    players json not null
+);
 
 create table teamRankings (
     id integer references tournaments(id),
@@ -225,7 +231,6 @@ create table teamRankings (
 non son sicuro se usare la chiave esterna per team o un json;
 punterei per la chiave esterna visto che una volta chiuse le iscrizioni finita li e si azzerra tutto a inizio torneo */
 
-
 create table registrations (
     registrationTime timestamp default now(),
     teamID  varchar(250) references teams(name) on delete cascade, 
@@ -234,9 +239,6 @@ create table registrations (
     primary key(teamID, tournamentID) 
 );
 
-
-
 INSERT INTO account VALUES ('1','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','1','1'),('2','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','2','2'),('3','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','3','3'),('4','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','4','4'),('5','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','5','5'),('6','9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08','6','6');
-
 
 INSERT INTO players VALUES ('mario#1234', 'psn', '1'), ('luca#567', 'battle', '2'),  ('fred#2222', 'xbl', '3'), ('gianni#333', 'psn', '4'), ('dario#8888', 'xbl', '5'), ('pippo#7777', 'battle', '6');
