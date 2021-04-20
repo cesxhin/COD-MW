@@ -95,7 +95,7 @@ json_teams
 
 create table teamRankings (
     id integer references tournaments(id),
-    teamID varchar(256) references teams(name),
+    teamID varchar(256) references teams(name) on delete cascade,
     teamResults json not null,
     PRIMARY KEY (id, teamID);
 );

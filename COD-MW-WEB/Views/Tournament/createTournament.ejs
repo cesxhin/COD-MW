@@ -1,35 +1,72 @@
 <!DOCTYPE html>
 <html lang="it-IT">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Public/style.css">
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Creazione Torneo</title>
-</head>
-<body>
-    <div class="form-insert">
-        <h1>Creazione Torneo</h1>
-        <% if(typeof rows == 'object' && rows) {%>
-            <form action="/tournament" method="post">
-                <input type="date" name="start_date" placeholder="Data di inizio" required>
-                <input type="time" name="start_time" placeholder="Ora di inizio" required>
-                <input type="time" name="end_time" placeholder="Ora di Fine" required>
-                <select name="id_schema" required>
-                    <% rows.forEach(function(element) {%>
-                        <option value="<%= element.id %>"><%= element.name %></option>
-                    <% }); %>
-                </select>
-                <input type="submit" value="Conferma">
-                <a class="button-link" href="/management">Torna indietro</a>
-            </form>
-        <% } else {%>
-            Non hai nessun schema per applicare questo torneo! Torna indietro e crea un nuovo schema!
-            <a class="button-link" href="/management">Torna indietro</a>
-        <% } %>
-    </div>
-</body>
-</html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Veltrix - Responsive Bootstrap 4 Admin Dashboard</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <link rel="shortcut icon" href="/Public/assets/images/favicon.ico">
+
+        <link href="/Public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body class="pb-0">        
+        <div class="wrapper-page">
+            <div class="card overflow-hidden account-card mx-3">
+                <div class="account-card-content">
+                    <h1>Creazione Torneo</h1>
+                    <% if(typeof rows == 'object' && rows) {%>
+                        <form class="form-horizontal m-t-30" action="/tournament" method="post" autocomplete="off">
+                            <!-- date -->
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" class="form-control" id="date" name="start_date" placeholder="Data di inizio" required>
+                            </div>
+                            <!-- time start -->
+                            <div class="form-group">
+                                <label for="startTime">Password</label>
+                                <input type="time" class="form-control" name="start_time" id="startTime" placeholder="Ora di inizio" required>
+                            </div>
+                            <!-- time end -->
+                            <div class="form-group">
+                                <label for="endTime">Password</label>
+                                <input type="time" class="form-control" name="end_time" id="endTime" placeholder="Ora di fine" required>
+                            </div>
+                            <!-- schema -->
+                            <div class="form-group">
+                                <label>Schema</label>
+                                <div class="col-sm-20"></div>
+                                    <select class="form-control" name="id_schema" required>
+                                        <% rows.forEach(function(element) {%>
+                                            <option value="<%= element.id %>"><%= element.name %></option>
+                                        <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="button_items">
+                                <input type="submit" class="btn btn-primary btn-lg btn-block waves-effect waves-light" value="Conferma">
+                                <a class="btn btn-secondary btn-lg btn-block waves-effect waves-light" href="/management">Torna indietro</a>
+                            </div>
+                        </form>
+                    <% } else {%>
+                        Non hai nessun schema per applicare questo torneo! Torna indietro e crea un nuovo schema!
+                        <a class="button-link" href="/management">Torna indietro</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <!-- end wrapper-page -->
+        <!-- jQuery  -->
+        <script src="/Public/assets/js/jquery.min.js"></script>
+        <script src="/Public/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/Public/assets/js/jquery.slimscroll.js"></script>
+        <script src="/Public/assets/js/waves.min.js"></script>
+        <!-- App js -->
+        <script src="/Public/assets/js/app.js"></script>
+    </body>
+</html> 

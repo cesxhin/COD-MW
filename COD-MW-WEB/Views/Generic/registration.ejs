@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Veltrix - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>wztournaments</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <link rel="shortcut icon" href="/Public/assets/images/favicon.ico">
@@ -16,15 +16,12 @@
     </head>
 
     <body class="pb-0">
-        
         <div class="wrapper-page">
-
             <div class="card overflow-hidden account-card mx-3">
-                
                 <div class="bg-primary p-4 text-white text-center position-relative">
                     <h4 class="font-20 m-b-5">Registrazione gratis</h4>
                     <p class="text-white-50 mb-4">Ottienilo ora un account gratis</p>
-                    <a href="index.html" class="logo logo-admin"><img src="/Public/assets/images/logo-sm.png" height="24" alt="logo"></a>
+                    <a href="index.html" class="logo logo-admin"><img src="/Public/assets/images/logo.png" height="60" alt="logo"></a>
                 </div>
                 <div class="account-card-content">  
                     <% if(registrationError) { %>
@@ -50,13 +47,16 @@
                             <% if(registrationError === 'agree') { %>
                                 Devi accettare il consenso di accedere al tuo account
                             <% }%>
+                            <% if(registrationError === 'equalPassword') { %>
+                                Le due password non sono uguali!
+                            <% }%>
                         </div>
                     <%}%>
                     <form class="form-horizontal m-t-30" action="/registration" method="post">
                         <!-- email cod -->
                         <div class="form-group">
                             <label for="emailcod">Email</label>
-                            <input type="email" class="form-control" id="emailcod" name="email_cod" placeholder="Email di Activision" required>
+                            <input type="email" class="form-control" required id="emailcod" name="email_cod" placeholder="Email di Activision">
                         </div>
                         <!-- password cod -->
                         <div class="form-group">
@@ -94,9 +94,13 @@
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password per il nostro sito" required>
                         </div>
+                        <div class="form-group">
+                            <label for="password2">Password</label>
+                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Ripeti la password" required>
+                        </div>
                         <div class="form-group row m-t-20">
                             <div class="col-12 text-right">
-                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Registrati</button>
+                                <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">Registrati</button>
                             </div>
                         </div>
                     </form>
@@ -105,7 +109,6 @@
             <div class="m-t-40 text-center">
                 <p>Hai già un account ? <a href="/login" class="font-500 text-primary"> Login </a> </p>
             </div>
-
         </div>
         <!-- end wrapper-pags -->
 
@@ -114,7 +117,8 @@
         <script src="/Public/assets/js/bootstrap.bundle.min.js"></script>
         <script src="/Public/assets/js/jquery.slimscroll.js"></script>
         <script src="/Public/assets/js/waves.min.js"></script>
-
+        <!-- Parsley js -->
+        <script src="/Public/plugins/parsleyjs/parsley.min.js"></script>
         <!-- App js -->
         <script src="/Public/assets/js/app.js"></script>
 

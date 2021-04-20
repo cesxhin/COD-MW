@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/style.css">
+    <title>Registra Team</title>
+</head>
+<body>
+    <div class="form-insert">
+        <a href="/home"></a>
+        <form action="/registrateTeam" method="post">
+            <% if(error) { %>
+                <p style="color: red;"><%= error %></p>
+            <% } %>
+            <input type="text" name="teamName" value="<%= teamName %>" readonly>
+            
+            <% if(tournaments) { %>
+                <select name="tournaments">
+                    <option value="<%= tournaments.id%>">Torneo delle ore : <%= tournaments.start_time %> del <%= new Date(tournaments.start_date).toLocaleDateString('it-IT') %></option>
+                </select>
+                <input type="submit" value="Registrati">
+            <% } else { %>
+                <input type="text" name="tournamentID" value="Non ci sono tornei a cui partecipare" readonly>
+            <% } %>
+        </form>
+
+    </div>
+</body>
+</html>

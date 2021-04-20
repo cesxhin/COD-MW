@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html lang="it-IT">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Public/style.css">
-    <title>Registra Team</title>
-</head>
-<body>
-    <div class="form-insert">
-        <a href="/home"></a>
-        <form action="/registrateTeam" method="post">
-            <% if(error) { %>
-                <p style="color: red;"><%= error %></p>
-            <% } %>
-            <input type="text" name="teamName" value="<%= teamName %>" readonly>
-            
-            <% if(tournaments) { %>
-                <select name="tournaments">
-                    <option value="<%= tournaments.id%>">Torneo delle ore : <%= tournaments.start_time %> del <%= new Date(tournaments.start_date).toLocaleDateString('it-IT') %></option>
-                </select>
-                <input type="submit" value="Registrati">
-            <% } else { %>
-                <input type="text" name="tournamentID" value="Non ci sono tornei a cui partecipare" readonly>
-            <% } %>
-        </form>
 
-    </div>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Iscrizione</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <link rel="shortcut icon" href="/Public/assets/images/logo.png">
+
+        <!-- DataTables -->
+        <link href="/Public/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="/Public/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="/Public/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="/Public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body class="main-content">
+        
+        <form action="/registrateTeam" method="post">
+            <div class="row justify-content-center align-self-center">
+                <div class="card col-lg-4 mt-5">
+                    <h4 class="card-header font-16 mt-0">Iscrizione</h4>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="teamName" value="<%= teamName %>" readonly>
+                        </div>
+                        <% if(tournaments) { %>
+                            <div class="form-group">
+                                <select class="form-control" name="tournaments">
+                                    <option value="<%= tournaments.id%>">Torneo delle ore : <%= tournaments.start_time %> alle ore: <%= tournaments.end_time %> del <%= new Date(tournaments.start_date).toLocaleDateString('it-IT') %></option>
+                                </select>
+                            </div>
+                            <input type="submit" class="btn btn-primary w-md waves-effect waves-light" value="Registrati">
+                        <% } else { %>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="tournamentID" value="Non ci sono tornei a cui partecipare" readonly>
+                            </div>
+                        <% } %>
+                        <a class="btn btn-secondary waves-effect waves-light" href="/home" role="button">Torna indietro</a>
+                    </div>
+                </div>
+            </div>
+        </form>     
+        <!-- end wrapper-page -->
+        <!-- jQuery  -->
+        <script src="/Public/assets/js/jquery.min.js"></script>
+        <script src="/Public/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/Public/assets/js/jquery.slimscroll.js"></script>
+        <script src="/Public/assets/js/waves.min.js"></script>
+        <script src="/Public/assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="/Public/assets/libs/simplebar/simplebar.min.js"></script>
+        <!-- Datatable init js -->
+        <script src="/Public/assets/pages/datatables.init.js"></script>   
+        <!-- App js -->
+        <script src="/Public/assets/js/app.js"></script>
+    </body>
 </html>

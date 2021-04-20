@@ -95,7 +95,44 @@
                 }
             })
         });
-
+        //Delete tournament
+        $('#sa-tournament').click(function () {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger mr-2'
+                },
+                buttonsStyling: false,
+            })
+            
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                swalWithBootstrapButtons.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success',
+                    window.open("https://www.google.com")
+                )
+                } else if (
+                // Read more about handling dismissals
+                result.dismiss === Swal.DismissReason.cancel
+                ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+                }
+            })
+        });
         //Custom Image
         $('#sa-image').click(function () {
             Swal.fire({

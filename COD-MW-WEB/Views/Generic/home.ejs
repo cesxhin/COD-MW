@@ -5,10 +5,10 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Torneo COD WZ</title>
+        <title>wztournaments</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
-        <link rel="shortcut icon" href="/Public/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="/Public/assets/images/logo.png">
 
         <!--Chartist Chart CSS -->
         <link rel="stylesheet" href="/Public/plugins/chartist/css/chartist.min.css">
@@ -22,18 +22,13 @@
         <header id="topnav">
             <div class="topbar-main">
                 <div class="container-fluid">
-
                     <!-- Logo container-->
                     <div class="logo">
-                        <a href="index.html" class="logo">
-                            <img src="/Public/assets/images/logo-sm.png" alt="" class="logo-small">
-                            <img src="/Public/assets/images/logo-light.png" alt="" class="logo-large">
-                        </a>
+                        <!--<img src="/Public/assets/images/logo.png" alt="" class="logo-large" height="60">
+                        <img src="/Public/assets/images/logo.png" alt="" class="logo-small" height="60"> -->
                     </div>
-
                     <!-- End Logo container-->
                     <div class="menu-extras topbar-custom">
-
                         <ul class="navbar-right list-inline float-right mb-0">    
                             <!-- full screen -->
                             <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
@@ -41,11 +36,11 @@
                                     <i class="mdi mdi-fullscreen noti-icon"></i>
                                 </a>
                             </li>
-
                             <li class="dropdown notification-list list-inline-item">
                                 <div class="dropdown notification-list nav-pro-img">
                                     <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                        <img src="/Public/assets/images/users/user-4.jpg" alt="user" class="rounded-circle">
+                                        <label><%= cookie.tag_username %></label>
+                                        <img src="/Public/assets/images/users/user-4.jpg" alt="user" class="rounded-circle">                                        
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
@@ -103,9 +98,9 @@
                                 <li class="has-submenu">
                                     <a href="/viewTeam/<%= foundTeam %>"><i class="mdi mdi-account-multiple"></i>Vedi Team</a>
                                 </li>
-                                <li class="has-submenu">
+                                <!--<li class="has-submenu">
                                     <a href="/teamRankings"><i class="mdi mdi-format-list-bulleted"></i>Classifiche Team</a>
-                                </li>
+                                </li>-->
                             <% } else { %>
                                 <li class="has-submenu">
                                     <a href="/createTeam"><i class="mdi mdi-account-plus"></i>Crea Team</a>
@@ -121,20 +116,12 @@
             </div> <!-- end navbar-custom -->
         </header>
         <!-- End Navigation Bar-->
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        2019 © Veltrix <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</span>
-                    </div>
-                </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="wrapper-page">
+            <div class="card overflow-hidden account-card mx-5">
+                <h1>🛠️Prossimamente🛠️</h1>
             </div>
-        </footer>
-        <!-- End Footer -->
-    
-
+        </div>
         <!-- jQuery  -->
         <script src="/Public/assets/js/jquery.min.js"></script>
         <script src="/Public/assets/js/bootstrap.bundle.min.js"></script>

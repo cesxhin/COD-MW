@@ -1,99 +1,128 @@
 <!DOCTYPE html>
 <html lang="it-IT">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Public/style.css">
-    <title>Classifica Globale</title>
-</head>
-<body>
-    <div class="form-insert">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Iscrizione</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <link rel="shortcut icon" href="/Public/assets/images/logo.png">
+
+        <!-- DataTables -->
+        <link href="/Public/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="/Public/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="/Public/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="/Public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="/Public/assets/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body class="main-content">
         <form action="/globalRankings" method="post">
-            <% if(!rankings) { %> 
-                <a href="/home">Torna indietro</a>
-    
-                <label for="tournamentDate">Data Torneo</label>
-               <input type="date" name="tournamentDate" required>
-        
-                <input type="submit" value="Vedi classifica">
-            <% } else { %>
-                <div class="table-management">
-                    <table>
-                        <tr>
-                            <th>ID Torneo</th>
-                            <th>Data Inizio</th>
-                            <th>Ora Inizio</th>
-                            <th>Ora Fine</th>
-                        </tr>
-                        <tr>
-                            <td><%= rankings.id %></td>
-                            <td><%= new Date(rankings.start_date).toLocaleDateString('it-IT') %></td>
-                            <td><%= rankings.start_time %></td>
-                            <td><%= rankings.end_time %></td>
-                        </tr>
-                    </table>
-                        
-                        <br>
-                    <table>
-                        <% rankings.teams.teams.forEach(t => { %>
-                            <tr>
-                                <th><%= t.tournamentPlace %></th>  
-                                <th colspan="2"style="background-color : chartreuse"><%= t.teamName %></th>
-                                <th style="background-color: sandybrown;">1° PARTITA</th>
-                                <th style="background-color: skyblue;">2° PARTITA</th>
-                                <th style="background-color: tomato;">3° PARTITA</th>
-                                <th style="background-color: darksalmon;">TOT : </th>
-                            </tr>
-                            <tr>
-                                <th colspan="3" >Posizione : </th>
-                                <td style="background-color: sandybrown;"><%= t.matches[0].teamPlacement %></td>
-                                <td style="background-color: skyblue;"><%= t.matches[1].teamPlacement %></td>
-                                <td style="background-color: tomato;"><%= t.matches[2].teamPlacement %></td>
-                                <td style="background-color: darksalmon;"></td>
-                            </tr>
-                            <tr>
-                                <% let bonusPoints = t.matches[0].bonus + t.matches[1].bonus + t.matches[2].bonus; %>
-                                <th colspan="3">Punteggio bonus: </th>
-                                <td><%= t.matches[0].bonus %></td>
-                                <td><%= t.matches[1].bonus %></td>
-                                <td><%= t.matches[2].bonus %></td>
-                                <td><%= bonusPoints %></td>
-                            </tr>
-                            <% const m = t.matches;    
-                                for(let i = 0; i < m.length; i++) {
-                                    for(let k = 0 ; k < m[i].players.length; k++){ 
-                                        let totalPointsMatch = 0; %>
+            <div class="row justify-content-center align-self-center">
+                <div class="card col-lg-4 mt-5">
+                    <h4 class="card-header font-16 mt-0">Lista della classifica globale</h4>
+                    <div class="card-body">
+                        <% if(!rankings) { %>                 
+                            <label for="tournamentDate">Data Torneo</label>
+                            <div class="form-group">
+                                <input type="date" class="form-control" name="tournamentDate" required>
+                            </div>
+                            <input type="submit" class="btn btn-primary w-md waves-effect waves-light" value="Vedi classifica">
+                        <% } else { %>
+                            <div class="table-management">
+                                <table>
+                                    <tr>
+                                        <th>ID Torneo</th>
+                                        <th>Data Inizio</th>
+                                        <th>Ora Inizio</th>
+                                        <th>Ora Fine</th>
+                                    </tr>
+                                    <tr>
+                                        <td><%= rankings.id %></td>
+                                        <td><%= new Date(rankings.start_date).toLocaleDateString('it-IT') %></td>
+                                        <td><%= rankings.start_time %></td>
+                                        <td><%= rankings.end_time %></td>
+                                    </tr>
+                                </table>
+                                    
+                                    <br>
+                                <table>
+                                    <% rankings.teams.teams.forEach(t => { %>
                                         <tr>
-                                            <th><%= m[i].players[k].username %></th>
-                                            <td colspan="2">KILL : </td> 
-                                            <% let index = i; 
-                                            while(index < m.length) { %>
-                                                <td><%= m[index].players[k].kills %></td>
-                                                <% totalPointsMatch += m[index].players[k].kills;
-                                                index++; 
-                                            } %>
-                                            <td><%= totalPointsMatch %></td>
+                                            <th><%= t.tournamentPlace %></th>  
+                                            <th colspan="2"style="background-color : chartreuse"><%= t.teamName %></th>
+                                            <th style="background-color: sandybrown;">1° PARTITA</th>
+                                            <th style="background-color: skyblue;">2° PARTITA</th>
+                                            <th style="background-color: tomato;">3° PARTITA</th>
+                                            <th style="background-color: darksalmon;">TOT : </th>
                                         </tr>
-                                        
-                                    <%}
-                                    break;
-                                }
-                                %>
-                                <tr>
-                                    <th colspan="" style="background-color : red">TOTALE PUNTI TEAM : </th>
-                                    <td style="background-color: darksalmon;"><%= t.totalPoints %></td>
-                                </tr>
-                                <!-- ma fra dov'è tag punteggio? , cosa intendi  Punteggio  fermo , c'è gia posizione, fermo un attimo che vedo un a cosa :-->
-                            <% }); %> 
-                    </table>
-                       
-                    
+                                        <tr>
+                                            <th colspan="3" >Posizione : </th>
+                                            <td style="background-color: sandybrown;"><%= t.matches[0].teamPlacement %></td>
+                                            <td style="background-color: skyblue;"><%= t.matches[1].teamPlacement %></td>
+                                            <td style="background-color: tomato;"><%= t.matches[2].teamPlacement %></td>
+                                            <td style="background-color: darksalmon;"></td>
+                                        </tr>
+                                        <tr>
+                                            <% let bonusPoints = t.matches[0].bonus + t.matches[1].bonus + t.matches[2].bonus; %>
+                                            <th colspan="3">Punteggio bonus: </th>
+                                            <td><%= t.matches[0].bonus %></td>
+                                            <td><%= t.matches[1].bonus %></td>
+                                            <td><%= t.matches[2].bonus %></td>
+                                            <td><%= bonusPoints %></td>
+                                        </tr>
+                                        <% const m = t.matches;    
+                                            for(let i = 0; i < m.length; i++) {
+                                                for(let k = 0 ; k < m[i].players.length; k++){ 
+                                                    let totalPointsMatch = 0; %>
+                                                    <tr>
+                                                        <th><%= m[i].players[k].username %></th>
+                                                        <td colspan="2">KILL : </td> 
+                                                        <% let index = i; 
+                                                        while(index < m.length) { %>
+                                                            <td><%= m[index].players[k].kills %></td>
+                                                            <% totalPointsMatch += m[index].players[k].kills;
+                                                            index++; 
+                                                        } %>
+                                                        <td><%= totalPointsMatch %></td>
+                                                    </tr>
+                                                    
+                                                <%}
+                                                break;
+                                            }
+                                            %>
+                                            <tr>
+                                                <th colspan="" style="background-color : red">TOTALE PUNTI TEAM : </th>
+                                                <td style="background-color: darksalmon;"><%= t.totalPoints %></td>
+                                            </tr>
+                                            <!-- ma fra dov'è tag punteggio? , cosa intendi  Punteggio  fermo , c'è gia posizione, fermo un attimo che vedo un a cosa :-->
+                                        <% }); %> 
+                                </table>
+                                   
+                                
+                            </div>
+                        <% } %>
+                        <a class="btn btn-secondary waves-effect waves-light" href="/home">Torna indietro</a>
+                    </div>
                 </div>
-                <a class="button-link" href="/home">Torna indietro</a> 
-            <% } %>
-        </form>
-    </div>
-    
-</body>
+            </div>
+        </form>     
+        <!-- end wrapper-page -->
+        <!-- jQuery  -->
+        <script src="/Public/assets/js/jquery.min.js"></script>
+        <script src="/Public/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/Public/assets/js/jquery.slimscroll.js"></script>
+        <script src="/Public/assets/js/waves.min.js"></script>
+        <script src="/Public/assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="/Public/assets/libs/simplebar/simplebar.min.js"></script>
+        <!-- Datatable init js -->
+        <script src="/Public/assets/pages/datatables.init.js"></script>   
+        <!-- App js -->
+        <script src="/Public/assets/js/app.js"></script>
+    </body>
 </html>

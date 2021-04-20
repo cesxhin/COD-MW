@@ -4,11 +4,9 @@ const path = require('path');
 //uuid for authToken 
 const uuid = require('uuid');
 
-
 //security
 const sha256 = require("sha256");
 const Cryptr = require('cryptr');
-
 
 //import css
 const fastify = require('fastify')({
@@ -60,8 +58,22 @@ fastify.addHook('onRequest', async (req, reply) => {
   //if browser is in incognito it would be better to not edit user authToken in db
   if(req.cookies.authToken) {
     const user = await fastify.dalGeneric.getUserByToken(req.cookies.authToken);
+    //if admin
     if(user)
-      return;
+    {
+      if(user.admin == true)
+      {
+        if(req.url.startsWith('/'))
+          return;
+      }else
+      {
+        if(req.url.startsWith('/management') || req.url.startsWith('/tournament') || req.url.startsWith('/updateTournament') || req.url.startsWith('/deleteTournament') || req.url.startsWith('/rankingSchema') || req.url.startsWith('/deleteRankingSchema') || req.url.startsWith('/updateRankingSchema') || req.url.startsWith('/closeRegistrations') || req.url.startsWith('/endTournament'))
+        {
+          return reply.view('/CodeRequests/pages-401.ejs');
+        }
+        return;
+      }
+    }
   }
   return reply.redirect('/login');
 });
@@ -140,6 +152,11 @@ fastify.post('/registration', async (req, reply) => {
   if(data['password'].length < 1)
   {
     reply.view('./Generic/registration.ejs', {registrationError : "password"});
+    return;
+  }
+  if(data['password'] !== data['password2'])
+  {
+    reply.view('./Generic/registration.ejs', {registrationError : "equalPassword"});
     return;
   }
   if(data['agree'] !== 'on')
@@ -392,14 +409,16 @@ fastify.post('/createTeam', async (req, reply) => {
   if(result)
   {
     return reply.view('./Team/createTeam.ejs', {error : 'Il Player '+result+' esiste già in un altro team' , tag_username});
-  } else
+  }
+  //check exits teams
+  const check = await fastify.dalTeam.getTeam(data.teamName);
+  if(!check)
   {
-    const team = await fastify.dalTeam.createTeam(data.teamName, jsonPlayers);
-    if(team === 'error')
-      return reply.view('./Team/createTeam.ejs', {error : 'Esiste già un team con questo nome', tag_username})
-    else if(team == null)
-      return reply.view('./Team/createTeam.ejs', {error : 'Inserimento fallito', tag_username});
-    reply.redirect('/home');
+    await fastify.dalTeam.createTeam(data.teamName, jsonPlayers);
+    return reply.redirect('/viewTeam/'+data.teamName);
+  }else
+  {
+    return reply.view('./Team/createTeam.ejs', {error : 'Esiste già un team con questo nome', tag_username})
   }
 });
 //View Team
@@ -503,6 +522,7 @@ fastify.get('/deleteTeam/:nameTeam', async (req, reply) => {
   if(team.players[0].player === req.cookies.tag_username)
   {
     await fastify.dalTeam.deleteTeam(req.params.nameTeam);
+    reply.setCookie('teamName', {maxAge: 0});
     reply.redirect('/home');
   }else
   {
@@ -516,7 +536,6 @@ fastify.get('/globalRankings', (req, reply) => {
 
 fastify.post('/globalRankings', async(req, reply) => {
   const date = req.body.tournamentDate;
-
   const rankings = await fastify.dalGlobalRankings.getGlobalRankings(date);
   //manca calcolo punti e visualizzazione players
   if(!rankings) {
@@ -591,6 +610,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
   const registratedTeams = await fastify.dalRegistration.getRegistrations(tournamentID);
   const tournament = await fastify.dalTournament.getTournamentsById(tournamentID);
   const rankingSchema = await fastify.dalRankingSchema.getRankingSchemaById(tournament.id_schema)
+
   if(!registratedTeams)
     reply.redirect('/management');
 
@@ -680,7 +700,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
           var endTimeTournament = tournament.end_time;
           var dateTournament = new Date(tournament.start_date).toLocaleDateString('it-IT');
           if(dateMatch === dateTournament){
-            if(Date.parse('01/01/2011 ' + timeMatch) >= Date.parse('01/01/2011 ' + startTimeTournament) && Date.parse('01/01/2011 ' + timeMatch) <= Date.parse('01/01/2011 ' + endTimeTournament)){
+            if(Date.parse('01/01/2011 ' + timeMatch) >= Date.parse('01/01/2011 ' + startTimeTournament) && Date.parse('01/01/2011 ' + timeMatch) <= Date.parse('01/01/2011 ' + endTimeTournament) && result.matches[k].mode.includes(tournament.mode)){
               //check gulag
               if(rankingSchema.gulag)
               {
@@ -762,7 +782,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
         let min = -1;
         for(let z=0; z<maxArray.length; z++)
         {
-          if(maxArray[z].totalPointsMatch < teamResultsGlobal.teams[i].matches[k].totalPointsMatch)
+          if((teamResultsGlobal.teams[i].matches[k].totalPointsMatch > maxArray[z].totalPointsMatch && min == -1) || (min != -1 && maxArray[min].totalPointsMatch > maxArray[z].totalPointsMatch))
           {
             min = z;
           }
@@ -775,6 +795,12 @@ fastify.get('/endTournament/:id', async(req, reply) => {
           };
         }
       }
+    }
+    //delete team by Results global if they don't 3 matchs
+    if(maxArray.length < 3)
+    {
+      teamResultsGlobal.teams.splice(i,1);
+      continue;
     }
     //remove match
     for (let k = 0; k < teamResultsGlobal.teams[i].matches.length; k++) {
@@ -789,7 +815,8 @@ fastify.get('/endTournament/:id', async(req, reply) => {
       }
       if(remove)
       {
-        teamResultsGlobal.teams[i].matches.splice(k,k);
+        teamResultsGlobal.teams[i].matches.splice(k,1);
+        k=-1;
       }
     }
     //tournamentPlace only insert

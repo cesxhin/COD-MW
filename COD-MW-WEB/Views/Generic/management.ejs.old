@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Management</title>
+</head>
+<body>
+    <% if(cookies.admin === 'true') { %>
+        <div class="header">
+            <a class="button-link crea" href="/tournament">Crea Torneo</a>
+            <a class="button-link crea" href="/rankingSchema">Crea Schema Classifica</a>
+            <a class="button-link whitelist" href="#">Players</a>
+            <a class="button-link back" href="/home">Torna indietro</a>
+        </div>
+        <div class="table-management">
+            <table>
+                <tr>
+                    <th colspan="8">Lista Tornei</th>
+                </tr>
+                <tr>
+                    <th>Data</th>
+                    <th>Ora inzio</th>
+                    <th>Ora fine</th>
+                    <th>Tipo di Schema</th>
+                    <th>Calcola</th>
+                    <th>Elimina</th>
+                    <th>Modifica</th>
+                    <th>Stato</th>
+                    <th>Registrazioni</th>
+                    <th>Vedi Registrazioni</th>
+                </tr>
+                <% if(typeof tournament == 'object' && tournament){ %>
+                    <% tournament.forEach(t => { %>
+                        <tr>
+                            <td><%= t.start_date %></td>
+                            <td><%= t.start_time %></td>
+                            <td><%= t.end_time %></td>
+                            <td><%= t.id_schema %></td>
+                            <td><a class="a-icon" href="/endTournament/<%= t.id %>"><img src="https://www.flaticon.com/svg/vstatic/svg/887/887103.svg?token=exp=1617212459~hmac=54feac7aaf94b23deabc9195985a6ab4"></a></td>
+                            <td><a class="a-icon" onclick="popup('/deleteTournament/<%= t.id %>')"><img src="https://www.flaticon.com/svg/vstatic/svg/1214/1214428.svg?token=exp=1617212106~hmac=c41a41123e39a66737b3d3e812c545aa"></a></td>
+                            <td><a class="a-icon" href="/updateTournament/<%= t.id %>"><img src="https://www.flaticon.com/svg/vstatic/svg/84/84380.svg?token=exp=1617212064~hmac=a61abf2a445963f139b5d008c12bc3ce"></a></td>
+                            <% if(t.finished) { 
+                                t.closed = true; %>
+                                <td>Chiuso</td>
+                            <% } else { %>
+                                <td>Aperto</td>
+                            <% } %>
+                            <% if(t.closed) { %>
+                                <td style="color: red;">Chiuse</td>
+                            <% } else { %>
+                                <td><a onclick="closePopup('/closeRegistrations/<%= t.id %>')">Chiudi registrazioni</a></td>
+                            <% } %>
+                            <td><a class="button-link" href="/management/<%= t.id %>">Visualizza</a></td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </table>
+        </div>
+        <br><br><br>
+        <div class="table-management">
+            <table>
+                <tr>
+                    <th colspan="13">Schema punteggi</th>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Top 1</th>
+                    <th>Top 2</th>
+                    <th>Top 3</th>
+                    <th>Top 5</th>
+                    <th>Top 10</th>
+                    <th>Top 15</th>
+                    <th>Top 20</th>
+                    <th>Kill</th>
+                    <th>N° ogni Team</th>
+                    <th>Gulag</th>
+                    <th>Elimina</th>
+                    <th>Modifica</th>
+                </tr>
+                <% if(typeof schemas == 'object' && schemas) { %>
+                    <% schemas.forEach(s => { %>
+                        <tr>
+                            <td><%= s.id %></td>
+                            <td><%= s.name %></td>
+                            <td><%= s.points_top1 %></td>
+                            <td><%= s.points_top2 %></td>
+                            <td><%= s.points_top3 %></td>
+                            <td><%= s.points_top5 %></td>
+                            <td><%= s.points_top10 %></td>
+                            <td><%= s.points_top15 %></td>
+                            <td><%= s.points_top20 %></td>
+                            <td><%= s.kill %></td>
+                            <th><%= s.playersnumber %></th>
+                            <td><%= s.gulag %></td>
+                            <td><a class="a-icon" onclick="popup('/deleteRankingSchema/<%= s.id %>')"><img src="https://www.flaticon.com/svg/vstatic/svg/1214/1214428.svg?token=exp=1617212106~hmac=c41a41123e39a66737b3d3e812c545aa"></a></td>
+                            <td><a class="a-icon" href="/updateRankingSchema/<%= s.id %>"><img src="https://www.flaticon.com/svg/vstatic/svg/84/84380.svg?token=exp=1617212064~hmac=a61abf2a445963f139b5d008c12bc3ce"></a></td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </table>
+        </div>
+    <% }  else { %>
+        <p style="color: red;">Non sei un amministratore!</p>
+        <a class="button-link" href="/home">Torna indietro</a>
+    <% } %>
+    <script>
+        function popup(url) {
+          if(confirm("Sei sicuro di voler eliminare?"))
+          {
+              window.open(url,"_self","Sei sicuro di volere eliminare?")
+          }
+        }
+        function closePopup(url) {
+          if(confirm("Vuoi chiudere le registrazioni?"))
+          {
+              window.open(url,"_self","Vuoi chiudere le registrazioni?")
+          }
+        }
+    </script>
+</body>
+</html>

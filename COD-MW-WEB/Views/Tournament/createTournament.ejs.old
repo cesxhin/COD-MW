@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Creazione Torneo</title>
+</head>
+<body>
+    <div class="form-insert">
+        <h1>Creazione Torneo</h1>
+        <% if(typeof rows == 'object' && rows) {%>
+            <form action="/tournament" method="post">
+                <input type="date" name="start_date" placeholder="Data di inizio" required>
+                <input type="time" name="start_time" placeholder="Ora di inizio" required>
+                <input type="time" name="end_time" placeholder="Ora di Fine" required>
+                <select name="id_schema" required>
+                    <% rows.forEach(function(element) {%>
+                        <option value="<%= element.id %>"><%= element.name %></option>
+                    <% }); %>
+                </select>
+                <input type="submit" value="Conferma">
+                <a class="button-link" href="/management">Torna indietro</a>
+            </form>
+        <% } else {%>
+            Non hai nessun schema per applicare questo torneo! Torna indietro e crea un nuovo schema!
+            <a class="button-link" href="/management">Torna indietro</a>
+        <% } %>
+    </div>
+</body>
+</html>
