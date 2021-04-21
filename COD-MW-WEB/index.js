@@ -1,5 +1,6 @@
 //variable global
 const path = require('path');
+const fs = require('fs');
 
 //uuid for authToken 
 const uuid = require('uuid');
@@ -12,10 +13,13 @@ const Cryptr = require('cryptr');
 const fastify = require('fastify')({
     logger: {
       level : 'error',
-      file : './Logging/codLoggerError.log'
+      file : '../Logging/codLoggerError.log'
+    },
+    http2: true,
+    https: {
+      key: fs.readFileSync(path.join(__dirname, '', 'https', 'fastify.key')),
+      cert: fs.readFileSync(path.join(__dirname, '', 'https', 'fastify.cert'))
     }
-    
-    
   })
   fastify.register(require('fastify-static'), {
     root: path.join(__dirname, 'Public'),
