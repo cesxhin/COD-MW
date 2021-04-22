@@ -35,16 +35,24 @@
                         <!-- email -->
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="pippo@domain.com">
+                            <input type="text" class="form-control inline" id="email" name="email" placeholder="pippo@domain.com">
                         </div>
                         <!-- password -->
-                        <div class="form-group">
-                            <label for="emailpassword">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                        <div class="form-group ">
+                            <label for="password">Password</label>
+                            <div class="row">
+                                <div class="col-10 ">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                </div>
+                                <div class="col-2">
+                                    <span class="fas fa-eye" onclick="showOrHide()"></span>
+                                </div>
+                            </div>
+                            
                         </div>
                         <!-- remember me -->
                         <div class="form-group row m-t-20">
-                            <div class="col-sm-6">
+                            <div class="col-6">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" name="remember_me" id="customControlInline">
                                     <label class="custom-control-label" for="customControlInline">Ricordami</label>
@@ -80,6 +88,21 @@
 
         <!-- App js -->
         <script src="/Public/assets/js/app.js"></script>
+
+        <script type="text/javascript">
+            function showOrHide(){
+                var input = document.getElementById("password");
+                var icon = document.getElementsByClassName("fas");
+                if(input.attributes.getNamedItem("type").value === "password" && icon[0].className.includes("fa-eye")){
+                    input.attributes.getNamedItem("type").value = "text";
+                    icon[0].className = icon[0].className.replace("fa-eye","fa-eye-slash");
+                } else {
+                    input.attributes.getNamedItem("type").value = "password";
+                    icon[0].className = icon[0].className.replace("fa-eye-slash","fa-eye");
+                }
+            }
+
+        </script>
 
     </body>
 

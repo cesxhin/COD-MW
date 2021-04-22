@@ -13,12 +13,12 @@ const Cryptr = require('cryptr');
 const fastify = require('fastify')({
     logger: {
       level : 'error',
-      file : '../Logging/codLoggerError.log'
+      file : 'codLoggerError.log'
     },
     http2: true,
     https: {
-      key: fs.readFileSync(path.join(__dirname, '', 'https', 'fastify.key')),
-      cert: fs.readFileSync(path.join(__dirname, '', 'https', 'fastify.cert'))
+      key: fs.readFileSync(path.join(__dirname, '', 'https', 'private.key')),
+      cert: fs.readFileSync(path.join(__dirname, '', 'https', 'certificate.cert'))
     }
   })
   fastify.register(require('fastify-static'), {
