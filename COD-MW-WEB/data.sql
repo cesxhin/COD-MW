@@ -5,6 +5,7 @@ create table account
     email_cod varchar(250) not null,
     password_cod varchar(300) not null,
     authToken varchar(500) default null,
+    authTokenResetPassw varchar(500) default null,
     admin boolean default false
 );
 

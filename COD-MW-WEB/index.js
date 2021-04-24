@@ -1,14 +1,15 @@
 //variable global
 const path = require('path');
 const fs = require('fs');
-
+const HttpsRedirect = require("fastify-https-redirect")
 //uuid for authToken 
 const uuid = require('uuid');
 
 //security
 const sha256 = require("sha256");
 const Cryptr = require('cryptr');
-
+//password
+const key = "yMtgjZ70*IQm%r@iv2S@$YOr";
 //import css
 const fastify = require('fastify')({
     logger: {
@@ -17,6 +18,7 @@ const fastify = require('fastify')({
     },
     http2: true,
     https: {
+      allowHTTP1: true,
       key: fs.readFileSync(path.join(__dirname, '', 'https', 'private.key')),
       cert: fs.readFileSync(path.join(__dirname, '', 'https', 'certificate.cert'))
     }
@@ -25,7 +27,6 @@ const fastify = require('fastify')({
     root: path.join(__dirname, 'Public'),
     prefix: '/Public/', // optional: default '/'
 });
-
 //create and connect db
 //fastify.decorate('dal', require('./DbAccess/db')());
 fastify.decorate('dalRankingSchema', require('./DbAccess/RankingSchemaRepository')());
@@ -36,6 +37,7 @@ fastify.decorate('dalRegistration', require('./DbAccess/RegistrationRepository')
 fastify.decorate('dalRegistrationTournaments', require('./DbAccess/RegistrationTournamentsRepository')());
 fastify.decorate('dalGlobalRankings', require('./DbAccess/GlobalRankingsRepository')());
 fastify.decorate('dalTeamRankings', require('./DbAccess/TeamRankingsRepository')());
+fastify.decorate('Email', require('./Email/EmailRepository')());
 //COD WZ API
 fastify.decorate('cod', require('./APICaller/CodService')());
 
@@ -56,8 +58,8 @@ fastify.register(require('fastify-cookie'), {
 });
 
 fastify.addHook('onRequest', async (req, reply) => {
-
-  if(req.url === '/login' || req.url.startsWith('/Public') || req.url === '/registration') 
+  req.log.info(Date.now() + 'richiesta');
+  if(req.url === '/login' || req.url.startsWith('/requestResetPassword') || req.url.startsWith('/Public') || req.url === '/registration') 
     return;
   //if browser is in incognito it would be better to not edit user authToken in db
   if(req.cookies.authToken) {
@@ -181,7 +183,7 @@ fastify.post('/registration', async (req, reply) => {
     const uno = await fastify.cod.getUno();
     const tag_username = await fastify.cod.getGamerTag(data['platform']);
     const psw_sha256 = sha256(data['password'])
-    const crypt = new Cryptr(psw_sha256);
+    const crypt = new Cryptr(key);
     const psw_cod_aes = crypt.encrypt(data['password_cod']);
 
     var account = {
@@ -643,7 +645,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
 
       //get credentials
       let encryptedCredentials = await fastify.dalGeneric.getPlayerCredentials(username);
-      const crypt = new Cryptr(encryptedCredentials.psw);
+      const crypt = new Cryptr(key);
       const email = encryptedCredentials.codemail;
       const uno = encryptedCredentials.uno;
       const plainCodPsw = crypt.decrypt(encryptedCredentials.codpsw);
@@ -885,7 +887,43 @@ fastify.get('/endTournament/:id', async(req, reply) => {
   }
 }*/
 
-fastify.listen(3000, (err, address) => {
+//View Global Rankings By Date
+fastify.get('/requestResetPassword', (req, reply) => {
+  reply.view('./ResetPassword/RequestResetPassword.ejs');
+})
+fastify.post('/requestResetPassword', async (req, reply) => {
+  const data = req.body;
+  const authTokenResetPassword = uuid.v4();
+  const rs = await fastify.dalGeneric.addTokenResetPassword(data['email'], authTokenResetPassword);
+  if(rs)
+  {
+    await fastify.Email.sendMail(data['email'], authTokenResetPassword);
+  }
+  reply.redirect("/home");
+})
+fastify.get('/requestResetPassword/:token', async (req, reply) => {
+  const authTokenResetPassword = req.params.token;
+  const rs = await fastify.dalGeneric.ValidTokenResetPassword(authTokenResetPassword);
+  if(rs)
+  {
+    return reply.view('./ResetPassword/ResetPassword.ejs', {error: "", authTokenResetPassword, uno: rs.uno});
+  }
+  return reply.view('./ResetPassword/ResetPassword.ejs', {error: "401", authTokenResetPassword: "", uno: ""});
+})
+fastify.post('/requestResetPassword/:token', async (req, reply) => {
+  const authTokenResetPassword = req.params.token;
+  const data = req.body;
+  if(data['password'] === data['password2'])
+  {
+    const psw_sha256 = sha256(data['password']);
+    const rs = await fastify.dalGeneric.changePassword(psw_sha256, data['uno']);
+    reply.redirect("/home");
+  }
+  return reply.view('./ResetPassword/ResetPassword.ejs', {error: "password", authTokenResetPassword, uno: data['uno']});
+})
+
+fastify.listen(443, '0.0.0.0', (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
 })
+fastify.register(HttpsRedirect,{httpPort:80, httpPort:8080});

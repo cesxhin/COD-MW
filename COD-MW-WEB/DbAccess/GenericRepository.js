@@ -86,7 +86,27 @@ const dalGeneric = () =>
       client.end();
       return result.rowCount > 0 ? result.rows[0] : null;
     }
-
+    //add / edit auth token to user
+    const addTokenResetPassword = async(email, token) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`UPDATE account SET authTokenResetPassw = $2 WHERE email_cod = $1 RETURNING *`, [email, token]);
+      client.end();
+      return result.rowCount > 0 ? result.rows[0] : null;
+    }
+    //add / edit auth token to user
+    const ValidTokenResetPassword = async(token) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`SELECT uno FROM account WHERE authTokenResetPassw=$1`, [token]);
+      client.end();
+      return result.rowCount > 0 ? result.rows[0] : null;
+    }
+    //add / edit auth token to user
+    const changePassword = async(password, uno) => {
+      const client = new ConnectionClient();
+      const result = await client.query(`UPDATE account SET password = $2 WHERE uno = $1 RETURNING *`, [uno, password]);
+      client.end();
+      return result.rowCount > 0 ? result.rows[0] : null;
+    }
     return{
       login,
       addToken,
@@ -95,7 +115,10 @@ const dalGeneric = () =>
       verifyEmail,
       checkTagUsername,
       checkRegistrations,
-      getPlayerCredentials
+      getPlayerCredentials,
+      addTokenResetPassword,
+      ValidTokenResetPassword,
+      changePassword
     }
 }
 
