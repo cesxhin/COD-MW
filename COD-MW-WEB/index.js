@@ -1,7 +1,6 @@
 //variable global
 const path = require('path');
 const fs = require('fs');
-const HttpsRedirect = require("fastify-https-redirect")
 //uuid for authToken 
 const uuid = require('uuid');
 
@@ -12,20 +11,19 @@ const Cryptr = require('cryptr');
 const key = "yMtgjZ70*IQm%r@iv2S@$YOr";
 //import css
 const fastify = require('fastify')({
-    logger: {
-      level : 'error',
-      file : 'codLoggerError.log'
-    },
-    http2: true,
-    https: {
-      allowHTTP1: true,
-      key: fs.readFileSync(path.join(__dirname, '', 'https', 'private.key')),
-      cert: fs.readFileSync(path.join(__dirname, '', 'https', 'certificate.cert'))
-    }
-  })
-  fastify.register(require('fastify-static'), {
-    root: path.join(__dirname, 'Public'),
-    prefix: '/Public/', // optional: default '/'
+  logger: {
+    level : 'info'
+  },
+  http2: true,
+  https: {
+    allowHTTP1: true,
+    key: fs.readFileSync(path.join(__dirname, '', 'https', 'private.key')),
+    cert: fs.readFileSync(path.join(__dirname, '', 'https', 'certificate.cert'))
+  }
+});
+fastify.register(require('fastify-static'), {
+  root: path.join(__dirname, 'Public'),
+  prefix: '/Public/', // optional: default '/'
 });
 //create and connect db
 //fastify.decorate('dal', require('./DbAccess/db')());
@@ -56,7 +54,6 @@ fastify.register(require('point-of-view'), {
 fastify.register(require('fastify-cookie'), {
   secret : 'mySecret'
 });
-
 fastify.addHook('onRequest', async (req, reply) => {
   req.log.info(Date.now() + 'richiesta');
   if(req.url === '/login' || req.url.startsWith('/requestResetPassword') || req.url.startsWith('/Public') || req.url === '/registration') 
@@ -649,7 +646,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
       const email = encryptedCredentials.codemail;
       const uno = encryptedCredentials.uno;
       const plainCodPsw = crypt.decrypt(encryptedCredentials.codpsw);
-      
+      req.log.info(email)
       //login with credentials
       let result = await fastify.cod.getMatches(email ,plainCodPsw, uno);
       if(!result)
@@ -689,7 +686,6 @@ fastify.get('/endTournament/:id', async(req, reply) => {
                 //insert teamRankings
                 teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches[z].players.push(matchResults);
                 teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches[z].totalPointsMatch = (teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches[z].totalPointsMatch + matchResults.killPoints);
-            console.log();
             }
           }
         }
@@ -768,10 +764,13 @@ fastify.get('/endTournament/:id', async(req, reply) => {
           }
         }
       }
+      req.log.info(teamResultsGlobal);
+      req.log.info(teamResultsPrivate);
     }
   }
   //END
-
+  req.log.info(teamResultsGlobal);
+  req.log.info(teamResultsPrivate);
   let tournamentPlace = [];
   //select only 3 match and ranking
   for (let i = 0; i < registratedTeams.length; i++) {
@@ -802,6 +801,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
         }
       }
     }
+    req.log.info(maxArray);
     //delete team by Results global if they don't 3 matchs
     if(maxArray.length < 3)
     {
@@ -845,15 +845,19 @@ fastify.get('/endTournament/:id', async(req, reply) => {
       }
     }
   }
+  req.log.info(teamResultsGlobal);
+  req.log.info(teamResultsPrivate);
   //close tournament
   const closed = await fastify.dalTournament.closeTournament(tournamentID);
   if(!closed)
     reply.redirect('/management');
   //insert into db
   const rs = await fastify.dalGlobalRankings.insertGlobalRankings(teamResultsGlobal, tournamentID);
+  req.log.info("insertGlobalRankings: "+rs);
   for(let i=0; i<teamResultsPrivate.teams.length; i++)
   {
     const result = await fastify.dalTeamRankings.insertTeamRankings(teamResultsPrivate.teams[i].nameTeam, teamResultsPrivate.teams[i], tournamentID);
+    req.log.info("insertTeamRankings: "+result);
   }
   reply.redirect('/management');
 })
@@ -913,17 +917,22 @@ fastify.get('/requestResetPassword/:token', async (req, reply) => {
 fastify.post('/requestResetPassword/:token', async (req, reply) => {
   const authTokenResetPassword = req.params.token;
   const data = req.body;
-  if(data['password'] === data['password2'])
-  {
-    const psw_sha256 = sha256(data['password']);
-    const rs = await fastify.dalGeneric.changePassword(psw_sha256, data['uno']);
-    reply.redirect("/home");
+  try {
+    if(data['password'] === data['password2'])
+    {
+      const psw_sha256 = sha256(data['password']);
+      const rs = await fastify.dalGeneric.changePassword(psw_sha256, data['uno']);
+      const success = await fastify.dalGeneric.deleteResetToken(data['uno']);
+      reply.redirect("/home");
+    }
+    return reply.view('./ResetPassword/ResetPassword.ejs', {error: "password", authTokenResetPassword, uno: data['uno']});
+  } catch (err) {
+    fastify.log.error(err);
+    return reply.view('./ResetPassword/ResetPassword.ejs', {error: "generic", authTokenResetPassword: "", uno: ""});
   }
-  return reply.view('./ResetPassword/ResetPassword.ejs', {error: "password", authTokenResetPassword, uno: data['uno']});
+  
 })
-
-fastify.listen(443, '0.0.0.0', (err, address) => {
+fastify.listen(3000, '0.0.0.0', (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
 })
-fastify.register(HttpsRedirect,{httpPort:80, httpPort:8080});

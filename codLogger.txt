@@ -1,0 +1,1013 @@
+{"level":30,"time":1619369568901,"pid":12728,"hostname":"DESKTOP-V9E78IE","msg":"Server listening at https://0.0.0.0:3000"}
+{"level":30,"time":1619369568901,"pid":12728,"hostname":"DESKTOP-V9E78IE","msg":"server listening on https://0.0.0.0:3000"}
+{"level":30,"time":1619369573133,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1","req":{"method":"GET","url":"/","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573133,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1","msg":"1619369573133richiesta"}
+{"level":30,"time":1619369573160,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1","res":{"statusCode":302},"responseTime":26.640000000596046,"msg":"request completed"}
+{"level":30,"time":1619369573160,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2","req":{"method":"GET","url":"/","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573161,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2","msg":"1619369573161richiesta"}
+{"level":30,"time":1619369573161,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573161,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3","msg":"1619369573161richiesta"}
+{"level":30,"time":1619369573164,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2","res":{"statusCode":302},"responseTime":3.0738999992609024,"msg":"request completed"}
+{"level":30,"time":1619369573168,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3","res":{"statusCode":200},"responseTime":6.99949999153614,"msg":"request completed"}
+{"level":30,"time":1619369573169,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573169,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4","msg":"1619369573169richiesta"}
+{"level":30,"time":1619369573172,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4","res":{"statusCode":200},"responseTime":2.598600000143051,"msg":"request completed"}
+{"level":30,"time":1619369573179,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-5","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573179,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-5","msg":"1619369573179richiesta"}
+{"level":30,"time":1619369573180,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-6","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573180,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-6","msg":"1619369573180richiesta"}
+{"level":30,"time":1619369573181,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-7","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573181,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-7","msg":"1619369573181richiesta"}
+{"level":30,"time":1619369573182,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-8","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573182,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-8","msg":"1619369573182richiesta"}
+{"level":30,"time":1619369573182,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-9","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573182,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-9","msg":"1619369573182richiesta"}
+{"level":30,"time":1619369573183,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-a","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573183,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-a","msg":"1619369573183richiesta"}
+{"level":30,"time":1619369573183,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-b","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573183,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-b","msg":"1619369573183richiesta"}
+{"level":30,"time":1619369573184,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-c","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573184,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-c","msg":"1619369573184richiesta"}
+{"level":30,"time":1619369573184,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-d","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573184,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-d","msg":"1619369573184richiesta"}
+{"level":30,"time":1619369573208,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-b","res":{"statusCode":200},"responseTime":24.98659999668598,"msg":"request completed"}
+{"level":30,"time":1619369573211,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-e","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573211,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-e","msg":"1619369573211richiesta"}
+{"level":30,"time":1619369573212,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-7","res":{"statusCode":200},"responseTime":30.723800003528595,"msg":"request completed"}
+{"level":30,"time":1619369573212,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-8","res":{"statusCode":200},"responseTime":30.633300006389618,"msg":"request completed"}
+{"level":30,"time":1619369573213,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-a","res":{"statusCode":200},"responseTime":30.151000007987022,"msg":"request completed"}
+{"level":30,"time":1619369573213,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-c","res":{"statusCode":200},"responseTime":29.508100003004074,"msg":"request completed"}
+{"level":30,"time":1619369573214,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-d","res":{"statusCode":200},"responseTime":29.371899992227554,"msg":"request completed"}
+{"level":30,"time":1619369573214,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-f","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573215,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-f","msg":"1619369573215richiesta"}
+{"level":30,"time":1619369573215,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-g","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573215,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-g","msg":"1619369573215richiesta"}
+{"level":30,"time":1619369573215,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-h","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573215,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-h","msg":"1619369573215richiesta"}
+{"level":30,"time":1619369573216,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-i","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573216,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-i","msg":"1619369573216richiesta"}
+{"level":30,"time":1619369573216,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-j","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573216,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-j","msg":"1619369573216richiesta"}
+{"level":30,"time":1619369573217,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-k","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573217,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-k","msg":"1619369573217richiesta"}
+{"level":30,"time":1619369573217,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-l","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573217,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-l","msg":"1619369573217richiesta"}
+{"level":30,"time":1619369573217,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-m","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573217,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-m","msg":"1619369573217richiesta"}
+{"level":30,"time":1619369573222,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-9","res":{"statusCode":200},"responseTime":39.866799995303154,"msg":"request completed"}
+{"level":30,"time":1619369573225,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-5","res":{"statusCode":200},"responseTime":46.21770000457764,"msg":"request completed"}
+{"level":30,"time":1619369573240,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-k","res":{"statusCode":200},"responseTime":22.988099992275238,"msg":"request completed"}
+{"level":30,"time":1619369573240,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-l","res":{"statusCode":200},"responseTime":22.75400000810623,"msg":"request completed"}
+{"level":30,"time":1619369573240,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-m","res":{"statusCode":200},"responseTime":22.482299998402596,"msg":"request completed"}
+{"level":30,"time":1619369573243,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-g","res":{"statusCode":200},"responseTime":28.26630000770092,"msg":"request completed"}
+{"level":30,"time":1619369573243,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-j","res":{"statusCode":200},"responseTime":27.15030001103878,"msg":"request completed"}
+{"level":30,"time":1619369573244,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-i","res":{"statusCode":200},"responseTime":27.694499999284744,"msg":"request completed"}
+{"level":30,"time":1619369573244,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-6","res":{"statusCode":200},"responseTime":63.38239999115467,"msg":"request completed"}
+{"level":30,"time":1619369573246,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-h","res":{"statusCode":200},"responseTime":30.696099996566772,"msg":"request completed"}
+{"level":30,"time":1619369573247,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-e","res":{"statusCode":200},"responseTime":35.59160000085831,"msg":"request completed"}
+{"level":30,"time":1619369573249,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-f","res":{"statusCode":200},"responseTime":34.82780000567436,"msg":"request completed"}
+{"level":30,"time":1619369573314,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-n","req":{"method":"GET","url":"/Public/assets/fonts/fa-solid-900.woff2","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573314,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-n","msg":"1619369573314richiesta"}
+{"level":30,"time":1619369573315,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-o","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50903},"msg":"incoming request"}
+{"level":30,"time":1619369573315,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-o","msg":"1619369573315richiesta"}
+{"level":30,"time":1619369573320,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-n","res":{"statusCode":200},"responseTime":5.891199991106987,"msg":"request completed"}
+{"level":30,"time":1619369573322,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-o","res":{"statusCode":200},"responseTime":7.278599992394447,"msg":"request completed"}
+{"level":30,"time":1619369582394,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-p","req":{"method":"POST","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369582394,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-p","msg":"1619369582394richiesta"}
+{"level":30,"time":1619369583309,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-p","msg":"Logged undefined"}
+{"level":30,"time":1619369583310,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-p","res":{"statusCode":302},"responseTime":915.8865000009537,"msg":"request completed"}
+{"level":30,"time":1619369583312,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-q","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583312,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-q","msg":"1619369583312richiesta"}
+{"level":30,"time":1619369583856,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-q","res":{"statusCode":302},"responseTime":543.8569999933243,"msg":"request completed"}
+{"level":30,"time":1619369583857,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-r","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583857,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-r","msg":"1619369583857richiesta"}
+{"level":30,"time":1619369583860,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-r","res":{"statusCode":200},"responseTime":2.423900008201599,"msg":"request completed"}
+{"level":30,"time":1619369583876,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-s","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583876,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-s","msg":"1619369583876richiesta"}
+{"level":30,"time":1619369583877,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-t","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583877,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-t","msg":"1619369583877richiesta"}
+{"level":30,"time":1619369583878,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-u","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583878,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-u","msg":"1619369583878richiesta"}
+{"level":30,"time":1619369583881,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-v","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583881,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-v","msg":"1619369583881richiesta"}
+{"level":30,"time":1619369583882,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-w","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583882,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-w","msg":"1619369583882richiesta"}
+{"level":30,"time":1619369583883,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-x","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583883,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-x","msg":"1619369583883richiesta"}
+{"level":30,"time":1619369583883,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-y","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583883,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-y","msg":"1619369583883richiesta"}
+{"level":30,"time":1619369583883,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-z","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583883,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-z","msg":"1619369583883richiesta"}
+{"level":30,"time":1619369583884,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-10","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583884,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-10","msg":"1619369583884richiesta"}
+{"level":30,"time":1619369583890,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-v","res":{"statusCode":304},"responseTime":9.262299999594688,"msg":"request completed"}
+{"level":30,"time":1619369583891,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-w","res":{"statusCode":304},"responseTime":8.577900007367134,"msg":"request completed"}
+{"level":30,"time":1619369583891,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-x","res":{"statusCode":304},"responseTime":8.20160000026226,"msg":"request completed"}
+{"level":30,"time":1619369583891,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-y","res":{"statusCode":304},"responseTime":7.879199996590614,"msg":"request completed"}
+{"level":30,"time":1619369583891,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-z","res":{"statusCode":304},"responseTime":7.555399999022484,"msg":"request completed"}
+{"level":30,"time":1619369583896,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-10","res":{"statusCode":304},"responseTime":12.00459998846054,"msg":"request completed"}
+{"level":30,"time":1619369583901,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-u","res":{"statusCode":200},"responseTime":22.99210000038147,"msg":"request completed"}
+{"level":30,"time":1619369583901,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-s","res":{"statusCode":200},"responseTime":24.992400005459785,"msg":"request completed"}
+{"level":30,"time":1619369583904,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-t","res":{"statusCode":200},"responseTime":26.867899999022484,"msg":"request completed"}
+{"level":30,"time":1619369583934,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-11","req":{"method":"GET","url":"/Public/assets/fonts/fa-solid-900.woff2","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583934,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-11","msg":"1619369583934richiesta"}
+{"level":30,"time":1619369583934,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-12","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50922},"msg":"incoming request"}
+{"level":30,"time":1619369583935,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-12","msg":"1619369583935richiesta"}
+{"level":30,"time":1619369583936,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-11","res":{"statusCode":304},"responseTime":2.2186999917030334,"msg":"request completed"}
+{"level":30,"time":1619369583937,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-12","res":{"statusCode":304},"responseTime":2.4388999938964844,"msg":"request completed"}
+{"level":30,"time":1619369603232,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-13","req":{"method":"POST","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369603232,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-13","msg":"1619369603232richiesta"}
+{"level":30,"time":1619369604311,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-13","msg":"Logged undefined"}
+{"level":30,"time":1619369604312,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-13","res":{"statusCode":302},"responseTime":1080.1907000094652,"msg":"request completed"}
+{"level":30,"time":1619369604314,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-14","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369604314,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-14","msg":"1619369604314richiesta"}
+{"level":30,"time":1619369605021,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-14","res":{"statusCode":302},"responseTime":706.4036000072956,"msg":"request completed"}
+{"level":30,"time":1619369605022,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-15","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605022,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-15","msg":"1619369605022richiesta"}
+{"level":30,"time":1619369605025,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-15","res":{"statusCode":200},"responseTime":2.419300004839897,"msg":"request completed"}
+{"level":30,"time":1619369605036,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-16","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605036,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-16","msg":"1619369605036richiesta"}
+{"level":30,"time":1619369605037,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-17","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605037,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-17","msg":"1619369605037richiesta"}
+{"level":30,"time":1619369605038,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-18","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605038,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-18","msg":"1619369605038richiesta"}
+{"level":30,"time":1619369605043,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-19","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605044,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-19","msg":"1619369605044richiesta"}
+{"level":30,"time":1619369605044,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1a","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605044,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1a","msg":"1619369605044richiesta"}
+{"level":30,"time":1619369605045,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1b","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605045,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1b","msg":"1619369605045richiesta"}
+{"level":30,"time":1619369605045,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1c","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605045,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1c","msg":"1619369605045richiesta"}
+{"level":30,"time":1619369605046,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1d","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605046,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1d","msg":"1619369605046richiesta"}
+{"level":30,"time":1619369605046,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1e","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605046,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1e","msg":"1619369605046richiesta"}
+{"level":30,"time":1619369605053,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-19","res":{"statusCode":304},"responseTime":9.754700005054474,"msg":"request completed"}
+{"level":30,"time":1619369605053,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1a","res":{"statusCode":304},"responseTime":9.09570001065731,"msg":"request completed"}
+{"level":30,"time":1619369605054,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1b","res":{"statusCode":304},"responseTime":8.806999996304512,"msg":"request completed"}
+{"level":30,"time":1619369605054,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1c","res":{"statusCode":304},"responseTime":8.476099997758865,"msg":"request completed"}
+{"level":30,"time":1619369605054,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1d","res":{"statusCode":304},"responseTime":8.145100012421608,"msg":"request completed"}
+{"level":30,"time":1619369605054,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1e","res":{"statusCode":304},"responseTime":7.828999996185303,"msg":"request completed"}
+{"level":30,"time":1619369605057,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-18","res":{"statusCode":200},"responseTime":19.374200001358986,"msg":"request completed"}
+{"level":30,"time":1619369605059,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-16","res":{"statusCode":200},"responseTime":22.93690000474453,"msg":"request completed"}
+{"level":30,"time":1619369605062,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-17","res":{"statusCode":200},"responseTime":25.530100002884865,"msg":"request completed"}
+{"level":30,"time":1619369605090,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1f","req":{"method":"GET","url":"/Public/assets/fonts/fa-solid-900.woff2","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605090,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1f","msg":"1619369605090richiesta"}
+{"level":30,"time":1619369605091,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1g","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50939},"msg":"incoming request"}
+{"level":30,"time":1619369605091,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1g","msg":"1619369605091richiesta"}
+{"level":30,"time":1619369605092,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1f","res":{"statusCode":304},"responseTime":1.7928999960422516,"msg":"request completed"}
+{"level":30,"time":1619369605093,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1g","res":{"statusCode":304},"responseTime":2.3710999935865402,"msg":"request completed"}
+{"level":30,"time":1619369612942,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1h","req":{"method":"POST","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369612942,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1h","msg":"1619369612942richiesta"}
+{"level":30,"time":1619369615352,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1h","msg":"Logged undefined"}
+{"level":30,"time":1619369615352,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1h","res":{"statusCode":302},"responseTime":2410.3300999999046,"msg":"request completed"}
+{"level":30,"time":1619369615354,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1i","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369615354,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1i","msg":"1619369615354richiesta"}
+{"level":30,"time":1619369616192,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1i","res":{"statusCode":302},"responseTime":837.7164999991655,"msg":"request completed"}
+{"level":30,"time":1619369616194,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1j","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616194,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1j","msg":"1619369616194richiesta"}
+{"level":30,"time":1619369616196,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1j","res":{"statusCode":200},"responseTime":2.192300006747246,"msg":"request completed"}
+{"level":30,"time":1619369616210,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1k","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616210,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1k","msg":"1619369616210richiesta"}
+{"level":30,"time":1619369616210,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1l","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616210,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1l","msg":"1619369616210richiesta"}
+{"level":30,"time":1619369616211,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1m","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616211,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1m","msg":"1619369616211richiesta"}
+{"level":30,"time":1619369616218,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1n","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616218,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1n","msg":"1619369616218richiesta"}
+{"level":30,"time":1619369616219,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1o","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616219,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1o","msg":"1619369616219richiesta"}
+{"level":30,"time":1619369616220,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1p","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616220,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1p","msg":"1619369616220richiesta"}
+{"level":30,"time":1619369616220,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1q","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616220,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1q","msg":"1619369616220richiesta"}
+{"level":30,"time":1619369616221,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1r","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616221,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1r","msg":"1619369616221richiesta"}
+{"level":30,"time":1619369616221,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1s","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616221,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1s","msg":"1619369616221richiesta"}
+{"level":30,"time":1619369616229,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1n","res":{"statusCode":304},"responseTime":10.755800008773804,"msg":"request completed"}
+{"level":30,"time":1619369616229,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1o","res":{"statusCode":304},"responseTime":9.843400001525879,"msg":"request completed"}
+{"level":30,"time":1619369616229,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1p","res":{"statusCode":304},"responseTime":9.449600011110306,"msg":"request completed"}
+{"level":30,"time":1619369616229,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1q","res":{"statusCode":304},"responseTime":9.07820001244545,"msg":"request completed"}
+{"level":30,"time":1619369616230,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1r","res":{"statusCode":304},"responseTime":8.710500001907349,"msg":"request completed"}
+{"level":30,"time":1619369616230,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1s","res":{"statusCode":304},"responseTime":8.38960000872612,"msg":"request completed"}
+{"level":30,"time":1619369616233,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1m","res":{"statusCode":200},"responseTime":22.410899996757507,"msg":"request completed"}
+{"level":30,"time":1619369616234,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1k","res":{"statusCode":200},"responseTime":24.15929999947548,"msg":"request completed"}
+{"level":30,"time":1619369616237,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1l","res":{"statusCode":200},"responseTime":26.34469999372959,"msg":"request completed"}
+{"level":30,"time":1619369616265,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1t","req":{"method":"GET","url":"/Public/assets/fonts/fa-solid-900.woff2","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616265,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1t","msg":"1619369616265richiesta"}
+{"level":30,"time":1619369616265,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1u","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369616265,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1u","msg":"1619369616265richiesta"}
+{"level":30,"time":1619369616266,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1t","res":{"statusCode":304},"responseTime":1.6661000102758408,"msg":"request completed"}
+{"level":30,"time":1619369616269,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1u","res":{"statusCode":304},"responseTime":3.770999997854233,"msg":"request completed"}
+{"level":30,"time":1619369617271,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1v","req":{"method":"GET","url":"/requestResetPassword","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617271,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1v","msg":"1619369617271richiesta"}
+{"level":30,"time":1619369617273,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1v","res":{"statusCode":200},"responseTime":2.5309999883174896,"msg":"request completed"}
+{"level":30,"time":1619369617287,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1w","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617287,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1w","msg":"1619369617287richiesta"}
+{"level":30,"time":1619369617288,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1x","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617288,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1x","msg":"1619369617288richiesta"}
+{"level":30,"time":1619369617289,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1y","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617289,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1y","msg":"1619369617289richiesta"}
+{"level":30,"time":1619369617289,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1z","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617289,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1z","msg":"1619369617289richiesta"}
+{"level":30,"time":1619369617290,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-20","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617290,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-20","msg":"1619369617290richiesta"}
+{"level":30,"time":1619369617290,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-21","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617290,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-21","msg":"1619369617290richiesta"}
+{"level":30,"time":1619369617290,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-22","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617291,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-22","msg":"1619369617291richiesta"}
+{"level":30,"time":1619369617291,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-23","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617291,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-23","msg":"1619369617291richiesta"}
+{"level":30,"time":1619369617291,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-24","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617291,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-24","msg":"1619369617291richiesta"}
+{"level":30,"time":1619369617292,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-25","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617292,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-25","msg":"1619369617292richiesta"}
+{"level":30,"time":1619369617292,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-26","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617293,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-26","msg":"1619369617293richiesta"}
+{"level":30,"time":1619369617293,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-27","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617293,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-27","msg":"1619369617293richiesta"}
+{"level":30,"time":1619369617293,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-28","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617293,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-28","msg":"1619369617293richiesta"}
+{"level":30,"time":1619369617294,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-29","req":{"method":"GET","url":"/Public/assets/pages/datatables.init.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617294,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-29","msg":"1619369617294richiesta"}
+{"level":30,"time":1619369617300,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-27","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619369617301,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-28","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619369617302,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-20","res":{"statusCode":304},"responseTime":12.186100006103516,"msg":"request completed"}
+{"level":30,"time":1619369617302,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-21","res":{"statusCode":304},"responseTime":11.880899995565414,"msg":"request completed"}
+{"level":30,"time":1619369617302,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-24","res":{"statusCode":304},"responseTime":10.672499999403954,"msg":"request completed"}
+{"level":30,"time":1619369617302,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-25","res":{"statusCode":304},"responseTime":10.3614000082016,"msg":"request completed"}
+{"level":30,"time":1619369617302,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-26","res":{"statusCode":304},"responseTime":9.840500012040138,"msg":"request completed"}
+{"level":30,"time":1619369617306,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-27","res":{"statusCode":404},"responseTime":12.587099999189377,"msg":"request completed"}
+{"level":30,"time":1619369617306,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-28","res":{"statusCode":404},"responseTime":12.28150001168251,"msg":"request completed"}
+{"level":30,"time":1619369617317,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1w","res":{"statusCode":200},"responseTime":29.18069998919964,"msg":"request completed"}
+{"level":30,"time":1619369617317,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1x","res":{"statusCode":200},"responseTime":28.653599992394447,"msg":"request completed"}
+{"level":30,"time":1619369617317,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1y","res":{"statusCode":200},"responseTime":28.240299999713898,"msg":"request completed"}
+{"level":30,"time":1619369617320,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-23","res":{"statusCode":200},"responseTime":29.521799996495247,"msg":"request completed"}
+{"level":30,"time":1619369617321,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-29","res":{"statusCode":200},"responseTime":26.671499997377396,"msg":"request completed"}
+{"level":30,"time":1619369617323,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-1z","res":{"statusCode":200},"responseTime":33.39739999175072,"msg":"request completed"}
+{"level":30,"time":1619369617325,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-22","res":{"statusCode":200},"responseTime":34.54269999265671,"msg":"request completed"}
+{"level":30,"time":1619369617339,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2a","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617339,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2a","msg":"1619369617339richiesta"}
+{"level":30,"time":1619369617339,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2a","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619369617340,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2a","res":{"statusCode":404},"responseTime":1.3435000032186508,"msg":"request completed"}
+{"level":30,"time":1619369617358,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2b","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369617358,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2b","msg":"1619369617358richiesta"}
+{"level":30,"time":1619369617359,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2b","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619369617359,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2b","res":{"statusCode":404},"responseTime":1.587799996137619,"msg":"request completed"}
+{"level":30,"time":1619369620021,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2c","req":{"method":"POST","url":"/requestResetPassword","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369620022,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2c","msg":"1619369620022richiesta"}
+{"level":30,"time":1619369621923,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2c","res":{"statusCode":302},"responseTime":1901.420100003481,"msg":"request completed"}
+{"level":30,"time":1619369621925,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2d","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369621925,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2d","msg":"1619369621925richiesta"}
+{"level":30,"time":1619369622795,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2d","res":{"statusCode":302},"responseTime":870.1516999900341,"msg":"request completed"}
+{"level":30,"time":1619369622797,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2e","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622797,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2e","msg":"1619369622797richiesta"}
+{"level":30,"time":1619369622799,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2e","res":{"statusCode":200},"responseTime":1.9812999963760376,"msg":"request completed"}
+{"level":30,"time":1619369622811,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2f","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622811,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2f","msg":"1619369622811richiesta"}
+{"level":30,"time":1619369622811,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2g","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622811,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2g","msg":"1619369622811richiesta"}
+{"level":30,"time":1619369622812,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2h","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622812,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2h","msg":"1619369622812richiesta"}
+{"level":30,"time":1619369622818,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2i","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622818,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2i","msg":"1619369622818richiesta"}
+{"level":30,"time":1619369622819,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2j","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622819,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2j","msg":"1619369622819richiesta"}
+{"level":30,"time":1619369622820,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2k","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622820,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2k","msg":"1619369622820richiesta"}
+{"level":30,"time":1619369622820,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2l","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622820,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2l","msg":"1619369622820richiesta"}
+{"level":30,"time":1619369622821,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2m","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622821,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2m","msg":"1619369622821richiesta"}
+{"level":30,"time":1619369622822,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2n","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622822,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2n","msg":"1619369622822richiesta"}
+{"level":30,"time":1619369622829,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2i","res":{"statusCode":304},"responseTime":10.943900004029274,"msg":"request completed"}
+{"level":30,"time":1619369622829,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2j","res":{"statusCode":304},"responseTime":10.297999992966652,"msg":"request completed"}
+{"level":30,"time":1619369622830,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2k","res":{"statusCode":304},"responseTime":9.913999989628792,"msg":"request completed"}
+{"level":30,"time":1619369622830,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2l","res":{"statusCode":304},"responseTime":9.610799998044968,"msg":"request completed"}
+{"level":30,"time":1619369622830,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2m","res":{"statusCode":304},"responseTime":8.577999994158745,"msg":"request completed"}
+{"level":30,"time":1619369622834,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2h","res":{"statusCode":200},"responseTime":21.69370000064373,"msg":"request completed"}
+{"level":30,"time":1619369622836,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2f","res":{"statusCode":200},"responseTime":25.053800001740456,"msg":"request completed"}
+{"level":30,"time":1619369622840,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2n","res":{"statusCode":200},"responseTime":17.719400003552437,"msg":"request completed"}
+{"level":30,"time":1619369622840,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2g","res":{"statusCode":200},"responseTime":28.954099997878075,"msg":"request completed"}
+{"level":30,"time":1619369622868,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2o","req":{"method":"GET","url":"/Public/assets/fonts/fa-solid-900.woff2","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622868,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2o","msg":"1619369622868richiesta"}
+{"level":30,"time":1619369622869,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2p","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":50957},"msg":"incoming request"}
+{"level":30,"time":1619369622869,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2p","msg":"1619369622869richiesta"}
+{"level":30,"time":1619369622870,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2o","res":{"statusCode":304},"responseTime":1.6587999910116196,"msg":"request completed"}
+{"level":30,"time":1619369622871,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2p","res":{"statusCode":304},"responseTime":2.223900005221367,"msg":"request completed"}
+{"level":30,"time":1619369646433,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2q","req":{"method":"GET","url":"/requestResetPassword/45de1458-e2ae-4908-a286-49db1fb94087","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646433,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2q","msg":"1619369646433richiesta"}
+{"level":30,"time":1619369646845,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2q","res":{"statusCode":200},"responseTime":412.42639999091625,"msg":"request completed"}
+{"level":30,"time":1619369646859,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2r","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646859,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2r","msg":"1619369646859richiesta"}
+{"level":30,"time":1619369646859,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2s","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646859,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2s","msg":"1619369646859richiesta"}
+{"level":30,"time":1619369646860,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2t","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646860,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2t","msg":"1619369646860richiesta"}
+{"level":30,"time":1619369646860,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2u","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646860,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2u","msg":"1619369646860richiesta"}
+{"level":30,"time":1619369646861,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2v","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646861,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2v","msg":"1619369646861richiesta"}
+{"level":30,"time":1619369646861,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2w","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646861,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2w","msg":"1619369646861richiesta"}
+{"level":30,"time":1619369646862,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2x","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646862,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2x","msg":"1619369646862richiesta"}
+{"level":30,"time":1619369646862,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2y","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646862,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2y","msg":"1619369646862richiesta"}
+{"level":30,"time":1619369646863,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2z","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646863,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2z","msg":"1619369646863richiesta"}
+{"level":30,"time":1619369646863,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-30","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646863,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-30","msg":"1619369646863richiesta"}
+{"level":30,"time":1619369646863,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-31","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646863,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-31","msg":"1619369646863richiesta"}
+{"level":30,"time":1619369646864,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-32","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646864,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-32","msg":"1619369646864richiesta"}
+{"level":30,"time":1619369646864,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-33","req":{"method":"GET","url":"/Public/assets/pages/datatables.init.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646864,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-33","msg":"1619369646864richiesta"}
+{"level":30,"time":1619369646865,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-34","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646865,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-34","msg":"1619369646865richiesta"}
+{"level":30,"time":1619369646870,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-31","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619369646870,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-32","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619369646872,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2x","res":{"statusCode":304},"responseTime":10.45839999616146,"msg":"request completed"}
+{"level":30,"time":1619369646872,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2y","res":{"statusCode":304},"responseTime":10.06199999153614,"msg":"request completed"}
+{"level":30,"time":1619369646872,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2z","res":{"statusCode":304},"responseTime":9.722299993038177,"msg":"request completed"}
+{"level":30,"time":1619369646872,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-30","res":{"statusCode":304},"responseTime":9.409400001168251,"msg":"request completed"}
+{"level":30,"time":1619369646876,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-34","res":{"statusCode":304},"responseTime":11.011500000953674,"msg":"request completed"}
+{"level":30,"time":1619369646876,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-31","res":{"statusCode":404},"responseTime":12.569999992847443,"msg":"request completed"}
+{"level":30,"time":1619369646876,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-32","res":{"statusCode":404},"responseTime":12.263600006699562,"msg":"request completed"}
+{"level":30,"time":1619369646888,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2r","res":{"statusCode":200},"responseTime":29.45659999549389,"msg":"request completed"}
+{"level":30,"time":1619369646888,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2s","res":{"statusCode":200},"responseTime":29.075599998235703,"msg":"request completed"}
+{"level":30,"time":1619369646888,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2t","res":{"statusCode":200},"responseTime":28.7601999938488,"msg":"request completed"}
+{"level":30,"time":1619369646889,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-33","res":{"statusCode":200},"responseTime":24.14519999921322,"msg":"request completed"}
+{"level":30,"time":1619369646893,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2w","res":{"statusCode":200},"responseTime":31.73600000143051,"msg":"request completed"}
+{"level":30,"time":1619369646895,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2u","res":{"statusCode":200},"responseTime":34.495199993252754,"msg":"request completed"}
+{"level":30,"time":1619369646898,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-2v","res":{"statusCode":200},"responseTime":37.398400008678436,"msg":"request completed"}
+{"level":30,"time":1619369646913,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-35","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646913,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-35","msg":"1619369646913richiesta"}
+{"level":30,"time":1619369646913,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-35","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619369646914,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-35","res":{"statusCode":404},"responseTime":1.39130000770092,"msg":"request completed"}
+{"level":30,"time":1619369646933,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-36","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369646933,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-36","msg":"1619369646933richiesta"}
+{"level":30,"time":1619369646934,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-36","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619369646935,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-36","res":{"statusCode":404},"responseTime":1.622299998998642,"msg":"request completed"}
+{"level":30,"time":1619369651685,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-37","req":{"method":"POST","url":"/requestResetPassword/45de1458-e2ae-4908-a286-49db1fb94087","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369651685,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-37","msg":"1619369651685richiesta"}
+{"level":30,"time":1619369652872,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-37","res":{"statusCode":302},"responseTime":1187.3509000092745,"msg":"request completed"}
+{"level":40,"time":1619369652873,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-37","err":{"type":"FastifyError","message":"Reply was already sent.","stack":"FastifyError: Reply was already sent.\n    at _Reply.Reply.send (c:\\Users\\matti\\Documents\\GitHub\\COD-MW\\COD-MW-WEB\\node_modules\\fastify\\lib\\reply.js:118:26)\n    at _readCallback (c:\\Users\\matti\\Documents\\GitHub\\COD-MW\\COD-MW-WEB\\node_modules\\point-of-view\\index.js:213:12)\n    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:75:3)\n    at FSReqCallback.callbackTrampoline (node:internal/async_hooks:132:14)","name":"FastifyError","code":"FST_ERR_REP_ALREADY_SENT","statusCode":500},"msg":"Reply already sent"}
+{"level":30,"time":1619369652874,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-38","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369652874,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-38","msg":"1619369652874richiesta"}
+{"level":30,"time":1619369653592,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-38","res":{"statusCode":302},"responseTime":718.4038999974728,"msg":"request completed"}
+{"level":30,"time":1619369653594,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-39","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653594,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-39","msg":"1619369653594richiesta"}
+{"level":30,"time":1619369653597,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-39","res":{"statusCode":200},"responseTime":2.394999995827675,"msg":"request completed"}
+{"level":30,"time":1619369653609,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3a","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653609,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3a","msg":"1619369653609richiesta"}
+{"level":30,"time":1619369653609,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3b","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653609,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3b","msg":"1619369653609richiesta"}
+{"level":30,"time":1619369653610,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3c","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653610,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3c","msg":"1619369653610richiesta"}
+{"level":30,"time":1619369653613,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3d","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653613,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3d","msg":"1619369653613richiesta"}
+{"level":30,"time":1619369653613,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3e","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653613,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3e","msg":"1619369653613richiesta"}
+{"level":30,"time":1619369653614,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3f","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653614,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3f","msg":"1619369653614richiesta"}
+{"level":30,"time":1619369653614,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3g","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653614,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3g","msg":"1619369653614richiesta"}
+{"level":30,"time":1619369653615,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3h","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653615,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3h","msg":"1619369653615richiesta"}
+{"level":30,"time":1619369653615,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3i","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653615,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3i","msg":"1619369653615richiesta"}
+{"level":30,"time":1619369653622,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3d","res":{"statusCode":304},"responseTime":9.218800008296967,"msg":"request completed"}
+{"level":30,"time":1619369653622,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3e","res":{"statusCode":304},"responseTime":8.898400008678436,"msg":"request completed"}
+{"level":30,"time":1619369653622,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3f","res":{"statusCode":304},"responseTime":8.540000006556511,"msg":"request completed"}
+{"level":30,"time":1619369653623,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3g","res":{"statusCode":304},"responseTime":8.241000011563301,"msg":"request completed"}
+{"level":30,"time":1619369653623,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3h","res":{"statusCode":304},"responseTime":8.014300003647804,"msg":"request completed"}
+{"level":30,"time":1619369653630,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3c","res":{"statusCode":200},"responseTime":20.092700004577637,"msg":"request completed"}
+{"level":30,"time":1619369653634,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3a","res":{"statusCode":200},"responseTime":25.429300010204315,"msg":"request completed"}
+{"level":30,"time":1619369653636,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3i","res":{"statusCode":200},"responseTime":20.86830000579357,"msg":"request completed"}
+{"level":30,"time":1619369653637,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3b","res":{"statusCode":200},"responseTime":27.847599998116493,"msg":"request completed"}
+{"level":30,"time":1619369653667,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3j","req":{"method":"GET","url":"/Public/assets/fonts/fa-solid-900.woff2","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653667,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3j","msg":"1619369653667richiesta"}
+{"level":30,"time":1619369653667,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3k","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51000},"msg":"incoming request"}
+{"level":30,"time":1619369653667,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3k","msg":"1619369653667richiesta"}
+{"level":30,"time":1619369653668,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3j","res":{"statusCode":304},"responseTime":1.6788000017404556,"msg":"request completed"}
+{"level":30,"time":1619369653670,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3k","res":{"statusCode":304},"responseTime":2.543400004506111,"msg":"request completed"}
+{"level":30,"time":1619369662962,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3l","req":{"method":"POST","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369662962,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3l","msg":"1619369662962richiesta"}
+{"level":30,"time":1619369663789,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3l","msg":"Logged undefined"}
+{"level":30,"time":1619369663790,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3l","res":{"statusCode":302},"responseTime":827.584399998188,"msg":"request completed"}
+{"level":30,"time":1619369663792,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3m","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369663792,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3m","msg":"1619369663792richiesta"}
+{"level":30,"time":1619369664430,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3m","res":{"statusCode":302},"responseTime":637.8495000004768,"msg":"request completed"}
+{"level":30,"time":1619369664432,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3n","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664432,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3n","msg":"1619369664432richiesta"}
+{"level":30,"time":1619369664434,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3n","res":{"statusCode":200},"responseTime":2.457400009036064,"msg":"request completed"}
+{"level":30,"time":1619369664446,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3o","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664446,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3o","msg":"1619369664446richiesta"}
+{"level":30,"time":1619369664447,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3p","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664447,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3p","msg":"1619369664447richiesta"}
+{"level":30,"time":1619369664447,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3q","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664447,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3q","msg":"1619369664447richiesta"}
+{"level":30,"time":1619369664453,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3r","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664454,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3r","msg":"1619369664454richiesta"}
+{"level":30,"time":1619369664454,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3s","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664454,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3s","msg":"1619369664454richiesta"}
+{"level":30,"time":1619369664455,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3t","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664455,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3t","msg":"1619369664455richiesta"}
+{"level":30,"time":1619369664456,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3u","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664456,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3u","msg":"1619369664456richiesta"}
+{"level":30,"time":1619369664456,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3v","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664456,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3v","msg":"1619369664456richiesta"}
+{"level":30,"time":1619369664457,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3w","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664457,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3w","msg":"1619369664457richiesta"}
+{"level":30,"time":1619369664463,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3r","res":{"statusCode":304},"responseTime":9.75789999961853,"msg":"request completed"}
+{"level":30,"time":1619369664463,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3s","res":{"statusCode":304},"responseTime":9.1233000010252,"msg":"request completed"}
+{"level":30,"time":1619369664464,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3t","res":{"statusCode":304},"responseTime":9.053399994969368,"msg":"request completed"}
+{"level":30,"time":1619369664464,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3u","res":{"statusCode":304},"responseTime":8.202299997210503,"msg":"request completed"}
+{"level":30,"time":1619369664464,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3v","res":{"statusCode":304},"responseTime":7.8907999992370605,"msg":"request completed"}
+{"level":30,"time":1619369664464,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3w","res":{"statusCode":304},"responseTime":7.5981999933719635,"msg":"request completed"}
+{"level":30,"time":1619369664468,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3q","res":{"statusCode":200},"responseTime":21.109400004148483,"msg":"request completed"}
+{"level":30,"time":1619369664469,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3o","res":{"statusCode":200},"responseTime":22.90260000526905,"msg":"request completed"}
+{"level":30,"time":1619369664472,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3p","res":{"statusCode":200},"responseTime":25.007099986076355,"msg":"request completed"}
+{"level":30,"time":1619369664501,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3x","req":{"method":"GET","url":"/Public/assets/fonts/fa-solid-900.woff2","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664501,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3x","msg":"1619369664501richiesta"}
+{"level":30,"time":1619369664501,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3y","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51018},"msg":"incoming request"}
+{"level":30,"time":1619369664502,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3y","msg":"1619369664502richiesta"}
+{"level":30,"time":1619369664503,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3x","res":{"statusCode":304},"responseTime":1.660400003194809,"msg":"request completed"}
+{"level":30,"time":1619369664504,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3y","res":{"statusCode":304},"responseTime":2.219999998807907,"msg":"request completed"}
+{"level":30,"time":1619369701448,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3z","req":{"method":"POST","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369701449,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3z","msg":"1619369701449richiesta"}
+{"level":30,"time":1619369702318,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3z","msg":"Logged undefined"}
+{"level":30,"time":1619369702318,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-3z","res":{"statusCode":302},"responseTime":869.843800008297,"msg":"request completed"}
+{"level":30,"time":1619369702320,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-40","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702320,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-40","msg":"1619369702320richiesta"}
+{"level":30,"time":1619369702795,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-40","res":{"statusCode":302},"responseTime":474.1051999926567,"msg":"request completed"}
+{"level":30,"time":1619369702796,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-41","req":{"method":"GET","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702796,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-41","msg":"1619369702796richiesta"}
+{"level":30,"time":1619369702799,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-41","res":{"statusCode":200},"responseTime":2.1869999915361404,"msg":"request completed"}
+{"level":30,"time":1619369702812,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-42","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702812,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-42","msg":"1619369702812richiesta"}
+{"level":30,"time":1619369702812,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-43","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702812,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-43","msg":"1619369702812richiesta"}
+{"level":30,"time":1619369702813,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-44","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702813,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-44","msg":"1619369702813richiesta"}
+{"level":30,"time":1619369702820,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-45","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702820,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-45","msg":"1619369702820richiesta"}
+{"level":30,"time":1619369702821,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-46","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702821,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-46","msg":"1619369702821richiesta"}
+{"level":30,"time":1619369702821,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-47","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702821,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-47","msg":"1619369702821richiesta"}
+{"level":30,"time":1619369702822,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-48","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702822,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-48","msg":"1619369702822richiesta"}
+{"level":30,"time":1619369702823,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-49","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702823,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-49","msg":"1619369702823richiesta"}
+{"level":30,"time":1619369702823,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4a","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702823,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4a","msg":"1619369702823richiesta"}
+{"level":30,"time":1619369702831,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-45","res":{"statusCode":304},"responseTime":10.707999989390373,"msg":"request completed"}
+{"level":30,"time":1619369702831,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-46","res":{"statusCode":304},"responseTime":10.442900002002716,"msg":"request completed"}
+{"level":30,"time":1619369702831,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-47","res":{"statusCode":304},"responseTime":9.834600001573563,"msg":"request completed"}
+{"level":30,"time":1619369702831,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-48","res":{"statusCode":304},"responseTime":9.234400004148483,"msg":"request completed"}
+{"level":30,"time":1619369702831,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-49","res":{"statusCode":304},"responseTime":8.86209999024868,"msg":"request completed"}
+{"level":30,"time":1619369702835,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4a","res":{"statusCode":304},"responseTime":12.169699996709824,"msg":"request completed"}
+{"level":30,"time":1619369702835,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-44","res":{"statusCode":200},"responseTime":22.606100007891655,"msg":"request completed"}
+{"level":30,"time":1619369702837,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-42","res":{"statusCode":200},"responseTime":25.48309999704361,"msg":"request completed"}
+{"level":30,"time":1619369702841,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-43","res":{"statusCode":200},"responseTime":28.30009999871254,"msg":"request completed"}
+{"level":30,"time":1619369702870,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4b","req":{"method":"GET","url":"/Public/assets/fonts/fa-solid-900.woff2","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702870,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4b","msg":"1619369702870richiesta"}
+{"level":30,"time":1619369702871,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4c","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51055},"msg":"incoming request"}
+{"level":30,"time":1619369702871,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4c","msg":"1619369702871richiesta"}
+{"level":30,"time":1619369702872,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4b","res":{"statusCode":304},"responseTime":1.7998000085353851,"msg":"request completed"}
+{"level":30,"time":1619369702874,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4c","res":{"statusCode":304},"responseTime":2.7244000136852264,"msg":"request completed"}
+{"level":30,"time":1619369752599,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4d","req":{"method":"POST","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51101},"msg":"incoming request"}
+{"level":30,"time":1619369752599,"pid":12728,"hostname":"DESKTOP-V9E78IE","reqId":"req-4d","msg":"1619369752599richiesta"}
+{"level":30,"time":1619369901859,"pid":6648,"hostname":"DESKTOP-V9E78IE","msg":"Server listening at https://0.0.0.0:3000"}
+{"level":30,"time":1619369901859,"pid":6648,"hostname":"DESKTOP-V9E78IE","msg":"server listening on https://0.0.0.0:3000"}
+{"level":30,"time":1619369905305,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1","req":{"method":"POST","url":"/login","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369905306,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1","msg":"1619369905306richiesta"}
+{"level":30,"time":1619369907914,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1","msg":"Logged cesxhin#2768"}
+{"level":30,"time":1619369907917,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1","res":{"statusCode":302},"responseTime":2610.7986000031233,"msg":"request completed"}
+{"level":30,"time":1619369907918,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369907918,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2","msg":"1619369907918richiesta"}
+{"level":30,"time":1619369909167,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2","res":{"statusCode":200},"responseTime":1248.5254999995232,"msg":"request completed"}
+{"level":30,"time":1619369909194,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3","req":{"method":"GET","url":"/Public/plugins/chartist/css/chartist.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909194,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3","msg":"1619369909194richiesta"}
+{"level":30,"time":1619369909195,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909195,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4","msg":"1619369909195richiesta"}
+{"level":30,"time":1619369909196,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-5","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909196,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-5","msg":"1619369909196richiesta"}
+{"level":30,"time":1619369909196,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-6","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909197,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-6","msg":"1619369909197richiesta"}
+{"level":30,"time":1619369909209,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-7","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909209,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-7","msg":"1619369909209richiesta"}
+{"level":30,"time":1619369909209,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3","res":{"statusCode":200},"responseTime":15.37890000641346,"msg":"request completed"}
+{"level":30,"time":1619369909211,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-8","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909211,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-8","msg":"1619369909211richiesta"}
+{"level":30,"time":1619369909212,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-9","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909212,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-9","msg":"1619369909212richiesta"}
+{"level":30,"time":1619369909212,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-a","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909212,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-a","msg":"1619369909212richiesta"}
+{"level":30,"time":1619369909213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-b","req":{"method":"GET","url":"/Public/plugins/chartist/js/chartist.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-b","msg":"1619369909213richiesta"}
+{"level":30,"time":1619369909213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-c","req":{"method":"GET","url":"/Public/plugins/chartist/js/chartist-plugin-tooltip.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-c","msg":"1619369909213richiesta"}
+{"level":30,"time":1619369909214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-d","req":{"method":"GET","url":"/Public/plugins/peity-chart/jquery.peity.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-d","msg":"1619369909214richiesta"}
+{"level":30,"time":1619369909214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-e","req":{"method":"GET","url":"/Public/assets/pages/dashboard.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-e","msg":"1619369909214richiesta"}
+{"level":30,"time":1619369909215,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-f","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909215,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-f","msg":"1619369909215richiesta"}
+{"level":30,"time":1619369909215,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-g","req":{"method":"GET","url":"/Public/assets/images/SOLO_SCRITTA.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909215,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-g","msg":"1619369909215richiesta"}
+{"level":30,"time":1619369909215,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-h","req":{"method":"GET","url":"/Public/assets/images/users/user-4.jpg","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909216,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-h","msg":"1619369909216richiesta"}
+{"level":30,"time":1619369909216,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-i","req":{"method":"GET","url":"/Public/assets/images/LOGO_SCRITTA.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909216,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-i","msg":"1619369909216richiesta"}
+{"level":30,"time":1619369909216,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-j","req":{"method":"GET","url":"/Public/assets/images/logo_sponsor.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909216,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-j","msg":"1619369909216richiesta"}
+{"level":30,"time":1619369909228,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-6","res":{"statusCode":200},"responseTime":31.226000010967255,"msg":"request completed"}
+{"level":30,"time":1619369909243,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4","res":{"statusCode":200},"responseTime":47.78540000319481,"msg":"request completed"}
+{"level":30,"time":1619369909250,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-9","res":{"statusCode":200},"responseTime":38.796399995684624,"msg":"request completed"}
+{"level":30,"time":1619369909251,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-a","res":{"statusCode":200},"responseTime":38.41039998829365,"msg":"request completed"}
+{"level":30,"time":1619369909251,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-c","res":{"statusCode":200},"responseTime":37.57209999859333,"msg":"request completed"}
+{"level":30,"time":1619369909251,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-d","res":{"statusCode":200},"responseTime":37.213100001215935,"msg":"request completed"}
+{"level":30,"time":1619369909251,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-e","res":{"statusCode":200},"responseTime":36.91030000150204,"msg":"request completed"}
+{"level":30,"time":1619369909251,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-f","res":{"statusCode":200},"responseTime":36.61109998822212,"msg":"request completed"}
+{"level":30,"time":1619369909255,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-8","res":{"statusCode":200},"responseTime":44.02320000529289,"msg":"request completed"}
+{"level":30,"time":1619369909255,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-b","res":{"statusCode":200},"responseTime":42.41000001132488,"msg":"request completed"}
+{"level":30,"time":1619369909255,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-g","res":{"statusCode":200},"responseTime":40.22289998829365,"msg":"request completed"}
+{"level":30,"time":1619369909255,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-h","res":{"statusCode":200},"responseTime":39.925400003790855,"msg":"request completed"}
+{"level":30,"time":1619369909256,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-j","res":{"statusCode":200},"responseTime":39.200200006365776,"msg":"request completed"}
+{"level":30,"time":1619369909258,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-7","res":{"statusCode":200},"responseTime":48.84440000355244,"msg":"request completed"}
+{"level":30,"time":1619369909258,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-i","res":{"statusCode":200},"responseTime":41.89090000092983,"msg":"request completed"}
+{"level":30,"time":1619369909259,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-5","res":{"statusCode":200},"responseTime":62.79129999876022,"msg":"request completed"}
+{"level":30,"time":1619369909328,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-k","req":{"method":"GET","url":"/Public/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909328,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-k","msg":"1619369909328richiesta"}
+{"level":30,"time":1619369909329,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-l","req":{"method":"GET","url":"/Public/assets/fonts/themify.woff?-fvbane","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909329,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-l","msg":"1619369909329richiesta"}
+{"level":30,"time":1619369909336,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-l","res":{"statusCode":200},"responseTime":7.080899998545647,"msg":"request completed"}
+{"level":30,"time":1619369909337,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-k","res":{"statusCode":200},"responseTime":8.801700010895729,"msg":"request completed"}
+{"level":30,"time":1619369909554,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-m","req":{"method":"GET","url":"/Public/assets/images/logo.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369909554,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-m","msg":"1619369909554richiesta"}
+{"level":30,"time":1619369909558,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-m","res":{"statusCode":200},"responseTime":3.636699989438057,"msg":"request completed"}
+{"level":30,"time":1619369911567,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-n","req":{"method":"GET","url":"/management","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369911567,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-n","msg":"1619369911567richiesta"}
+{"level":30,"time":1619369913275,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-n","res":{"statusCode":200},"responseTime":1707.6038999855518,"msg":"request completed"}
+{"level":30,"time":1619369913289,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-o","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913289,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-o","msg":"1619369913289richiesta"}
+{"level":30,"time":1619369913294,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-p","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913294,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-p","msg":"1619369913294richiesta"}
+{"level":30,"time":1619369913294,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-o","res":{"statusCode":200},"responseTime":5.028799995779991,"msg":"request completed"}
+{"level":30,"time":1619369913295,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-q","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913295,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-q","msg":"1619369913295richiesta"}
+{"level":30,"time":1619369913296,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-r","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913296,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-r","msg":"1619369913296richiesta"}
+{"level":30,"time":1619369913296,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-s","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913296,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-s","msg":"1619369913296richiesta"}
+{"level":30,"time":1619369913297,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-t","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913297,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-t","msg":"1619369913297richiesta"}
+{"level":30,"time":1619369913297,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-u","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913297,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-u","msg":"1619369913297richiesta"}
+{"level":30,"time":1619369913298,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-v","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913298,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-v","msg":"1619369913298richiesta"}
+{"level":30,"time":1619369913298,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-w","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913298,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-w","msg":"1619369913298richiesta"}
+{"level":30,"time":1619369913299,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-x","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913299,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-x","msg":"1619369913299richiesta"}
+{"level":30,"time":1619369913305,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-p","res":{"statusCode":304},"responseTime":11.661200001835823,"msg":"request completed"}
+{"level":30,"time":1619369913305,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-q","res":{"statusCode":304},"responseTime":10.325000002980232,"msg":"request completed"}
+{"level":30,"time":1619369913306,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-r","res":{"statusCode":304},"responseTime":9.921099990606308,"msg":"request completed"}
+{"level":30,"time":1619369913306,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-u","res":{"statusCode":304},"responseTime":8.704600006341934,"msg":"request completed"}
+{"level":30,"time":1619369913306,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-v","res":{"statusCode":304},"responseTime":8.054800003767014,"msg":"request completed"}
+{"level":30,"time":1619369913306,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-w","res":{"statusCode":304},"responseTime":7.648000001907349,"msg":"request completed"}
+{"level":30,"time":1619369913310,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-y","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913310,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-y","msg":"1619369913310richiesta"}
+{"level":30,"time":1619369913310,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-x","res":{"statusCode":304},"responseTime":11.320699989795685,"msg":"request completed"}
+{"level":30,"time":1619369913311,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-z","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913311,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-z","msg":"1619369913311richiesta"}
+{"level":30,"time":1619369913312,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-10","req":{"method":"GET","url":"/Public/plugins/datatables/jquery.dataTables.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913312,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-10","msg":"1619369913312richiesta"}
+{"level":30,"time":1619369913312,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-11","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913312,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-11","msg":"1619369913312richiesta"}
+{"level":30,"time":1619369913313,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-12","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913313,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-12","msg":"1619369913313richiesta"}
+{"level":30,"time":1619369913313,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-13","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.buttons.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913313,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-13","msg":"1619369913313richiesta"}
+{"level":30,"time":1619369913314,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-14","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913314,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-14","msg":"1619369913314richiesta"}
+{"level":30,"time":1619369913315,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-15","req":{"method":"GET","url":"/Public/plugins/datatables/jszip.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913315,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-15","msg":"1619369913315richiesta"}
+{"level":30,"time":1619369913315,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-16","req":{"method":"GET","url":"/Public/plugins/datatables/pdfmake.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913315,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-16","msg":"1619369913315richiesta"}
+{"level":30,"time":1619369913315,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-17","req":{"method":"GET","url":"/Public/plugins/datatables/vfs_fonts.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913315,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-17","msg":"1619369913315richiesta"}
+{"level":30,"time":1619369913316,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-18","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.html5.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913316,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-18","msg":"1619369913316richiesta"}
+{"level":30,"time":1619369913316,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-19","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.print.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913316,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-19","msg":"1619369913316richiesta"}
+{"level":30,"time":1619369913317,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1a","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.colVis.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913317,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1a","msg":"1619369913317richiesta"}
+{"level":30,"time":1619369913317,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1b","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.responsive.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913317,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1b","msg":"1619369913317richiesta"}
+{"level":30,"time":1619369913317,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1c","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913318,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1c","msg":"1619369913318richiesta"}
+{"level":30,"time":1619369913318,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1d","req":{"method":"GET","url":"/Public/assets/pages/datatables.init.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913318,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1d","msg":"1619369913318richiesta"}
+{"level":30,"time":1619369913320,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-y","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619369913321,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-z","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619369913327,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-11","res":{"statusCode":304},"responseTime":15.10130000114441,"msg":"request completed"}
+{"level":30,"time":1619369913330,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-s","res":{"statusCode":200},"responseTime":34.06199999153614,"msg":"request completed"}
+{"level":30,"time":1619369913330,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-t","res":{"statusCode":200},"responseTime":33.77590000629425,"msg":"request completed"}
+{"level":30,"time":1619369913330,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-y","res":{"statusCode":404},"responseTime":20.775600001215935,"msg":"request completed"}
+{"level":30,"time":1619369913331,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-z","res":{"statusCode":404},"responseTime":19.249700009822845,"msg":"request completed"}
+{"level":30,"time":1619369913350,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1e","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913350,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1e","msg":"1619369913350richiesta"}
+{"level":30,"time":1619369913350,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-12","res":{"statusCode":200},"responseTime":37.44969999790192,"msg":"request completed"}
+{"level":30,"time":1619369913351,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-14","res":{"statusCode":200},"responseTime":37.11829999089241,"msg":"request completed"}
+{"level":30,"time":1619369913351,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-18","res":{"statusCode":200},"responseTime":35.53450000286102,"msg":"request completed"}
+{"level":30,"time":1619369913352,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-19","res":{"statusCode":200},"responseTime":35.59299999475479,"msg":"request completed"}
+{"level":30,"time":1619369913352,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1a","res":{"statusCode":200},"responseTime":35.72690001130104,"msg":"request completed"}
+{"level":30,"time":1619369913353,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1b","res":{"statusCode":200},"responseTime":35.83460000157356,"msg":"request completed"}
+{"level":30,"time":1619369913353,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1c","res":{"statusCode":200},"responseTime":35.92559999227524,"msg":"request completed"}
+{"level":30,"time":1619369913354,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1d","res":{"statusCode":200},"responseTime":36.10029999911785,"msg":"request completed"}
+{"level":30,"time":1619369913357,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1e","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619369913358,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-13","res":{"statusCode":200},"responseTime":44.503000006079674,"msg":"request completed"}
+{"level":30,"time":1619369913358,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-15","res":{"statusCode":200},"responseTime":43.44590000808239,"msg":"request completed"}
+{"level":30,"time":1619369913362,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-10","res":{"statusCode":200},"responseTime":50.04790000617504,"msg":"request completed"}
+{"level":30,"time":1619369913362,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1e","res":{"statusCode":404},"responseTime":12.351400002837181,"msg":"request completed"}
+{"level":30,"time":1619369913365,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1f","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369913365,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1f","msg":"1619369913365richiesta"}
+{"level":30,"time":1619369913367,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1f","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619369913370,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1f","res":{"statusCode":404},"responseTime":5.545199990272522,"msg":"request completed"}
+{"level":30,"time":1619369913371,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-16","res":{"statusCode":200},"responseTime":56.01800000667572,"msg":"request completed"}
+{"level":30,"time":1619369913373,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-17","res":{"statusCode":200},"responseTime":57.57780000567436,"msg":"request completed"}
+{"level":30,"time":1619369915993,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1g","req":{"method":"GET","url":"/endTournament/7","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51201},"msg":"incoming request"}
+{"level":30,"time":1619369915994,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1g","msg":"1619369915994richiesta"}
+{"level":30,"time":1619370443153,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1g","res":{"statusCode":302},"responseTime":527159.6981999874,"msg":"request completed"}
+{"level":30,"time":1619370443763,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1h","req":{"method":"GET","url":"/management","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370443763,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1h","msg":"1619370443763richiesta"}
+{"level":30,"time":1619370445178,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1h","res":{"statusCode":200},"responseTime":1414.9989999979734,"msg":"request completed"}
+{"level":30,"time":1619370445201,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1i","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445202,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1i","msg":"1619370445202richiesta"}
+{"level":30,"time":1619370445205,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1i","res":{"statusCode":200},"responseTime":3.7257999926805496,"msg":"request completed"}
+{"level":30,"time":1619370445206,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1j","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445206,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1j","msg":"1619370445206richiesta"}
+{"level":30,"time":1619370445207,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1k","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445207,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1k","msg":"1619370445207richiesta"}
+{"level":30,"time":1619370445207,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1l","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445208,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1l","msg":"1619370445208richiesta"}
+{"level":30,"time":1619370445208,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1m","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445208,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1m","msg":"1619370445208richiesta"}
+{"level":30,"time":1619370445209,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1n","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445209,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1n","msg":"1619370445209richiesta"}
+{"level":30,"time":1619370445209,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1o","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445209,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1o","msg":"1619370445209richiesta"}
+{"level":30,"time":1619370445210,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1p","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445210,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1p","msg":"1619370445210richiesta"}
+{"level":30,"time":1619370445210,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1q","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445210,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1q","msg":"1619370445210richiesta"}
+{"level":30,"time":1619370445211,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1r","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445211,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1r","msg":"1619370445211richiesta"}
+{"level":30,"time":1619370445212,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1s","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445212,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1s","msg":"1619370445212richiesta"}
+{"level":30,"time":1619370445213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1t","req":{"method":"GET","url":"/Public/plugins/datatables/jquery.dataTables.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1t","msg":"1619370445213richiesta"}
+{"level":30,"time":1619370445213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1u","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1u","msg":"1619370445213richiesta"}
+{"level":30,"time":1619370445213,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1v","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1v","msg":"1619370445214richiesta"}
+{"level":30,"time":1619370445214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1w","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.buttons.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1w","msg":"1619370445214richiesta"}
+{"level":30,"time":1619370445214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1x","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445214,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1x","msg":"1619370445214richiesta"}
+{"level":30,"time":1619370445215,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1y","req":{"method":"GET","url":"/Public/plugins/datatables/jszip.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445215,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1y","msg":"1619370445215richiesta"}
+{"level":30,"time":1619370445220,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1s","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619370445222,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1v","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619370445225,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1k","res":{"statusCode":304},"responseTime":17.660600006580353,"msg":"request completed"}
+{"level":30,"time":1619370445225,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1m","res":{"statusCode":304},"responseTime":16.526600003242493,"msg":"request completed"}
+{"level":30,"time":1619370445225,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1o","res":{"statusCode":304},"responseTime":15.579800009727478,"msg":"request completed"}
+{"level":30,"time":1619370445225,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1p","res":{"statusCode":304},"responseTime":15.148399993777275,"msg":"request completed"}
+{"level":30,"time":1619370445225,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1q","res":{"statusCode":304},"responseTime":14.792699992656708,"msg":"request completed"}
+{"level":30,"time":1619370445225,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1r","res":{"statusCode":304},"responseTime":14.432099997997284,"msg":"request completed"}
+{"level":30,"time":1619370445225,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1t","res":{"statusCode":304},"responseTime":12.732600003480911,"msg":"request completed"}
+{"level":30,"time":1619370445225,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1u","res":{"statusCode":304},"responseTime":12.397600010037422,"msg":"request completed"}
+{"level":30,"time":1619370445226,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1w","res":{"statusCode":304},"responseTime":11.649700000882149,"msg":"request completed"}
+{"level":30,"time":1619370445226,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1x","res":{"statusCode":304},"responseTime":11.341399997472763,"msg":"request completed"}
+{"level":30,"time":1619370445230,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1z","req":{"method":"GET","url":"/Public/plugins/datatables/pdfmake.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445230,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1z","msg":"1619370445230richiesta"}
+{"level":30,"time":1619370445230,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1s","res":{"statusCode":404},"responseTime":18.232400000095367,"msg":"request completed"}
+{"level":30,"time":1619370445231,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1v","res":{"statusCode":404},"responseTime":17.350599989295006,"msg":"request completed"}
+{"level":30,"time":1619370445232,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-20","req":{"method":"GET","url":"/Public/plugins/datatables/vfs_fonts.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445232,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-20","msg":"1619370445232richiesta"}
+{"level":30,"time":1619370445232,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-21","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.html5.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445232,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-21","msg":"1619370445232richiesta"}
+{"level":30,"time":1619370445232,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-22","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.print.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445232,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-22","msg":"1619370445232richiesta"}
+{"level":30,"time":1619370445233,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-23","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.colVis.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445233,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-23","msg":"1619370445233richiesta"}
+{"level":30,"time":1619370445234,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-24","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.responsive.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445234,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-24","msg":"1619370445234richiesta"}
+{"level":30,"time":1619370445235,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-25","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445235,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-25","msg":"1619370445235richiesta"}
+{"level":30,"time":1619370445235,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-26","req":{"method":"GET","url":"/Public/assets/pages/datatables.init.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445235,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-26","msg":"1619370445235richiesta"}
+{"level":30,"time":1619370445236,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-27","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445236,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-27","msg":"1619370445236richiesta"}
+{"level":30,"time":1619370445242,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1y","res":{"statusCode":304},"responseTime":27.12100000679493,"msg":"request completed"}
+{"level":30,"time":1619370445242,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1z","res":{"statusCode":304},"responseTime":12.294299989938736,"msg":"request completed"}
+{"level":30,"time":1619370445242,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-20","res":{"statusCode":304},"responseTime":10.679300010204315,"msg":"request completed"}
+{"level":30,"time":1619370445242,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-21","res":{"statusCode":304},"responseTime":10.348800003528595,"msg":"request completed"}
+{"level":30,"time":1619370445242,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-22","res":{"statusCode":304},"responseTime":10.03829999268055,"msg":"request completed"}
+{"level":30,"time":1619370445243,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-23","res":{"statusCode":304},"responseTime":9.658600002527237,"msg":"request completed"}
+{"level":30,"time":1619370445243,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-24","res":{"statusCode":304},"responseTime":8.551899999380112,"msg":"request completed"}
+{"level":30,"time":1619370445243,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-25","res":{"statusCode":304},"responseTime":8.233599990606308,"msg":"request completed"}
+{"level":30,"time":1619370445243,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-26","res":{"statusCode":304},"responseTime":7.8472999930381775,"msg":"request completed"}
+{"level":30,"time":1619370445251,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-27","res":{"statusCode":304},"responseTime":15.366200000047684,"msg":"request completed"}
+{"level":30,"time":1619370445253,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1j","res":{"statusCode":200},"responseTime":46.94760000705719,"msg":"request completed"}
+{"level":30,"time":1619370445253,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1l","res":{"statusCode":200},"responseTime":45.80020000040531,"msg":"request completed"}
+{"level":30,"time":1619370445254,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-1n","res":{"statusCode":200},"responseTime":45.593799993395805,"msg":"request completed"}
+{"level":30,"time":1619370445263,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-28","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445263,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-28","msg":"1619370445263richiesta"}
+{"level":30,"time":1619370445264,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-28","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619370445265,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-28","res":{"statusCode":404},"responseTime":1.6431999951601028,"msg":"request completed"}
+{"level":30,"time":1619370445280,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-29","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51543},"msg":"incoming request"}
+{"level":30,"time":1619370445280,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-29","msg":"1619370445280richiesta"}
+{"level":30,"time":1619370445281,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-29","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619370445282,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-29","res":{"statusCode":404},"responseTime":1.5664999932050705,"msg":"request completed"}
+{"level":30,"time":1619370460997,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2a","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370460997,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2a","msg":"1619370460997richiesta"}
+{"level":30,"time":1619370463369,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2a","res":{"statusCode":200},"responseTime":2371.9211000055075,"msg":"request completed"}
+{"level":30,"time":1619370463382,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2b","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463382,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2b","msg":"1619370463382richiesta"}
+{"level":30,"time":1619370463383,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2c","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463383,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2c","msg":"1619370463383richiesta"}
+{"level":30,"time":1619370463383,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2d","req":{"method":"GET","url":"/Public/plugins/chartist/css/chartist.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463383,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2d","msg":"1619370463383richiesta"}
+{"level":30,"time":1619370463384,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2e","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463384,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2e","msg":"1619370463384richiesta"}
+{"level":30,"time":1619370463387,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2b","res":{"statusCode":304},"responseTime":4.7947999984025955,"msg":"request completed"}
+{"level":30,"time":1619370463387,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2c","res":{"statusCode":304},"responseTime":4.393700003623962,"msg":"request completed"}
+{"level":30,"time":1619370463392,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2f","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463392,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2f","msg":"1619370463392richiesta"}
+{"level":30,"time":1619370463393,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2d","res":{"statusCode":200},"responseTime":9.989600002765656,"msg":"request completed"}
+{"level":30,"time":1619370463394,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2g","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463394,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2g","msg":"1619370463394richiesta"}
+{"level":30,"time":1619370463397,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2h","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463397,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2h","msg":"1619370463397richiesta"}
+{"level":30,"time":1619370463398,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2f","res":{"statusCode":304},"responseTime":5.920799985527992,"msg":"request completed"}
+{"level":30,"time":1619370463398,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2g","res":{"statusCode":304},"responseTime":4.3780999928712845,"msg":"request completed"}
+{"level":30,"time":1619370463399,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2i","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463399,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2i","msg":"1619370463399richiesta"}
+{"level":30,"time":1619370463400,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2j","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463400,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2j","msg":"1619370463400richiesta"}
+{"level":30,"time":1619370463400,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2k","req":{"method":"GET","url":"/Public/plugins/chartist/js/chartist.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463400,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2k","msg":"1619370463400richiesta"}
+{"level":30,"time":1619370463401,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2l","req":{"method":"GET","url":"/Public/plugins/chartist/js/chartist-plugin-tooltip.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463401,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2l","msg":"1619370463401richiesta"}
+{"level":30,"time":1619370463401,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2m","req":{"method":"GET","url":"/Public/plugins/peity-chart/jquery.peity.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463401,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2m","msg":"1619370463401richiesta"}
+{"level":30,"time":1619370463402,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2n","req":{"method":"GET","url":"/Public/assets/pages/dashboard.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463402,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2n","msg":"1619370463402richiesta"}
+{"level":30,"time":1619370463402,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2o","req":{"method":"GET","url":"/Public/assets/images/SOLO_SCRITTA.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463402,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2o","msg":"1619370463402richiesta"}
+{"level":30,"time":1619370463403,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2p","req":{"method":"GET","url":"/Public/assets/images/users/user-4.jpg","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463403,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2p","msg":"1619370463403richiesta"}
+{"level":30,"time":1619370463403,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2q","req":{"method":"GET","url":"/Public/assets/images/LOGO_SCRITTA.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463403,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2q","msg":"1619370463403richiesta"}
+{"level":30,"time":1619370463404,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2r","req":{"method":"GET","url":"/Public/assets/images/logo_sponsor.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370463404,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2r","msg":"1619370463404richiesta"}
+{"level":30,"time":1619370463410,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2h","res":{"statusCode":304},"responseTime":12.743500009179115,"msg":"request completed"}
+{"level":30,"time":1619370463410,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2i","res":{"statusCode":304},"responseTime":11.077599987387657,"msg":"request completed"}
+{"level":30,"time":1619370463410,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2j","res":{"statusCode":304},"responseTime":10.629299998283386,"msg":"request completed"}
+{"level":30,"time":1619370463411,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2e","res":{"statusCode":200},"responseTime":26.667600005865097,"msg":"request completed"}
+{"level":30,"time":1619370463425,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2l","res":{"statusCode":200},"responseTime":23.957000002264977,"msg":"request completed"}
+{"level":30,"time":1619370463425,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2m","res":{"statusCode":200},"responseTime":23.787300005555153,"msg":"request completed"}
+{"level":30,"time":1619370463425,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2n","res":{"statusCode":200},"responseTime":23.620299994945526,"msg":"request completed"}
+{"level":30,"time":1619370463428,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2k","res":{"statusCode":200},"responseTime":27.434499993920326,"msg":"request completed"}
+{"level":30,"time":1619370463428,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2o","res":{"statusCode":200},"responseTime":25.681999996304512,"msg":"request completed"}
+{"level":30,"time":1619370463428,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2p","res":{"statusCode":200},"responseTime":25.410300001502037,"msg":"request completed"}
+{"level":30,"time":1619370463428,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2r","res":{"statusCode":200},"responseTime":24.752499997615814,"msg":"request completed"}
+{"level":30,"time":1619370463433,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2q","res":{"statusCode":200},"responseTime":29.888199999928474,"msg":"request completed"}
+{"level":30,"time":1619370464997,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2s","req":{"method":"GET","url":"/globalRankings","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370464997,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2s","msg":"1619370464997richiesta"}
+{"level":30,"time":1619370465325,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2s","res":{"statusCode":200},"responseTime":327.7453000098467,"msg":"request completed"}
+{"level":30,"time":1619370465338,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2t","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465338,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2t","msg":"1619370465338richiesta"}
+{"level":30,"time":1619370465339,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2u","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465339,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2u","msg":"1619370465339richiesta"}
+{"level":30,"time":1619370465339,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2v","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465339,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2v","msg":"1619370465339richiesta"}
+{"level":30,"time":1619370465339,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2w","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465340,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2w","msg":"1619370465340richiesta"}
+{"level":30,"time":1619370465340,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2x","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465340,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2x","msg":"1619370465340richiesta"}
+{"level":30,"time":1619370465340,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2y","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465340,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2y","msg":"1619370465340richiesta"}
+{"level":30,"time":1619370465341,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2z","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465341,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2z","msg":"1619370465341richiesta"}
+{"level":30,"time":1619370465341,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-30","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465341,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-30","msg":"1619370465341richiesta"}
+{"level":30,"time":1619370465342,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-31","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465342,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-31","msg":"1619370465342richiesta"}
+{"level":30,"time":1619370465342,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-32","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465342,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-32","msg":"1619370465342richiesta"}
+{"level":30,"time":1619370465343,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-33","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465343,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-33","msg":"1619370465343richiesta"}
+{"level":30,"time":1619370465343,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-34","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465343,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-34","msg":"1619370465343richiesta"}
+{"level":30,"time":1619370465344,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-35","req":{"method":"GET","url":"/Public/assets/pages/datatables.init.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465344,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-35","msg":"1619370465344richiesta"}
+{"level":30,"time":1619370465345,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-36","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465345,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-36","msg":"1619370465345richiesta"}
+{"level":30,"time":1619370465350,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-33","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619370465351,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-34","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619370465352,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2v","res":{"statusCode":304},"responseTime":13.169400006532669,"msg":"request completed"}
+{"level":30,"time":1619370465352,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2x","res":{"statusCode":304},"responseTime":12.426699995994568,"msg":"request completed"}
+{"level":30,"time":1619370465353,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2z","res":{"statusCode":304},"responseTime":11.712499991059303,"msg":"request completed"}
+{"level":30,"time":1619370465353,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-30","res":{"statusCode":304},"responseTime":11.381999999284744,"msg":"request completed"}
+{"level":30,"time":1619370465353,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-31","res":{"statusCode":304},"responseTime":11.065499991178513,"msg":"request completed"}
+{"level":30,"time":1619370465353,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-32","res":{"statusCode":304},"responseTime":10.745300009846687,"msg":"request completed"}
+{"level":30,"time":1619370465359,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-36","res":{"statusCode":304},"responseTime":14.066200003027916,"msg":"request completed"}
+{"level":30,"time":1619370465359,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-33","res":{"statusCode":404},"responseTime":16.185100004076958,"msg":"request completed"}
+{"level":30,"time":1619370465359,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-34","res":{"statusCode":404},"responseTime":15.857700005173683,"msg":"request completed"}
+{"level":30,"time":1619370465368,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2t","res":{"statusCode":200},"responseTime":29.657900005578995,"msg":"request completed"}
+{"level":30,"time":1619370465368,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2u","res":{"statusCode":200},"responseTime":29.212099999189377,"msg":"request completed"}
+{"level":30,"time":1619370465368,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2w","res":{"statusCode":200},"responseTime":28.444499999284744,"msg":"request completed"}
+{"level":30,"time":1619370465368,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-35","res":{"statusCode":200},"responseTime":24.55020000040531,"msg":"request completed"}
+{"level":30,"time":1619370465370,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-2y","res":{"statusCode":200},"responseTime":29.65309999883175,"msg":"request completed"}
+{"level":30,"time":1619370465377,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-37","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465377,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-37","msg":"1619370465377richiesta"}
+{"level":30,"time":1619370465378,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-37","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619370465379,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-37","res":{"statusCode":404},"responseTime":1.3448999971151352,"msg":"request completed"}
+{"level":30,"time":1619370465393,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-38","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370465393,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-38","msg":"1619370465393richiesta"}
+{"level":30,"time":1619370465394,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-38","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619370465395,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-38","res":{"statusCode":404},"responseTime":1.5402999967336655,"msg":"request completed"}
+{"level":30,"time":1619370466579,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-39","req":{"method":"GET","url":"/home","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370466579,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-39","msg":"1619370466579richiesta"}
+{"level":30,"time":1619370470043,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-39","res":{"statusCode":200},"responseTime":3464.5083999931812,"msg":"request completed"}
+{"level":30,"time":1619370470056,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3a","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470056,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3a","msg":"1619370470056richiesta"}
+{"level":30,"time":1619370470057,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3b","req":{"method":"GET","url":"/Public/plugins/chartist/css/chartist.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470057,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3b","msg":"1619370470057richiesta"}
+{"level":30,"time":1619370470058,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3c","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470058,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3c","msg":"1619370470058richiesta"}
+{"level":30,"time":1619370470058,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3d","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470058,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3d","msg":"1619370470058richiesta"}
+{"level":30,"time":1619370470061,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3a","res":{"statusCode":304},"responseTime":4.596499994397163,"msg":"request completed"}
+{"level":30,"time":1619370470061,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3c","res":{"statusCode":304},"responseTime":3.469200000166893,"msg":"request completed"}
+{"level":30,"time":1619370470063,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3e","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470063,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3e","msg":"1619370470063richiesta"}
+{"level":30,"time":1619370470065,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3f","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470065,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3f","msg":"1619370470065richiesta"}
+{"level":30,"time":1619370470066,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3b","res":{"statusCode":200},"responseTime":8.821400001645088,"msg":"request completed"}
+{"level":30,"time":1619370470067,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3g","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470067,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3g","msg":"1619370470067richiesta"}
+{"level":30,"time":1619370470068,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3h","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470068,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3h","msg":"1619370470068richiesta"}
+{"level":30,"time":1619370470068,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3i","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470068,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3i","msg":"1619370470068richiesta"}
+{"level":30,"time":1619370470068,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3j","req":{"method":"GET","url":"/Public/plugins/chartist/js/chartist.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470068,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3j","msg":"1619370470068richiesta"}
+{"level":30,"time":1619370470069,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3k","req":{"method":"GET","url":"/Public/plugins/chartist/js/chartist-plugin-tooltip.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470069,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3k","msg":"1619370470069richiesta"}
+{"level":30,"time":1619370470069,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3l","req":{"method":"GET","url":"/Public/plugins/peity-chart/jquery.peity.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470069,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3l","msg":"1619370470069richiesta"}
+{"level":30,"time":1619370470070,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3m","req":{"method":"GET","url":"/Public/assets/pages/dashboard.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470070,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3m","msg":"1619370470070richiesta"}
+{"level":30,"time":1619370470071,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3n","req":{"method":"GET","url":"/Public/assets/images/SOLO_SCRITTA.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470071,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3n","msg":"1619370470071richiesta"}
+{"level":30,"time":1619370470071,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3o","req":{"method":"GET","url":"/Public/assets/images/users/user-4.jpg","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470072,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3o","msg":"1619370470072richiesta"}
+{"level":30,"time":1619370470072,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3p","req":{"method":"GET","url":"/Public/assets/images/LOGO_SCRITTA.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470072,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3p","msg":"1619370470072richiesta"}
+{"level":30,"time":1619370470072,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3q","req":{"method":"GET","url":"/Public/assets/images/logo_sponsor.png","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370470073,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3q","msg":"1619370470073richiesta"}
+{"level":30,"time":1619370470080,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3e","res":{"statusCode":304},"responseTime":17.190499991178513,"msg":"request completed"}
+{"level":30,"time":1619370470081,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3f","res":{"statusCode":304},"responseTime":15.097300007939339,"msg":"request completed"}
+{"level":30,"time":1619370470081,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3g","res":{"statusCode":304},"responseTime":13.593600004911423,"msg":"request completed"}
+{"level":30,"time":1619370470081,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3h","res":{"statusCode":304},"responseTime":13.225600004196167,"msg":"request completed"}
+{"level":30,"time":1619370470081,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3i","res":{"statusCode":304},"responseTime":12.90769998729229,"msg":"request completed"}
+{"level":30,"time":1619370470093,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3d","res":{"statusCode":200},"responseTime":34.93450000882149,"msg":"request completed"}
+{"level":30,"time":1619370470097,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3k","res":{"statusCode":200},"responseTime":28.345899999141693,"msg":"request completed"}
+{"level":30,"time":1619370470097,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3l","res":{"statusCode":200},"responseTime":28.09560000896454,"msg":"request completed"}
+{"level":30,"time":1619370470098,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3m","res":{"statusCode":200},"responseTime":27.705300003290176,"msg":"request completed"}
+{"level":30,"time":1619370470099,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3j","res":{"statusCode":200},"responseTime":31.043600007891655,"msg":"request completed"}
+{"level":30,"time":1619370470100,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3n","res":{"statusCode":200},"responseTime":28.626900002360344,"msg":"request completed"}
+{"level":30,"time":1619370470100,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3o","res":{"statusCode":200},"responseTime":28.296299993991852,"msg":"request completed"}
+{"level":30,"time":1619370470101,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3p","res":{"statusCode":200},"responseTime":29.32770000398159,"msg":"request completed"}
+{"level":30,"time":1619370470102,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3q","res":{"statusCode":200},"responseTime":29.01970000565052,"msg":"request completed"}
+{"level":30,"time":1619370473587,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3r","req":{"method":"GET","url":"/globalRankings","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370473588,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3r","msg":"1619370473588richiesta"}
+{"level":30,"time":1619370474319,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3r","res":{"statusCode":200},"responseTime":731.4450999945402,"msg":"request completed"}
+{"level":30,"time":1619370474330,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3s","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474330,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3s","msg":"1619370474330richiesta"}
+{"level":30,"time":1619370474331,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3t","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474331,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3t","msg":"1619370474331richiesta"}
+{"level":30,"time":1619370474331,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3u","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474331,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3u","msg":"1619370474331richiesta"}
+{"level":30,"time":1619370474332,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3v","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474332,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3v","msg":"1619370474332richiesta"}
+{"level":30,"time":1619370474332,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3w","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474332,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3w","msg":"1619370474332richiesta"}
+{"level":30,"time":1619370474333,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3x","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474333,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3x","msg":"1619370474333richiesta"}
+{"level":30,"time":1619370474333,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3y","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474333,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3y","msg":"1619370474333richiesta"}
+{"level":30,"time":1619370474334,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3z","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474334,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3z","msg":"1619370474334richiesta"}
+{"level":30,"time":1619370474334,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-40","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474334,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-40","msg":"1619370474334richiesta"}
+{"level":30,"time":1619370474335,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-41","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474335,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-41","msg":"1619370474335richiesta"}
+{"level":30,"time":1619370474335,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-42","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474335,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-42","msg":"1619370474335richiesta"}
+{"level":30,"time":1619370474335,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-43","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474335,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-43","msg":"1619370474335richiesta"}
+{"level":30,"time":1619370474336,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-44","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474336,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-44","msg":"1619370474336richiesta"}
+{"level":30,"time":1619370474336,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-45","req":{"method":"GET","url":"/Public/assets/pages/datatables.init.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474336,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-45","msg":"1619370474336richiesta"}
+{"level":30,"time":1619370474342,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-43","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619370474343,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-44","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619370474344,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3t","res":{"statusCode":304},"responseTime":12.902199998497963,"msg":"request completed"}
+{"level":30,"time":1619370474344,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3v","res":{"statusCode":304},"responseTime":12.093199998140335,"msg":"request completed"}
+{"level":30,"time":1619370474344,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3y","res":{"statusCode":304},"responseTime":10.9498999863863,"msg":"request completed"}
+{"level":30,"time":1619370474344,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3z","res":{"statusCode":304},"responseTime":10.61259999871254,"msg":"request completed"}
+{"level":30,"time":1619370474344,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-40","res":{"statusCode":304},"responseTime":10.339299991726875,"msg":"request completed"}
+{"level":30,"time":1619370474345,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-41","res":{"statusCode":304},"responseTime":10.065499991178513,"msg":"request completed"}
+{"level":30,"time":1619370474345,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-42","res":{"statusCode":304},"responseTime":9.780500009655952,"msg":"request completed"}
+{"level":30,"time":1619370474349,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-43","res":{"statusCode":404},"responseTime":13.611100003123283,"msg":"request completed"}
+{"level":30,"time":1619370474349,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-44","res":{"statusCode":404},"responseTime":13.343699991703033,"msg":"request completed"}
+{"level":30,"time":1619370474357,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3s","res":{"statusCode":200},"responseTime":26.451399996876717,"msg":"request completed"}
+{"level":30,"time":1619370474357,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3u","res":{"statusCode":200},"responseTime":25.569700002670288,"msg":"request completed"}
+{"level":30,"time":1619370474357,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3w","res":{"statusCode":200},"responseTime":24.797499999403954,"msg":"request completed"}
+{"level":30,"time":1619370474360,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-3x","res":{"statusCode":200},"responseTime":27.32830001413822,"msg":"request completed"}
+{"level":30,"time":1619370474360,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-45","res":{"statusCode":200},"responseTime":24.055399999022484,"msg":"request completed"}
+{"level":30,"time":1619370474368,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-46","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474368,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-46","msg":"1619370474368richiesta"}
+{"level":30,"time":1619370474369,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-46","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619370474370,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-46","res":{"statusCode":404},"responseTime":1.7214000076055527,"msg":"request completed"}
+{"level":30,"time":1619370474384,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-47","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370474384,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-47","msg":"1619370474384richiesta"}
+{"level":30,"time":1619370474384,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-47","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619370474385,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-47","res":{"statusCode":404},"responseTime":1.3518000096082687,"msg":"request completed"}
+{"level":30,"time":1619370477895,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-48","req":{"method":"POST","url":"/globalRankings","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370477895,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-48","msg":"1619370477895richiesta"}
+{"level":30,"time":1619370480917,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-48","res":{"statusCode":200},"responseTime":3022.2389000058174,"msg":"request completed"}
+{"level":30,"time":1619370480930,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-49","req":{"method":"GET","url":"/Public/plugins/datatables/dataTables.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480930,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-49","msg":"1619370480930richiesta"}
+{"level":30,"time":1619370480930,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4a","req":{"method":"GET","url":"/Public/assets/css/bootstrap.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480930,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4a","msg":"1619370480930richiesta"}
+{"level":30,"time":1619370480931,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4b","req":{"method":"GET","url":"/Public/assets/css/icons.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480931,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4b","msg":"1619370480931richiesta"}
+{"level":30,"time":1619370480931,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4c","req":{"method":"GET","url":"/Public/plugins/datatables/buttons.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480931,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4c","msg":"1619370480931richiesta"}
+{"level":30,"time":1619370480932,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4d","req":{"method":"GET","url":"/Public/plugins/datatables/responsive.bootstrap4.min.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480932,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4d","msg":"1619370480932richiesta"}
+{"level":30,"time":1619370480932,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4e","req":{"method":"GET","url":"/Public/assets/css/style.css","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480932,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4e","msg":"1619370480932richiesta"}
+{"level":30,"time":1619370480933,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4f","req":{"method":"GET","url":"/Public/assets/js/jquery.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480933,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4f","msg":"1619370480933richiesta"}
+{"level":30,"time":1619370480934,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4g","req":{"method":"GET","url":"/Public/assets/js/bootstrap.bundle.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480934,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4g","msg":"1619370480934richiesta"}
+{"level":30,"time":1619370480934,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4h","req":{"method":"GET","url":"/Public/assets/js/jquery.slimscroll.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480934,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4h","msg":"1619370480934richiesta"}
+{"level":30,"time":1619370480935,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4i","req":{"method":"GET","url":"/Public/assets/js/waves.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480935,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4i","msg":"1619370480935richiesta"}
+{"level":30,"time":1619370480935,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4j","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480935,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4j","msg":"1619370480935richiesta"}
+{"level":30,"time":1619370480935,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4k","req":{"method":"GET","url":"/Public/assets/pages/datatables.init.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480935,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4k","msg":"1619370480935richiesta"}
+{"level":30,"time":1619370480936,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4l","req":{"method":"GET","url":"/Public/assets/js/app.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480936,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4l","msg":"1619370480936richiesta"}
+{"level":30,"time":1619370480936,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4m","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480936,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4m","msg":"1619370480936richiesta"}
+{"level":30,"time":1619370480941,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4j","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619370480944,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4a","res":{"statusCode":304},"responseTime":13.57379999756813,"msg":"request completed"}
+{"level":30,"time":1619370480944,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4b","res":{"statusCode":304},"responseTime":13.186200007796288,"msg":"request completed"}
+{"level":30,"time":1619370480944,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4f","res":{"statusCode":304},"responseTime":10.990099996328354,"msg":"request completed"}
+{"level":30,"time":1619370480944,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4g","res":{"statusCode":304},"responseTime":10.690999999642372,"msg":"request completed"}
+{"level":30,"time":1619370480945,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4h","res":{"statusCode":304},"responseTime":10.342399999499321,"msg":"request completed"}
+{"level":30,"time":1619370480945,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4i","res":{"statusCode":304},"responseTime":10.060300007462502,"msg":"request completed"}
+{"level":30,"time":1619370480945,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4k","res":{"statusCode":304},"responseTime":9.375200003385544,"msg":"request completed"}
+{"level":30,"time":1619370480945,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4l","res":{"statusCode":304},"responseTime":9.102400004863739,"msg":"request completed"}
+{"level":30,"time":1619370480948,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4m","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619370480949,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4j","res":{"statusCode":404},"responseTime":14.008799999952316,"msg":"request completed"}
+{"level":30,"time":1619370480950,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4m","res":{"statusCode":404},"responseTime":13.595400005578995,"msg":"request completed"}
+{"level":30,"time":1619370480956,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-49","res":{"statusCode":200},"responseTime":26.789800003170967,"msg":"request completed"}
+{"level":30,"time":1619370480957,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4c","res":{"statusCode":200},"responseTime":25.180399999022484,"msg":"request completed"}
+{"level":30,"time":1619370480957,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4d","res":{"statusCode":200},"responseTime":24.86089999973774,"msg":"request completed"}
+{"level":30,"time":1619370480958,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4e","res":{"statusCode":200},"responseTime":25.793500006198883,"msg":"request completed"}
+{"level":30,"time":1619370480966,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4n","req":{"method":"GET","url":"/Public/assets/libs/metismenu/metisMenu.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480966,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4n","msg":"1619370480966richiesta"}
+{"level":30,"time":1619370480967,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4n","msg":"Route GET:/Public/assets/libs/metismenu/metisMenu.min.js not found"}
+{"level":30,"time":1619370480968,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4n","res":{"statusCode":404},"responseTime":1.5197000056505203,"msg":"request completed"}
+{"level":30,"time":1619370480981,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4o","req":{"method":"GET","url":"/Public/assets/libs/simplebar/simplebar.min.js","hostname":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":51566},"msg":"incoming request"}
+{"level":30,"time":1619370480982,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4o","msg":"1619370480982richiesta"}
+{"level":30,"time":1619370480982,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4o","msg":"Route GET:/Public/assets/libs/simplebar/simplebar.min.js not found"}
+{"level":30,"time":1619370480983,"pid":6648,"hostname":"DESKTOP-V9E78IE","reqId":"req-4o","res":{"statusCode":404},"responseTime":1.6941999942064285,"msg":"request completed"}

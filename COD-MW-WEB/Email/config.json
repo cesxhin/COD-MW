@@ -3,9 +3,8 @@
     "host": "smtp.gmail.com",
     "port": "465",
     "secure": "true",
-    "auth":
-    {
+    "auth": {
         "user":"cod.wztournaments@gmail.com",
         "pass":"ch23MU0kNCJN0m33XsPg"
-    }
+      }
 }
