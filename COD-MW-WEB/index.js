@@ -12,7 +12,8 @@ const key = "yMtgjZ70*IQm%r@iv2S@$YOr";
 //import css
 const fastify = require('fastify')({
   logger: {
-    level : 'info'
+    level : 'info',
+    patch : 'DataLog.log'
   },
   http2: true,
   https: {
@@ -709,8 +710,18 @@ fastify.get('/endTournament/:id', async(req, reply) => {
           
           req.log.info("TimeMatch: "+timeMatch);
           req.log.info("TimeTournament: "+startTimeTournament+" - "+endTimeTournament);
+
+          req.log.info("timeMatch-Date: "+(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0)));
+          req.log.info("startTimeTournament-Date: "+(Date.UTC(2011, 1, 1, startTimeTournament.slice(0,2), startTimeTournament.slice(3,5), startTimeTournament.slice(6,8),0)));
+          req.log.info("timeMatch-Date: "+(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0)));
+          req.log.info("endTimeTournament-Date: "+(Date.UTC(2011, 1, 1, endTimeTournament.slice(0,2), endTimeTournament.slice(3,5), endTimeTournament.slice(6,8),0)));
+
+          req.log.info("true o false-date: "+(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0) >= Date.UTC(2011, 1, 1, startTimeTournament.slice(0,2), startTimeTournament.slice(3,5), startTimeTournament.slice(6,8),0)));
+          req.log.info("true o false-date: "+(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0) <= Date.UTC(2011, 1, 1, endTimeTournament.slice(0,2), endTimeTournament.slice(3,5), endTimeTournament.slice(6,8),0)));
+          req.log.info("true o false-includes: "+result.matches[k].mode.includes(tournament.mode));
+          
           if(dateMatch === dateTournament){
-            if(Date.parse('01/01/2011 ' + timeMatch) >= Date.parse('01/01/2011 ' + startTimeTournament) && Date.parse('01/01/2011 ' + timeMatch) <= Date.parse('01/01/2011 ' + endTimeTournament) && result.matches[k].mode.includes(tournament.mode))
+            if(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0) >= Date.UTC(2011, 1, 1, startTimeTournament.slice(0,2), startTimeTournament.slice(3,5), startTimeTournament.slice(6,8),0) && Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0)  <= Date.UTC(2011, 1, 1, endTimeTournament.slice(0,2), endTimeTournament.slice(3,5), endTimeTournament.slice(6,8),0) && result.matches[k].mode.includes(tournament.mode))
             {
               req.log.info("requisito tempo rispetta");
               //check gulag
