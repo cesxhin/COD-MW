@@ -44,7 +44,7 @@
                                     </tr>
                                     <tr>
                                         <td><%= rankings.id %></td>
-                                        <td><%= new Date(rankings.start_date).toLocaleDateString('it-IT') %></td>
+                                        <td><%= new Date(rankings.start_date).toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' }); %></td>
                                         <td><%= rankings.start_time %></td>
                                         <td><%= rankings.end_time %></td>
                                     </tr>

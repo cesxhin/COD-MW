@@ -697,35 +697,21 @@ fastify.get('/endTournament/:id', async(req, reply) => {
         for (let k = 0; k < result.matches.length; k++) 
         {
           let matchResults = {};
-          var timeMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleTimeString('it-IT');
-          var dateMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleDateString('it-IT');
+          var timeMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome' });
+          var dateMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome' });
           var startTimeTournament = tournament.start_time;
           var endTimeTournament = tournament.end_time;
-          var dateTournament = new Date(tournament.start_date).toLocaleDateString('it-IT');
-<<<<<<< HEAD
+          var dateTournament = new Date(tournament.start_date).toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome' });
+
           req.log.info("dateMatch: "+dateMatch);
           req.log.info("dateTournament: "+dateTournament);
           
           req.log.info("TimeMatch: "+timeMatch);
           req.log.info("TimeTournament: "+startTimeTournament+" - "+endTimeTournament);
 
-          req.log.info("timeMatch-Date: "+(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0)));
-          req.log.info("startTimeTournament-Date: "+(Date.UTC(2011, 1, 1, startTimeTournament.slice(0,2), startTimeTournament.slice(3,5), startTimeTournament.slice(6,8),0)));
-          req.log.info("timeMatch-Date: "+(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0)));
-          req.log.info("endTimeTournament-Date: "+(Date.UTC(2011, 1, 1, endTimeTournament.slice(0,2), endTimeTournament.slice(3,5), endTimeTournament.slice(6,8),0)));
-
-          req.log.info("true o false-date: "+(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0) >= Date.UTC(2011, 1, 1, startTimeTournament.slice(0,2), startTimeTournament.slice(3,5), startTimeTournament.slice(6,8),0)));
-          req.log.info("true o false-date: "+(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0) <= Date.UTC(2011, 1, 1, endTimeTournament.slice(0,2), endTimeTournament.slice(3,5), endTimeTournament.slice(6,8),0)));
           req.log.info("true o false-includes: "+result.matches[k].mode.includes(tournament.mode));
-          
-          if(dateMatch === dateTournament){
-            if(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0) >= Date.UTC(2011, 1, 1, startTimeTournament.slice(0,2), startTimeTournament.slice(3,5), startTimeTournament.slice(6,8),0) && Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0)  <= Date.UTC(2011, 1, 1, endTimeTournament.slice(0,2), endTimeTournament.slice(3,5), endTimeTournament.slice(6,8),0) && result.matches[k].mode.includes(tournament.mode))
-            {
-              req.log.info("requisito tempo rispetta");
-=======
           if(dateMatch === dateTournament){
             if(Date.parse('01/01/2011 ' + timeMatch) >= Date.parse('01/01/2011 ' + startTimeTournament) && Date.parse('01/01/2011 ' + timeMatch) <= Date.parse('01/01/2011 ' + endTimeTournament) && result.matches[k].mode.includes(tournament.mode)){
->>>>>>> parent of 54c869c (logs)
               //check gulag
               if(rankingSchema.gulag)
               {
@@ -955,7 +941,7 @@ fastify.post('/requestResetPassword/:token', async (req, reply) => {
   }
   
 })
-fastify.listen(3000, '0.0.0.0', (err, address) => {
+fastify.listen(443, '0.0.0.0', (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
 })

@@ -34,7 +34,7 @@
                         <% if(tournaments) { %>
                             <div class="form-group">
                                 <select class="form-control" name="tournaments">
-                                    <option value="<%= tournaments.id%>">Torneo delle ore : <%= tournaments.start_time %> alle ore: <%= tournaments.end_time %> del <%= new Date(tournaments.start_date).toLocaleDateString('it-IT') %></option>
+                                    <option value="<%= tournaments.id%>">Torneo delle ore : <%= tournaments.start_time %> alle ore: <%= tournaments.end_time %> del <%= new Date(tournaments.start_date).toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' }); %></option>
                                 </select>
                             </div>
                             <input type="submit" class="btn btn-primary w-md waves-effect waves-light" value="Registrati">
