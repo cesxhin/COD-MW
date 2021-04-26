@@ -650,12 +650,10 @@ fastify.get('/endTournament/:id', async(req, reply) => {
       req.log.info(email)
       //login with credentials
       let result = await fastify.cod.getMatches(email ,plainCodPsw, uno);
-      req.log.info(result);
       if(!result)
         return; //error, reopen tournament or retry
       if(teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches.length > 0)
       {
-        req.log.info("no capo squadra");
         for(let z=0; z<teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches.length; z++)
         {
           //matching
@@ -694,7 +692,6 @@ fastify.get('/endTournament/:id', async(req, reply) => {
         }
       }else
       {
-        req.log.info("caposquadra");
         teamResultsPrivate.teams[teamResultsGlobal.teams.length -1] = {nameTeam: registratedTeams[i].teamid, matches: []}
         //matching
         for (let k = 0; k < result.matches.length; k++) 
@@ -705,6 +702,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
           var startTimeTournament = tournament.start_time;
           var endTimeTournament = tournament.end_time;
           var dateTournament = new Date(tournament.start_date).toLocaleDateString('it-IT');
+<<<<<<< HEAD
           req.log.info("dateMatch: "+dateMatch);
           req.log.info("dateTournament: "+dateTournament);
           
@@ -724,6 +722,10 @@ fastify.get('/endTournament/:id', async(req, reply) => {
             if(Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0) >= Date.UTC(2011, 1, 1, startTimeTournament.slice(0,2), startTimeTournament.slice(3,5), startTimeTournament.slice(6,8),0) && Date.UTC(2011, 1, 1, timeMatch.slice(0,2), timeMatch.slice(3,5), timeMatch.slice(6,8),0)  <= Date.UTC(2011, 1, 1, endTimeTournament.slice(0,2), endTimeTournament.slice(3,5), endTimeTournament.slice(6,8),0) && result.matches[k].mode.includes(tournament.mode))
             {
               req.log.info("requisito tempo rispetta");
+=======
+          if(dateMatch === dateTournament){
+            if(Date.parse('01/01/2011 ' + timeMatch) >= Date.parse('01/01/2011 ' + startTimeTournament) && Date.parse('01/01/2011 ' + timeMatch) <= Date.parse('01/01/2011 ' + endTimeTournament) && result.matches[k].mode.includes(tournament.mode)){
+>>>>>>> parent of 54c869c (logs)
               //check gulag
               if(rankingSchema.gulag)
               {
@@ -953,7 +955,7 @@ fastify.post('/requestResetPassword/:token', async (req, reply) => {
   }
   
 })
-fastify.listen(443, '0.0.0.0', (err, address) => {
+fastify.listen(3000, '0.0.0.0', (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
 })
