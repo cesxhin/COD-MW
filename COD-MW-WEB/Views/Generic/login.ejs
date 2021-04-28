@@ -45,7 +45,7 @@
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                                 </div>
                                 <div class="col-2">
-                                    <span class="fas fa-eye" onclick="showOrHide()"></span>
+                                    <span class="fas fa-eye" onclick="showOrHide('password')"></span>
                                 </div>
                             </div>
                             
@@ -89,8 +89,8 @@
         <script src="/Public/assets/js/app.js"></script>
 
         <script type="text/javascript">
-            function showOrHide(){
-                var input = document.getElementById("password");
+            function showOrHide(elementID){
+                var input = document.getElementById(elementID);
                 var icon = document.getElementsByClassName("fas");
                 if(input.attributes.getNamedItem("type").value === "password" && icon[0].className.includes("fa-eye")){
                     input.attributes.getNamedItem("type").value = "text";

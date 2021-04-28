@@ -698,10 +698,10 @@ fastify.get('/endTournament/:id', async(req, reply) => {
         {
           let matchResults = {};
           var timeMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome' });
-          var dateMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome' });
+          var dateMatch = new Date(result.matches[k].utcStartSeconds * 1000).toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' });
           var startTimeTournament = tournament.start_time;
           var endTimeTournament = tournament.end_time;
-          var dateTournament = new Date(tournament.start_date).toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome' });
+          var dateTournament = new Date(tournament.start_date).toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' });
 
           req.log.info("dateMatch: "+dateMatch);
           req.log.info("dateTournament: "+dateTournament);

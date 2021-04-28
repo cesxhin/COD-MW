@@ -31,6 +31,11 @@
                         <div class="form-group">
                             <input type="text" class="form-control" name="teamName" value="<%= teamName %>" readonly>
                         </div>
+                        <div class="form-group">
+                            <div class="alert alert-warning" role="alert">
+                                Non riesci a vedere il torneo che è stato annunciato? Controlla bene quante persone ci sono nel tuo team.
+                            </div>
+                        </div>
                         <% if(tournaments) { %>
                             <div class="form-group">
                                 <select class="form-control" name="tournaments">

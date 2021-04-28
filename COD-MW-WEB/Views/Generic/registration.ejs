@@ -80,7 +80,7 @@
                         </div>
                         <!-- password sito -->
                         <div class="form-group">
-                            <label>Seleziona la piattaforma che giochi attuale</label>
+                            <label>Seleziona la tua piattaforma</label>
                             <div class="col-sm-20">
                                 <select class="form-control" name="platform" required>
                                     <option value="battle">Battle.net</option>
@@ -92,11 +92,26 @@
                         <!-- password sito -->
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password per il nostro sito" required>
+                            <div class="row">
+                                <div class="col-10 ">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password per il nostro sito" required>
+                                </div>
+                                <div class="col-2">
+                                    <span class="fas fa-eye" onclick="showOrHide('password',0)"></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="password2">Ripeti Password</label>
-                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Ripeti la password" required>
+                            <div class="row">
+                                <div class="col-10 ">
+                                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Ripeti la password" required>
+                                </div>
+                                
+                                <div class="col-2">
+                                    <span class="fas fa-eye" onclick="showOrHide('password2',1)"></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group row m-t-20">
                             <div class="col-12 text-right">
@@ -121,7 +136,20 @@
         <script src="/Public/plugins/parsleyjs/parsley.min.js"></script>
         <!-- App js -->
         <script src="/Public/assets/js/app.js"></script>
+        <script type="text/javascript">
+            function showOrHide(elementID, n){
+                var input = document.getElementById(elementID);
+                var icon = document.getElementsByClassName("fas");
+                if(input.attributes.getNamedItem("type").value === "password" && icon[n].className.includes("fa-eye")){
+                    input.attributes.getNamedItem("type").value = "text";
+                    icon[n].className = icon[n].className.replace("fa-eye","fa-eye-slash");
+                } else {
+                    input.attributes.getNamedItem("type").value = "password";
+                    icon[n].className = icon[n].className.replace("fa-eye-slash","fa-eye");
+                }
+            }
 
+        </script>
     </body>
 
 </html>
