@@ -650,8 +650,8 @@ fastify.get('/endTournament/:id', async(req, reply) => {
       req.log.info(email)
       //login with credentials
       let result = await fastify.cod.getMatches(email ,plainCodPsw, uno);
-      if(!result)
-        return; //error, reopen tournament or retry
+      if(!result || result.matches === undefined)
+        continue; //error, reopen tournament or retry
       if(teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches.length > 0)
       {
         for(let z=0; z<teamResultsGlobal.teams[teamResultsGlobal.teams.length -1].matches.length; z++)
