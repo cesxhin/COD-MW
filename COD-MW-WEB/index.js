@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs');
 //uuid for authToken 
 const uuid = require('uuid');
-
 //security
 const sha256 = require("sha256");
 const Cryptr = require('cryptr');
@@ -51,7 +50,6 @@ fastify.register(require('point-of-view'), {
     },
     root: path.join(__dirname, 'Views')
 });
-
 //cookie
 fastify.register(require('fastify-cookie'), {
   secret : 'mySecret'
@@ -943,10 +941,21 @@ fastify.post('/requestResetPassword/:token', async (req, reply) => {
   
 })
 //certificate
-fastify.get('/.well-known/pki-validation/FACEDD5B1AC62B51ABC2851AFAB1FD9A.txt', async (req, reply) => {
+/*fastify.get('/.well-known/pki-validation/', async (req, reply) => {
   return reply.view('FACEDD5B1AC62B51ABC2851AFAB1FD9A.txt');
-})
+})*/
 fastify.listen(443, '0.0.0.0', (err, address) => {
+  if (err) throw err
+  fastify.log.info(`server listening on ${address}`)
+})
+
+const fastifyHTTP = require('fastify')();
+
+fastifyHTTP.get('/', (req, reply) => {
+  return reply.redirect("https://"+ req.headers.host + req.url)
+})
+
+fastifyHTTP.listen(80, '0.0.0.0', (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
 })
