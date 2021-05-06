@@ -14,13 +14,13 @@ const fastify = require('fastify')({
   logger: {
     level : 'info',
     patch : 'DataLog.log'
-  },
+  }/*,
   http2: true,
   https: {
     allowHTTP1: true,
     key: fs.readFileSync(path.join(__dirname, '', 'https', 'private.key')),
     cert: fs.readFileSync(path.join(__dirname, '', 'https', 'certificate.cert'))
-  }
+  }*/
 });
 fastify.register(require('fastify-static'), {
   root: path.join(__dirname, 'Public'),
@@ -57,7 +57,7 @@ fastify.register(require('fastify-cookie'), {
 });
 fastify.addHook('onRequest', async (req, reply) => {
   req.log.info(Date.now() + 'richiesta');
-  if(req.url === '/login' || req.url.startsWith('/requestResetPassword') || req.url.startsWith('/Public') || req.url === '/registration') 
+  if(req.url === '/login' || req.url.startsWith('/requestResetPassword') || req.url.startsWith('/Public') || req.url === '/registration' || req.url.startsWith('/.well-known/pki-validation/')) 
     return;
   //if browser is in incognito it would be better to not edit user authToken in db
   if(req.cookies.authToken) {
@@ -941,7 +941,11 @@ fastify.post('/requestResetPassword/:token', async (req, reply) => {
   }
   
 })
-fastify.listen(443, '0.0.0.0', (err, address) => {
+//certificate
+fastify.get('/.well-known/pki-validation/FACEDD5B1AC62B51ABC2851AFAB1FD9A.txt', async (req, reply) => {
+  return reply.view('FACEDD5B1AC62B51ABC2851AFAB1FD9A.txt');
+})
+fastify.listen(80, '0.0.0.0', (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
 })
