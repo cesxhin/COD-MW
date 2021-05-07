@@ -64,6 +64,9 @@ const dalRankingSchema = () =>
         {
           return 'generic'
         }
+      }finally
+      {
+        client.end();
       }
     }
 

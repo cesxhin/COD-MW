@@ -11,13 +11,13 @@ const dalTeam = () =>
             return result.rows[k].name;
           
         }
+      client.end();
       return false;
     }
 
     //check if  players are into team
     const checkPlayersIntoTeam = async(jsonPlayers) => {
       const client = new ConnectionClient();
-
       try {
         const result = await client.query('SELECT * FROM teams');
       //Funzionante

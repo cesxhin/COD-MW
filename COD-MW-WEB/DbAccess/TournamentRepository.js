@@ -63,11 +63,13 @@ const dalTournament = () =>
       try
       {
         await client.query('DELETE FROM tournaments WHERE id = $1', [id]);
-        client.end();
         return;
       }catch
       {
         return 'generic'
+      }finally
+      {
+        client.end();
       }
     }
 
@@ -77,7 +79,6 @@ const dalTournament = () =>
       const result = await client.query(`UPDATE tournaments SET finished = true 
                                         WHERE id = $1 RETURNING *`, [id]);
       client.end();
-
       return result.rowCount > 0 ? true : false;
     }
 
