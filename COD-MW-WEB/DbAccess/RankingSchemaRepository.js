@@ -4,9 +4,9 @@ const dalRankingSchema = () =>
 {
     //create ranking schema
     const addRankingSchema = async (schema) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         if(schema.gulag === undefined)
         {
           schema.gulag = false;
@@ -26,9 +26,9 @@ const dalRankingSchema = () =>
 
     //get ranking schemas
     const getRankingSchemas = async () => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query('SELECT * FROM rankingschemas ORDER BY id ASC');
         return result.rows.length > 0 ? result.rows : null;
       }catch(error)
@@ -42,9 +42,9 @@ const dalRankingSchema = () =>
 
     //get ranking schema by id
     const getRankingSchemaById = async (id) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query('SELECT * FROM rankingschemas WHERE id = $1', [id]);
         return result.rows.length > 0 ? result.rows[0] : null;
       }catch(error)
@@ -58,9 +58,9 @@ const dalRankingSchema = () =>
 
     //update ranking schema 
     const updateRankingSchema = async (schema) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         if(schema.gulag === undefined)
           schema.gulag = false;
         const result = await client.query(`UPDATE rankingschemas SET

@@ -3,9 +3,9 @@ const dalTournament = () =>
 {
     //create tournament
     const createTournament = async (tournament) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const modeNumbers = await client.query('SELECT playersNumber FROM rankingSchemas WHERE id = $1', [tournament.id_schema]);
         let mode = null;
         switch (modeNumbers.rows[0].playersnumber) {
@@ -37,9 +37,9 @@ const dalTournament = () =>
 
     //get tournaments
     const getTournaments = async () => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query('SELECT * FROM tournaments WHERE finished = false ORDER BY id ASC');
         return result.rows.length > 0 ? result.rows : null;
       }catch(error)
@@ -52,9 +52,9 @@ const dalTournament = () =>
     }
     //get by id tournaments
     const getTournamentsById = async (id) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query('SELECT * FROM tournaments WHERE id = $1', [id]);
         return result.rows.length > 0 ? result.rows[0] : null;
       }catch(error)
@@ -68,9 +68,9 @@ const dalTournament = () =>
 
     //get active tournaments by mode (duo, trio, quad)
     const getActiveTournaments = async(mode) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query(`SELECT * FROM tournaments WHERE finished = false AND mode = $1`, [mode]);
         //dovrebbe essere uno solo in teoria quindi sarebbe più corretto ritornare result.rows[0]
         return result.rowCount > 0 ? result.rows[0] : null;
@@ -84,9 +84,9 @@ const dalTournament = () =>
     }
     //update tournaments
     const updateTournaments = async (tournaments) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query('UPDATE tournaments SET start_date=$1, start_time=$2, end_time=$3, id_schema=$4 WHERE id = $5 RETURNING *',[tournaments.start_date, tournaments.start_time, tournaments.end_time, tournaments.id_schema, tournaments.id]);
         return result.rows.length > 0 ? result.rows[0] : null;
       }catch(error)
@@ -115,9 +115,9 @@ const dalTournament = () =>
 
     //close tournament by id
     const closeTournament = async(id) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query(`UPDATE tournaments SET finished = true 
                                           WHERE id = $1 RETURNING *`, [id]);
         return result.rowCount > 0 ? true : false;

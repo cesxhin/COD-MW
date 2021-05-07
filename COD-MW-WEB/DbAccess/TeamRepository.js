@@ -4,9 +4,9 @@ const dalTeam = () =>
 {
     //check if player already has a team
     const checkPlayerIntoTeamBy = async(tagUsername) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query('SELECT * FROM teams');
         for(let k in result.rows) {
           if(result.rows[k].players.find(p => p.player === tagUsername))
@@ -48,9 +48,9 @@ const dalTeam = () =>
 
     //check if a team already participates
     const checkTeamRegistration = async(teamName) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query(`SELECT * FROM registrations WHERE teamid = $1 AND closed = false`, [teamName]);
         return result.rowCount > 0 ? true : null;
       }catch(error)
@@ -64,9 +64,9 @@ const dalTeam = () =>
 
     //check if  players are into team
     const getTeam = async(name) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query('SELECT players FROM teams WHERE LOWER(name) = LOWER($1)',[name]);
         return result.rowCount > 0 ? result.rows[0] : null;
       }catch(error)
@@ -91,9 +91,9 @@ const dalTeam = () =>
 
     //create team
     const createTeam = async(teamName, jsonPlayers) => {
+      const client = new ConnectionClient();
       try
       {
-        const client = new ConnectionClient();
         const result = await client.query('INSERT INTO teams VALUES ($1, $2) RETURNING *', [teamName, JSON.stringify(jsonPlayers)]);
         return result.rowCount > 0 ? result.rows[0] : null;
       }catch(error)
