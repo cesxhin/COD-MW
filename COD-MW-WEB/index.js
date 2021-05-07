@@ -179,7 +179,7 @@ fastify.post('/registration', async (req, reply) => {
   {
     const uno = await fastify.cod.getUno();
     const tag_username = await fastify.cod.getGamerTag(data['platform']);
-    if(tag_username || tag_username.length <= 1)
+    if(!(tag_username) || tag_username.length <= 2)
     {
       reply.view('./Generic/registration.ejs', {registrationError : "error_tag_username"});
       return;
