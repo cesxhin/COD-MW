@@ -179,6 +179,11 @@ fastify.post('/registration', async (req, reply) => {
   {
     const uno = await fastify.cod.getUno();
     const tag_username = await fastify.cod.getGamerTag(data['platform']);
+    if(tag_username || tag_username.length <= 1)
+    {
+      reply.view('./Generic/registration.ejs', {registrationError : "error_tag_username"});
+      return;
+    }
     const psw_sha256 = sha256(data['password'])
     const crypt = new Cryptr(key);
     const psw_cod_aes = crypt.encrypt(data['password_cod']);

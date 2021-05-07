@@ -4,15 +4,23 @@ const dalTeam = () =>
 {
     //check if player already has a team
     const checkPlayerIntoTeamBy = async(tagUsername) => {
-      const client = new ConnectionClient();
-      const result = await client.query('SELECT * FROM teams');
-      for(let k in result.rows) {
-        if(result.rows[k].players.find(p => p.player === tagUsername))
-            return result.rows[k].name;
-          
-        }
-      client.end();
-      return false;
+      try
+      {
+        const client = new ConnectionClient();
+        const result = await client.query('SELECT * FROM teams');
+        for(let k in result.rows) {
+          if(result.rows[k].players.find(p => p.player === tagUsername))
+              return result.rows[k].name;
+            
+          }
+        return false;
+      }catch(error)
+      {
+        console.log(error);
+      }finally
+      {
+        client.end();
+      }
     }
 
     //check if  players are into team
@@ -30,7 +38,7 @@ const dalTeam = () =>
       }
       return false;
       } catch (error) {
-        
+        console.log(error);
       }
       finally {
         client.end();
@@ -40,18 +48,34 @@ const dalTeam = () =>
 
     //check if a team already participates
     const checkTeamRegistration = async(teamName) => {
-      const client = new ConnectionClient();
-      const result = await client.query(`SELECT * FROM registrations WHERE teamid = $1 AND closed = false`, [teamName]);
-      client.end();
-      return result.rowCount > 0 ? true : null;
+      try
+      {
+        const client = new ConnectionClient();
+        const result = await client.query(`SELECT * FROM registrations WHERE teamid = $1 AND closed = false`, [teamName]);
+        return result.rowCount > 0 ? true : null;
+      }catch(error)
+      {
+        console.log(error);
+      }finally
+      {
+        client.end();
+      }
     }
 
     //check if  players are into team
     const getTeam = async(name) => {
-      const client = new ConnectionClient();
-      const result = await client.query('SELECT players FROM teams WHERE LOWER(name) = LOWER($1)',[name]);
-      client.end();
-      return result.rowCount > 0 ? result.rows[0] : null;
+      try
+      {
+        const client = new ConnectionClient();
+        const result = await client.query('SELECT players FROM teams WHERE LOWER(name) = LOWER($1)',[name]);
+        return result.rowCount > 0 ? result.rows[0] : null;
+      }catch(error)
+      {
+        console.log(error);
+      }finally
+      {
+        client.end();
+      }
       /*//Funzionante
       if(result.rows[0].players.find(p => p.player === player))
           return true;
@@ -67,10 +91,18 @@ const dalTeam = () =>
 
     //create team
     const createTeam = async(teamName, jsonPlayers) => {
-      const client = new ConnectionClient();
-      const result = await client.query('INSERT INTO teams VALUES ($1, $2) RETURNING *', [teamName, JSON.stringify(jsonPlayers)]);
-      client.end();
-      return result.rowCount > 0 ? result.rows[0] : null;
+      try
+      {
+        const client = new ConnectionClient();
+        const result = await client.query('INSERT INTO teams VALUES ($1, $2) RETURNING *', [teamName, JSON.stringify(jsonPlayers)]);
+        return result.rowCount > 0 ? result.rows[0] : null;
+      }catch(error)
+      {
+        console.log(error);
+      }finally
+      {
+        client.end();
+      }
     }
     //create team
     const updatePlayer = async(teamName, jsonPlayers) => {

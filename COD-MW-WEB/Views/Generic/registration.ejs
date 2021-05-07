@@ -50,6 +50,9 @@
                             <% if(registrationError === 'equalPassword') { %>
                                 Le due password non sono uguali!
                             <% }%>
+                            <% if(registrationError === 'error_tag_username') { %>
+                                Non siamo riusciti a prendere il tuo nickname! Controlla nell'account di Activision che nella sezione Account Linking sia collegato alla vostra piattaforma che avete scelto!
+                            <% }%>
                         </div>
                     <%}%>
                     <form class="form-horizontal m-t-30" action="/registration" method="post">

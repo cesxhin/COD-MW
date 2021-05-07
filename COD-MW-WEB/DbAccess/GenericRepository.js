@@ -6,19 +6,6 @@ const generic = winston.loggers.get('generic');
 const dalGeneric = () =>
 {
     const pg = require('pg');
-    const getClient = () =>{
-        const client = new pg.Client(config);
-
-        client.connect(err => {
-          if (err) {
-            console.error('connection error', err.stack)
-          } else {
-            console.log('connected')
-          }
-        })
-        return client;
-    }
-
     //login
     const login = async (email, password) =>{
       const client = new ConnectionClient();
