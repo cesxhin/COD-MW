@@ -630,7 +630,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
   for (let i = 0; i < registratedTeams.length; i++) {
     //json
     teamResultsGlobal.teams.push({
-      teamName : registratedTeams[0].teamid,
+      teamName : registratedTeams[i].teamid,
       totalPoints : null,
       tournamentPlace : null,
       matches:[]
@@ -638,7 +638,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
     //get players
     let team = await fastify.dalTeam.getTeam(registratedTeams[i].teamid);
     //put into for verify players
-    jsonTeam.push({name: registratedTeams[0].teamid, players: team.players});
+    jsonTeam.push({name: registratedTeams[i].teamid, players: team.players});
     //
     let players = team.players;
     //insert json
@@ -821,6 +821,7 @@ fastify.get('/endTournament/:id', async(req, reply) => {
       teamResultsGlobal.teams.splice(i,1);
       continue;
     }
+    maxArrayCopy = Array.from(maxArray);
     //remove match
     for (let k = 0; k < teamResultsGlobal.teams[i].matches.length; k++) {
       let remove = true;
@@ -830,12 +831,21 @@ fastify.get('/endTournament/:id', async(req, reply) => {
         {
           teamResultsGlobal.teams[i].totalPoints += teamResultsGlobal.teams[i].matches[k].totalPointsMatch
           remove = false;
+          maxArray.splice(z,1);
         }
       }
       if(remove)
       {
+        for(let z=0; z<maxArrayCopy.length; z++)
+        {
+          if(maxArrayCopy[z].matchID === teamResultsGlobal.teams[i].matches[k].matchID)
+          {
+            teamResultsGlobal.teams[i].matches.splice(k,1);
+            continue;
+          }
+        }
         teamResultsGlobal.teams[i].matches.splice(k,1);
-        k=-1;
+        k-=1;
       }
     }
     //tournamentPlace only insert
