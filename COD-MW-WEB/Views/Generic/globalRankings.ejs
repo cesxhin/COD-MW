@@ -63,7 +63,7 @@
                                         <% rankings.teams.teams.forEach(t => { %>
                                             <tr class="mt-2">
                                                 <th class="bg-primary">
-                                                    <p><%= t.tournamentPlace %></p>
+                                                    <p>Posizione classifica: <%= t.tournamentPlace %></p>
                                                     <p><%= t.teamName %></p>
                                                 </th>  
                                                 <th >1° PARTITA</th>
@@ -91,7 +91,7 @@
                                                     for(let k = 0 ; k < m[i].players.length; k++){ 
                                                         let totalPointsMatch = 0; %>
                                                         <tr>
-                                                            <th><%= m[i].players[k].username %> <span class="bg-info">KILL: </span></th>
+                                                            <th><%= m[i].players[k].username %> KILL:</th>
                                                             <% let index = i; 
                                                             while(index < m.length) { %>
                                                                 <td><%= m[index].players[k].kills %></td>
