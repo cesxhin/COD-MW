@@ -119,8 +119,13 @@ fastify.post('/login', async (req, reply) => {
     {
       maxAge: _MAXAGE
     });
-    const authToken = uuid.v4();
-    await fastify.dalGeneric.addToken(result.uno, authToken);
+    let authToken = null;
+    if(!result.authtoken){
+      const authToken= uuid.v4();
+      await fastify.dalGeneric.addToken(result.uno, authToken);
+    } else
+      authToken = result.authtoken;
+      
     reply.setCookie('authToken', authToken, {
       maxAge : _MAXAGE
     });
