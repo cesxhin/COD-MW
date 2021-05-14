@@ -174,7 +174,7 @@ const dalGeneric = () =>
     const deleteResetToken = async(uno) => {
       const client = new ConnectionClient();
       try {
-        const result = await client.query(`UPDATE account SET authTokenResetPassw = null WHERE uno = $1 RETURNING *`, [uno]);
+        const result = await client.query(`UPDATE account SET (authTokenResetPassw, authtoken) = (null, null) WHERE uno = $1 RETURNING *`, [uno]);
         return result.rowCount > 0 ? true : false;
       } catch (err) {
         logger.error(err);
