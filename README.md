@@ -1,5 +1,5 @@
 # wztournaments
-![plot](src\COD-MW-WEB\Public\assets\images\LOGO_SFONDO_UFFICIALE.png)
+![plot](src/COD-MW-WEB/Public/assets/images/LOGO_SFONDO_UFFICIALE.png)
 ## What does this this?
 This project can be create new tournaments for call of duty warzone.
 When every tournaments will finish, the system in automatic calculation and generate ranking with point for players.
