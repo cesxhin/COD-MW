@@ -7,7 +7,7 @@ const uuid = require('uuid');
 const sha256 = require("sha256");
 const Cryptr = require('cryptr');
 //password
-const key = "yMtgjZ70*IQm%r@iv2S@$YOr";
+const key = "";
 //import css
 const fastify = require('fastify')({
   logger: {
