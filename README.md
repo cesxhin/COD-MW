@@ -34,4 +34,6 @@ import this [data.sql](src/COD-MW-WEB/data.sql)
 
 ## Privacy
 [privacy](src/COD-MW-WEB/Public/Privacy/privacy.pdf)
+
+## terms and conditions
 [termini e condizioni](src/COD-MW-WEB/Public/Privacy/termini_e_condizioni.pdf)
