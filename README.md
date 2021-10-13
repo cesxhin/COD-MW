@@ -28,3 +28,10 @@ There are password of account activion that we must use it for connect to api co
 const key = ""; //example oAHSD980#saDnas!da0sdAS#Dh
 ...
 ```
+
+## Configuration database
+import this [data.sql](src/COD-MW-WEB/data.sql)
+
+## Privacy
+[privacy](src/COD-MW-WEB/Public/Privacy/privacy.pdf)
+[termini e condizioni](src/COD-MW-WEB/Public/Privacy/termini_e_condizioni.pdf)
