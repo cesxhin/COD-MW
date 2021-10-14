@@ -1,7 +1,0 @@
-{
-    "host": "wztournaments-db.c5a2nzf5sbtl.eu-west-1.rds.amazonaws.com",
-    "database": "wztournaments",
-    "user": "administrator",
-    "password": "Zf59l6yNRkxhkmn35wYn",
-    "idleTimeoutMillis": 30000
-}
